@@ -1,5 +1,5 @@
 ﻿using System;
-using static System.Console;
+using static System.Console;   // erspart das führende Console.  vor Methoden und Eigenshaften
 
 namespace classConsole_ConsoleApplication
 {
@@ -8,7 +8,7 @@ namespace classConsole_ConsoleApplication
         static void Main(string[] args)
         {
             
-           BackgroundColor = ConsoleColor.Blue;
+            BackgroundColor = ConsoleColor.Blue;
             WriteLine("The current window width is {0} Chars",Console.WindowWidth);
             ReadLine();
             SetWindowSize(80, 40);
