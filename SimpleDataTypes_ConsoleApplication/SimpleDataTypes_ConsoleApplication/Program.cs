@@ -8,7 +8,7 @@ namespace SimpleDataTypes_ConsoleApplication
 {
     class Program
     {
-        static string s = "Hello";
+        string s = "Hello";
         static void Main(string[] args)
         {
             Console.WriteLine(s);
