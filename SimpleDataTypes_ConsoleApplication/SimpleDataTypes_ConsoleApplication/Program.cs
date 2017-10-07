@@ -8,7 +8,7 @@ namespace SimpleDataTypes_ConsoleApplication
 {
     class Program
     {
-        string s = "Hello";
+        static string s = "Hello";  // ohne static ist die Variable nur mit einem Object verfügbar
         static void Main(string[] args)
         {
             Console.WriteLine(s);
