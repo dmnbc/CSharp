@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace HelloWorld_ConsoleApplication
 {
     class Program
