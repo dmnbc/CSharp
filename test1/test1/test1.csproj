@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C2F1016F-3555-46D5-951B-B8177CF6C7D7}</ProjectGuid>
+    <ProjectGuid>{ADDD8A57-202F-43A9-9949-746A72E44665}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CurosrPositioning_ConsoleApplication</RootNamespace>
-    <AssemblyName>CurosrPositioning_ConsoleApplication</AssemblyName>
+    <RootNamespace>test1</RootNamespace>
+    <AssemblyName>test1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
