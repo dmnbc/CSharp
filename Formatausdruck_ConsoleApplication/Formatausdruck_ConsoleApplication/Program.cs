@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Text;
 using static System.Console;
 using static System.ConsoleColor;
 
@@ -7,11 +8,14 @@ namespace Formatausdruck_ConsoleApplication
 {
     class Program
     {
+       
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
             int  maxWidth = LargestWindowWidth;
             int  maxHeight = LargestWindowHeight;
             int topLine = 0;
+            double gesamtPreis = 0.0;
             SetWindowSize(maxWidth / 2, maxHeight / 2);
             BackgroundColor = Black;
             Clear();
@@ -31,7 +35,7 @@ namespace Formatausdruck_ConsoleApplication
             SetCursorPosition(2, 9);
             WriteLine("Bezeichnung\tEinzelpreis\tAnzahl\tPostionspreis");
 
-            for (int zeile = 10; zeile < 15; zeile++)
+            for (int zeile = 10; zeile < 16; zeile++)
             {
                 SetCursorPosition(2, zeile);
                 ForegroundColor = (ConsoleColor)(zeile%16);
@@ -40,11 +44,14 @@ namespace Formatausdruck_ConsoleApplication
                 int az = Convert.ToInt32(ReadLine());
                 double pos = ep*az;
                 SetCursorPosition(40, zeile);
-                Write(pos);
-
+                Write("{0,8:C}",pos); // auf zwei Stellen hinter dem Komma erweitern
+                gesamtPreis += pos;
+                WriteLine();
+                SetCursorPosition(40, CursorTop + 2);
+                Write("{0,10:C}", gesamtPreis);
             }
 
-
+            
             ReadLine();
         }
     }
