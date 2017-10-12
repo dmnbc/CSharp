@@ -11,8 +11,9 @@ namespace Bestellformular_ConsoleApplication
             public double einzelpreis;
             public int bestellmenge;
             public double zeilenpreis;
-        };
-
+        }
+        static string hinweis = "Alle Preise netto, zzgl. USt.";
+        // zugriff rückgabetyp name (parameter)
         static void Main(string[] args)
         {
             Bestellzeile[] bestellung = new Bestellzeile[]
@@ -22,6 +23,7 @@ namespace Bestellformular_ConsoleApplication
                   new Bestellzeile {bezeichnung ="Printer",einzelpreis=236.39,bestellmenge=0,zeilenpreis=0.0 },
                   new Bestellzeile {bezeichnung ="Desktop",einzelpreis=986.99,bestellmenge=0,zeilenpreis=0.0 }
                 };
+            
             int oldCursorTop = 9;
             ConsoleKeyInfo cki;
             do
@@ -30,16 +32,17 @@ namespace Bestellformular_ConsoleApplication
                 int breiteBez = 7; int breiteEp = 7;
                 SetCursorPosition(startLeft, startTop);
             Write("Bezeichnung\tE.Preis\tBestellmenge\tPreis");
-            ForegroundColor = Green;
+            ForegroundColor = Yellow;
                 double gesamtpreis = 0;
-                foreach (Bestellzeile zeile in bestellung)
+            foreach (Bestellzeile zeile in bestellung)
             { SetCursorPosition(4, ++CursorTop); ;
               Write("{0,-7}\t{1,7:F2}\t{2,6:D}\t{3,13:F2}",zeile.bezeichnung,zeile.einzelpreis,zeile.bestellmenge,zeile.zeilenpreis);
               gesamtpreis += zeile.zeilenpreis;
             }
+           hinweiseAusgeben(22,22,Blue);
             CursorSize = 10;
                 SetCursorPosition(startLeft, 18);
-                Write("Gesamtpreis: {0:F2}", gesamtpreis);
+                Write("Gesamtpreis: {0,10:F2}", gesamtpreis);
                 SetCursorPosition(breiteBez + 8 + breiteEp + 8, oldCursorTop);        
                 cki = Console.ReadKey(true);
                 if (!Char.IsNumber(cki.KeyChar))
@@ -70,6 +73,23 @@ namespace Bestellformular_ConsoleApplication
             } while (cki.Key != ConsoleKey.Escape);            
             ReadLine();
         }   // end of main
-        private static void myFunc() { ;}
-    }
+        static void hinweiseAusgeben()
+        {
+            Write("\nHinweis: ");
+        }
+        static void hinweiseAusgeben(int left, int top)
+        { // Überladung 
+            SetCursorPosition(left, top );
+            Write("Hinweis: ");
+        }
+        static void hinweiseAusgeben(int left, int top, ConsoleColor farbe)
+        { // Überladung  für Farbe
+            ConsoleColor hilf = ForegroundColor ;
+            ForegroundColor = farbe;
+            SetCursorPosition(left, top);           
+            Write("Hinweis: {0} ",hinweis);
+            ForegroundColor = hilf; 
+        }
+       
+    } // end of Class Program
 }
