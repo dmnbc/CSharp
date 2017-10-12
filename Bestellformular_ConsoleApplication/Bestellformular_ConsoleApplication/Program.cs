@@ -1,11 +1,14 @@
 ﻿using System;
 using static System.Console;
 using static System.ConsoleColor;
+using System.Collections.Generic;
 
 namespace Bestellformular_ConsoleApplication
 {
     class Program
-    {   struct Bestellzeile
+    {
+      
+        struct Bestellzeile
         {
             public string bezeichnung;
             public double einzelpreis;
@@ -16,6 +19,11 @@ namespace Bestellformular_ConsoleApplication
         // zugriff rückgabetyp name (parameter)
         static void Main(string[] args)
         {
+            Dictionary<string, double> uStListe = new Dictionary<string, double>();
+            uStListe.Add("DE", 19);
+            uStListe.Add("GB", 15);
+            uStListe.Add("NL", 21);
+            uStListe.Add("RU", 30);
             Bestellzeile[] bestellung = new Bestellzeile[]
                 { new Bestellzeile {bezeichnung ="Laptop" ,einzelpreis=782.99,bestellmenge=0,zeilenpreis=0.0 },
                   new Bestellzeile {bezeichnung ="Tablet" ,einzelpreis=186.49,bestellmenge=0,zeilenpreis=0.0 },
@@ -23,7 +31,7 @@ namespace Bestellformular_ConsoleApplication
                   new Bestellzeile {bezeichnung ="Printer",einzelpreis=236.39,bestellmenge=0,zeilenpreis=0.0 },
                   new Bestellzeile {bezeichnung ="Desktop",einzelpreis=986.99,bestellmenge=0,zeilenpreis=0.0 }
                 };
-            
+           double uStSatz  = landesauswahl(uStListe);
             int oldCursorTop = 9;
             ConsoleKeyInfo cki;
             do
@@ -39,10 +47,15 @@ namespace Bestellformular_ConsoleApplication
               Write("{0,-7}\t{1,7:F2}\t{2,6:D}\t{3,13:F2}",zeile.bezeichnung,zeile.einzelpreis,zeile.bestellmenge,zeile.zeilenpreis);
               gesamtpreis += zeile.zeilenpreis;
             }
+            // 
+        
+
            hinweiseAusgeben(22,22,Blue);
+           
             CursorSize = 10;
                 SetCursorPosition(startLeft, 18);
-                Write("Gesamtpreis: {0,10:F2}", gesamtpreis);
+                Write("Gesamtpreis: {0,12:F2}", gesamtpreis);
+                hinweiseAusgeben(ustBerechnen(gesamtpreis, uStSatz));
                 SetCursorPosition(breiteBez + 8 + breiteEp + 8, oldCursorTop);        
                 cki = Console.ReadKey(true);
                 if (!Char.IsNumber(cki.KeyChar))
@@ -77,6 +90,10 @@ namespace Bestellformular_ConsoleApplication
         {
             Write("\nHinweis: ");
         }
+        static void hinweiseAusgeben(double d)
+        {
+            Write("\n\tHinweis: USt. {0,5:F2} ",d);
+        }
         static void hinweiseAusgeben(int left, int top)
         { // Überladung 
             SetCursorPosition(left, top );
@@ -90,6 +107,38 @@ namespace Bestellformular_ConsoleApplication
             Write("Hinweis: {0} ",hinweis);
             ForegroundColor = hilf; 
         }
-       
+       static double ustBerechnen(double netto)
+        {
+            return ustBerechnen(netto, 19.0);
+        }
+        static double ustBerechnen(double netto,double ustSatz)
+        {
+            Write("\t {0} % werden berechnet",ustSatz);
+            return  netto * (ustSatz/100);
+        }
+
+        static double landesauswahl(Dictionary<string,double> u )
+        {
+            double value;
+            foreach (KeyValuePair<string, double> satz in u)
+            {
+                Console.Write("\n\t{0} hat einen Umsatzsteuersatz von  {1}",
+                 satz.Key, satz.Value);
+            }
+            Write("\n\tBitte wählen Sie ihr Zielland aus : ");
+            string country = ReadLine();
+            if (u.TryGetValue(country, out value))
+            {
+                return value;
+            }
+            else
+            {
+                Console.WriteLine("Land nicht gefunden, es werden 19% berechnet");
+            }
+            return 19;
+        }
+
+
+
     } // end of Class Program
 }
