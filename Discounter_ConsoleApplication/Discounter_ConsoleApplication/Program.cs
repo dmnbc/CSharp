@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Discounter_ConsoleApplication
 {
-    class Artikel
+    internal class Artikel
     {
         private int      _art_id;
         private double  _art_volumen;
@@ -29,6 +29,7 @@ namespace Discounter_ConsoleApplication
             }
         }
 
+     
 
         public Artikel()
         {
@@ -36,11 +37,11 @@ namespace Discounter_ConsoleApplication
         }
 
         public Artikel(int id, Artikel[] wk)
-        { WriteLine("Artikel {0} angelegt: ", wk[id]._art_id);
+        { // WriteLine("Artikel {0} angelegt: ", wk[id]._art_id);
             _art_id = wk[id]._art_id;
             _art_volumen = wk[id]._art_volumen;//1.0/((double)id*3);
             _art_einzelpreis = wk[id]._art_einzelpreis; // 1.0 / ((double) id * 5) ;
-            WriteLine("Der Artikel hat ein Volumen von {0:F2} und einen Preis von {1:F2}", _art_volumen, _art_einzelpreis);
+        //    WriteLine("Der Artikel hat ein Volumen von {0:F2} und einen Preis von {1:F2}", _art_volumen, _art_einzelpreis);
         }
 
    
@@ -55,7 +56,7 @@ namespace Discounter_ConsoleApplication
 
     }
 
-    class Program
+     class Program
     {
         static Artikel[] warenkatalog = new Artikel[]
           {
@@ -71,11 +72,15 @@ namespace Discounter_ConsoleApplication
 
         static void Main(string[] args)
         {
-            
+
+            Regal[] verkaufsraum = new Regal[warenkatalog.Length]; 
             for (int id = 0; id < warenkatalog.Length; id++)
-            { Regal temp = new Regal(id, warenkatalog); }
+            { verkaufsraum[id] = new Regal(id, warenkatalog); }
            
                 ReadLine();
+            foreach (Regal r in verkaufsraum)
+            { Console.Write("{0:D2}\t", r.aktuellerInhalt); }
+            ReadLine();
         }
     }
 }
