@@ -7,28 +7,70 @@ namespace Discounter_ConsoleApplication
 {
     internal class Regal
     {
-        private string _regal_id;
-        private float _regal_volumen;
-        private Artikel _artikel_im_Regal;
+        private int _regal_id;
+        private double _volumen = 1;
+        private Artikel _artikel;
+        private int _kapazitaet;
+        private int _mindestBestand;
+        private bool _nachfuellen;
+        private int _aktuellerInhalt;
+        private double _aktuellerWarenwert;
 
-        public Regal()
-        {
-            Console.WriteLine("Regalkonstruktor()");
-            
-        }
-
-        internal Artikel artikel_im_Regal
+        public int aktuellerInhalt
         {
             get
             {
-                return _artikel_im_Regal;
+                return _aktuellerInhalt;
             }
 
             set
             {
-                _artikel_im_Regal = value;
-                Console.WriteLine("Regal mit neuem Artikel befüllt");
+                _aktuellerInhalt = value;
             }
+        }
+
+        public double aktuellerWarenwert
+        {
+            get
+            {
+                return _aktuellerWarenwert;
+            }
+
+            set
+            {
+                _aktuellerWarenwert = value;
+            }
+        }
+
+        public bool nachfuellen
+        {
+            get
+            {
+                return _nachfuellen;
+            }
+
+            set
+            {
+                _nachfuellen = value;
+            }
+        }
+        public Regal()
+        {
+
+        }
+
+        public Regal(int id, Artikel[] wk)
+        {
+            _regal_id = id;
+            _artikel = new Artikel(_regal_id,wk);
+            _kapazitaet = (int)(_volumen / _artikel.art_volumen);
+            _mindestBestand =(int)( _kapazitaet * .3);
+            aktuellerInhalt = _kapazitaet;
+            nachfuellen = aktuellerInhalt > _kapazitaet;
+            aktuellerWarenwert = aktuellerInhalt * _artikel.art_einzelpreis;
+
+            Console.WriteLine("Regal {0} aufgestellt mit einer Kapazität: {1} Stück ",_regal_id, _kapazitaet);
+            Console.WriteLine("Das Regal hat einen Wert von {0} Euro\n", aktuellerWarenwert);
         }
     }
 }

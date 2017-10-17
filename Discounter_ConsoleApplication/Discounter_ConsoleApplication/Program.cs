@@ -13,6 +13,23 @@ namespace Discounter_ConsoleApplication
         private double  _art_volumen;
         private double  _art_einzelpreis;
 
+        public double art_einzelpreis
+        {
+            get
+            {
+                return _art_einzelpreis;
+            }
+        }
+
+        public double art_volumen
+        {
+            get
+            {
+                return _art_volumen;
+            }
+        }
+
+
         public Artikel()
         {
           //  WriteLine("Artikel  angelegt:");
@@ -38,18 +55,17 @@ namespace Discounter_ConsoleApplication
 
     }
 
-    
-
-
     class Program
     {
         static Artikel[] warenkatalog = new Artikel[]
           {
+              new Artikel(0,0.015,.99),
               new Artikel(1,0.5,.99),
               new Artikel(2,0.25,.89),
               new Artikel(3,0.35,.79),
               new Artikel(4,0.15,.89),
-              new Artikel(5,0.45,.49),
+              new Artikel(5,0.045,.49),
+              new Artikel(6,0.25,.19),
 
           };
 
@@ -57,7 +73,7 @@ namespace Discounter_ConsoleApplication
         {
             
             for (int id = 0; id < warenkatalog.Length; id++)
-            { Artikel temp = new Artikel(id, warenkatalog); }
+            { Regal temp = new Regal(id, warenkatalog); }
            
                 ReadLine();
         }
