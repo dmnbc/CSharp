@@ -14,18 +14,17 @@ namespace Discounter_ConsoleApplication
         protected Regal[] regal = new Regal[_raum_kapazitaet];
 
         public Raum()
-        { }
-
-        public Raum(string rb, int f)
         {
-
+            Console.WriteLine("Hey ich bin die Superklasse Raum !");
         }
+
     }
      internal class Verkauf:Raum
         {
          public  Verkauf()
         {
-            _raum_bezeichnung = "Ladenfläche"; ;
+            _raum_bezeichnung = "Ladenfläche";
+            Console.WriteLine(_raum_bezeichnung);
         }
         }
      internal class Lager : Raum

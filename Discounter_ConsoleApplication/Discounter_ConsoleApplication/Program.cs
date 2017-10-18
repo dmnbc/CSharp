@@ -81,6 +81,10 @@ namespace Discounter_ConsoleApplication
             foreach (Regal r in verkaufsraum)
             { Console.Write("{0:D2}\t", r.aktuellerInhalt); }
             ReadLine();
+
+            Verkauf v = new Verkauf();
+            
+            ReadLine();
         }
     }
 }
