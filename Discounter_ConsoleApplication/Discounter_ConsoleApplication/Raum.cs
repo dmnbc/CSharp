@@ -8,29 +8,58 @@ namespace Discounter_ConsoleApplication
 {
     internal class Raum
     {
-        protected string _raum_bezeichnung;
-        protected int _raum_flaeche;  // in quadratmeter
-        protected static int _raum_kapazitaet;
-        protected Regal[] regal = new Regal[_raum_kapazitaet];
+        protected int _anzahlRegale;
+        protected string _bezeichnung;
+        protected double _flaeche;
+        protected bool _kundenErlaubt;
+        protected Regal[] _regale;
 
         public Raum()
         {
-            Console.WriteLine("Hey ich bin die Superklasse Raum !");
+            throw new System.NotImplementedException();
         }
 
+        public int anzahlRegale
+        {
+            get
+            {
+                return _anzahlRegale;
+            }
+
+            set
+            {
+                _anzahlRegale = value;
+            }
+        }
     }
-     internal class Verkauf:Raum
-        {
-         public  Verkauf()
-        {
-            _raum_bezeichnung = "Ladenfläche";
-            Console.WriteLine(_raum_bezeichnung);
-        }
-        }
-     internal class Lager : Raum
-        {
+    internal class Verkauf:Raum
+    {
+        private int _anzahlKunden;
 
+        public Verkauf()
+        {
+            throw new System.NotImplementedException();
         }
+
+        public int anzahlKunden
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+    }
+    internal class Lager : Raum
+    {
+        public Lager()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 
 
 
