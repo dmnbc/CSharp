@@ -16,7 +16,14 @@ namespace Discounter_ConsoleApplication
 
         public Raum()
         {
-            throw new System.NotImplementedException();
+           
+        }
+
+        public Raum(string b, double f)
+        {
+            bezeichnung = b;
+            _flaeche = f;
+            
         }
 
         public int anzahlRegale
@@ -31,6 +38,27 @@ namespace Discounter_ConsoleApplication
                 _anzahlRegale = value;
             }
         }
+
+        public string bezeichnung
+        {
+            get
+            {
+                return _bezeichnung;
+            }
+            set
+            {
+                _bezeichnung = value;
+            }
+        }
+
+        public void anzeigen()
+        {
+            Console.WriteLine(GetType().ToString());
+            Console.WriteLine(" Das Objekt hat folgende Eignschaften ");
+            Console.WriteLine(" Bezeichnung: {0}\tFläche: {1}",bezeichnung,_flaeche);
+            Console.WriteLine(" Hier stehen {0} Regale ",anzahlRegale);
+            Console.WriteLine(" Kunden sind {0} erlaubt", _kundenErlaubt ? "" : "nicht");
+        }
     }
     internal class Verkauf:Raum
     {
@@ -38,14 +66,24 @@ namespace Discounter_ConsoleApplication
 
         public Verkauf()
         {
-            throw new System.NotImplementedException();
+            
         }
+
+        public Verkauf(string b,double f):base(b,f)
+        {
+            _kundenErlaubt = true;
+            anzahlRegale = (int)(f / .5);
+            
+
+        }
+
+
 
         public int anzahlKunden
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _anzahlKunden;
             }
 
             set
@@ -57,7 +95,13 @@ namespace Discounter_ConsoleApplication
     {
         public Lager()
         {
-            throw new System.NotImplementedException();
+            
+        }
+        public Lager(string b,double f):base(b,f)
+        {
+            _kundenErlaubt = false;
+            anzahlRegale = (int)(f / .33);
+            
         }
     }
 

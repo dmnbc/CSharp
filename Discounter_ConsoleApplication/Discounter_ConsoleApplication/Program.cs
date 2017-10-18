@@ -72,7 +72,7 @@ namespace Discounter_ConsoleApplication
 
         static void Main(string[] args)
         {
-
+            /*
             Regal[] verkaufsraum = new Regal[warenkatalog.Length]; 
             for (int id = 0; id < warenkatalog.Length; id++)
             { verkaufsraum[id] = new Regal(id, warenkatalog); }
@@ -81,9 +81,15 @@ namespace Discounter_ConsoleApplication
             foreach (Regal r in verkaufsraum)
             { Console.Write("{0:D2}\t", r.aktuellerInhalt); }
             ReadLine();
+            */
+            Verkauf v = new Verkauf("Im2.OG_Hohe Strasse",400.0);
+            v.anzeigen();
+            Console.WriteLine();
+            Lager l = new Lager("gemeinsamer Keller in Ossendorf",240.0);
+            l.anzeigen();
 
-            Verkauf v = new Verkauf();
-            
+
+
             ReadLine();
         }
     }
