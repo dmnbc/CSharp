@@ -82,11 +82,19 @@ namespace Discounter_ConsoleApplication
             { Console.Write("{0:D2}\t", r.aktuellerInhalt); }
             ReadLine();
             */
-            Verkauf v = new Verkauf("Im2.OG_Hohe Strasse",400.0);
-            v.anzeigen();
+            Verkauf v = new Verkauf("Im2.OG_Hohe Strasse",400.0,warenkatalog);
+            v.anzeigen(v.regale);
+
+          
+            // wie komme ich an die Regale des Verkaufsraumes um sie anzuzeigen ?
+                // ein bestimmtes Regal
+                // alle Regale des Raumes
+            
+
+
             Console.WriteLine();
             Lager l = new Lager("gemeinsamer Keller in Ossendorf",240.0);
-            l.anzeigen();
+            // l.anzeigen();
 
 
 

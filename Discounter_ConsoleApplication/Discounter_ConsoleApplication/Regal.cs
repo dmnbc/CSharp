@@ -56,7 +56,7 @@ namespace Discounter_ConsoleApplication
         }
         public Regal()
         {
-
+            Console.WriteLine("Regal erstellt");
         }
 
         public Regal(int id, Artikel[] wk)
@@ -68,9 +68,6 @@ namespace Discounter_ConsoleApplication
             aktuellerInhalt = _kapazitaet;
             nachfuellen = aktuellerInhalt > _kapazitaet;
             aktuellerWarenwert = aktuellerInhalt * _artikel.art_einzelpreis;
-
-         //   Console.WriteLine("Regal {0} aufgestellt mit einer Kapazität: {1} Stück ",_regal_id, _kapazitaet);
-         //   Console.WriteLine("Das Regal hat einen Wert von {0} Euro\n", aktuellerWarenwert);
         }
     }
 }
