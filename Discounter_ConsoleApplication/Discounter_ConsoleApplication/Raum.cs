@@ -82,7 +82,12 @@ namespace Discounter_ConsoleApplication
                 {
                     Console.ForegroundColor = Red;
                 }
-                Console.WriteLine("Regal {0,3:D} : {1,4:D} Einheiten ", regal.regal_id, regal.aktuellerInhalt);
+
+              //   Display abbild = new Display();  //geht nicht weil static
+
+
+                Display.darstellen();
+             //   Console.WriteLine("Regal {0,3:D} : {1,4:D} Einheiten ", regal.regal_id, regal.aktuellerInhalt);
             //    Console.WriteLine("Das Regal hat einen Wert von {0} Euro\n", regal.aktuellerWarenwert);
 
             }
