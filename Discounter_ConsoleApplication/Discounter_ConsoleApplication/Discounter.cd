@@ -1,16 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="Discounter_ConsoleApplication.Artikel" Collapsed="true">
-    <Position X="8" Y="0.75" Width="3.25" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAEAAAAAAABAAAAAAAAAAAAIAAAACAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Discounter_ConsoleApplication.Regal" Collapsed="true">
     <Position X="8" Y="1.5" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAEKAAACAAAgAAAgAACAAAAAAAIyA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAkKAAACAAAgAAAgAACAAAAAAAIyA=</HashCode>
       <FileName>Regal.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -20,22 +13,29 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>QAQAAAAAAAABAAAAAAEAAAAAAAAAAEAAAAAAEAQAABA=</HashCode>
+      <HashCode>QAQAAAAAAAABQAAAAAEAAAAAAAAAAEAAAAAAEAQAABA=</HashCode>
       <FileName>Raum.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Discounter_ConsoleApplication.Verkauf">
-    <Position X="8.75" Y="2.75" Width="1.5" />
+    <Position X="7.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Raum.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Discounter_ConsoleApplication.Lager">
-    <Position X="0.5" Y="3" Width="1.5" />
+    <Position X="1.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Raum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Artikel" Collapsed="true">
+    <Position X="8" Y="0.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAEAAAAAAABAAAAAAAAAAAAIAAAACAAAA=</HashCode>
+      <FileName>Artikel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

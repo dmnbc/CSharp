@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.ConsoleColor;
 
 namespace Discounter_ConsoleApplication
 {
@@ -61,20 +62,30 @@ namespace Discounter_ConsoleApplication
         }
 
         public void anzeigen(Regal[] r)
+        {anzeigen(r, 0, r.Length-1);}
+
+        public void anzeigen(Regal[] r, int x)
+        {anzeigen(r, x, x);}
+
+        public void anzeigen(Regal[] r,int x, int y)
         {
-            Console.WriteLine(GetType().ToString());
+         /*   Console.WriteLine(GetType().ToString());
             Console.WriteLine(" Das Objekt hat folgende Eignschaften ");
-            Console.WriteLine(" Bezeichnung: {0}\tFläche: {1}",bezeichnung,_flaeche);
-            Console.WriteLine(" Hier können {0} Regale stehen ",anzahlRegale);
+            Console.WriteLine(" Bezeichnung: {0}\tFläche: {1}", bezeichnung, _flaeche);
+            Console.WriteLine(" Hier können {0} Regale stehen ", anzahlRegale);
             Console.WriteLine(" Kunden sind {0} erlaubt", _kundenErlaubt ? "" : "nicht");
-            Console.WriteLine(" Aus dem existierenden Warenkatalog wurde:");
-           foreach (Regal regal in r)
+            Console.WriteLine(" Aus dem existierenden Warenkatalog wurde:"); */
+            for(int i = x; i <= y; i++)
             {
+                Regal regal = r[i];
+                if(regal.aktuellerInhalt<1)
+                {
+                    Console.ForegroundColor = Red;
+                }
+                Console.WriteLine("Regal {0,3:D} : {1,4:D} Einheiten ", regal.regal_id, regal.aktuellerInhalt);
+            //    Console.WriteLine("Das Regal hat einen Wert von {0} Euro\n", regal.aktuellerWarenwert);
 
-                Console.WriteLine("Regal aufgestellt mit einer Kapazität: {0} Einheiten ",regal.aktuellerInhalt);
-                Console.WriteLine("Das Regal hat einen Wert von {0} Euro\n", regal.aktuellerWarenwert);
-
-            } 
+            }
         }
     }
     internal class Verkauf:Raum
@@ -86,7 +97,7 @@ namespace Discounter_ConsoleApplication
             
         }
 
-        public Verkauf(string b,double f,Artikel[] wk):base(b,f)
+        public Verkauf(string b,double f,ref Artikel[] wk):base(b,f)
         {
             _kundenErlaubt = true;
             anzahlRegale = (int)(f / .5);

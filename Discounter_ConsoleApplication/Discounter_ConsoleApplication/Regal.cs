@@ -16,6 +16,11 @@ namespace Discounter_ConsoleApplication
         private int _aktuellerInhalt;
         private double _aktuellerWarenwert;
 
+        public int regal_id
+        {
+            get { return _regal_id;  }
+        }
+
         public int aktuellerInhalt
         {
             get
