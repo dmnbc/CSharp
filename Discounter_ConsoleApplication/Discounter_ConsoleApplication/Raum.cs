@@ -69,28 +69,8 @@ namespace Discounter_ConsoleApplication
 
         public void anzeigen(Regal[] r,int x, int y)
         {
-         /*   Console.WriteLine(GetType().ToString());
-            Console.WriteLine(" Das Objekt hat folgende Eignschaften ");
-            Console.WriteLine(" Bezeichnung: {0}\tFläche: {1}", bezeichnung, _flaeche);
-            Console.WriteLine(" Hier können {0} Regale stehen ", anzahlRegale);
-            Console.WriteLine(" Kunden sind {0} erlaubt", _kundenErlaubt ? "" : "nicht");
-            Console.WriteLine(" Aus dem existierenden Warenkatalog wurde:"); */
-            for(int i = x; i <= y; i++)
-            {
-                Regal regal = r[i];
-                if(regal.aktuellerInhalt<1)
-                {
-                    Console.ForegroundColor = Red;
-                }
-
-              //   Display abbild = new Display();  //geht nicht weil static
-
-
-                Display.darstellen();
-             //   Console.WriteLine("Regal {0,3:D} : {1,4:D} Einheiten ", regal.regal_id, regal.aktuellerInhalt);
-            //    Console.WriteLine("Das Regal hat einen Wert von {0} Euro\n", regal.aktuellerWarenwert);
-
-            }
+          Display.darstellen(ref r,x,y );
+            
         }
     }
     internal class Verkauf:Raum

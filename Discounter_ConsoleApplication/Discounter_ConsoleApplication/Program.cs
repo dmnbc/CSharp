@@ -28,7 +28,7 @@ namespace Discounter_ConsoleApplication
             // einkaufen testen 
             v.anzeigen(v.regale, 4);
             v.regale[4].aktuellerInhalt  -= 2;
-            v.anzeigen(v.regale, 4);
+            v.anzeigen(v.regale, 4,8);
 
 
 
