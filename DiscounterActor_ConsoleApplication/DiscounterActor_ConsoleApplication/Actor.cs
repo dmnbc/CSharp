@@ -8,20 +8,32 @@ namespace DiscounterActor_ConsoleApplication
 {
     class Actor
     {
-        private int _einkaufsliste;
+        protected Einkaufszettel _einkaufsliste;
         private int id;
         private int rolle;
 
-        public int einkaufsliste
+        public Einkaufszettel einkaufsliste
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _einkaufsliste;
             }
 
             set
-            {
+            { 
+
             }
+        }
+
+        public Actor()
+        {
+            _einkaufsliste = new Einkaufszettel();
+
+        }
+
+        public void Liste_zeigen()
+        {
+            _einkaufsliste.anzeigen();
         }
     }
 }

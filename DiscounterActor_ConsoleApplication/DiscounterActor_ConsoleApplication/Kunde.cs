@@ -8,5 +8,10 @@ namespace DiscounterActor_ConsoleApplication
 {
     class Kunde : Actor
     {
+
+        public Kunde()
+        {
+
+        }
     }
 }
