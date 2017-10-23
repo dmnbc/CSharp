@@ -3,7 +3,7 @@
   <Class Name="DiscounterActor_ConsoleApplication.Actor">
     <Position X="4.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAABAAAAAAAAAAABAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Actor.cs</FileName>
     </TypeIdentifier>
   </Class>
