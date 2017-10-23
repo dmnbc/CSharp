@@ -1,0 +1,16 @@
+Use Case    Discounter
+
+Akteure		Prozesse		Includes oder Extends
+
+System		Laden errichten	Warenkatalog,Regale,Räume, 
+
+Kunde		einkaufen,  Extension: bezahlen ( wenn nicht Dieb )
+Dieb spezialisiert Kunde 
+
+Mitarbeiter	einkaufen, bezahlen ( spezialisiert damit Kunden ( mit Rabatt ) )
+			auffüllen, usw. 
+
+Kassierer(in)  ( spezialisiert Mitarbeiter )
+Kasse            kassiert, führt Bestand, 
+				 erstellt Fehlliste ( nachfüllen )  Extension: Bestandsabfrage  
+				 Abbrechnungen erstellen

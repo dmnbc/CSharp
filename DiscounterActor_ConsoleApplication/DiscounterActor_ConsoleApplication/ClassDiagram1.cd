@@ -3,23 +3,47 @@
   <Class Name="DiscounterActor_ConsoleApplication.Actor">
     <Position X="4.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Actor.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DiscounterActor_ConsoleApplication.Kunde" Collapsed="true">
-    <Position X="5.75" Y="2" Width="1.5" />
+  <Class Name="DiscounterActor_ConsoleApplication.Kunde">
+    <Position X="5.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Kunde.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DiscounterActor_ConsoleApplication.Personal">
-    <Position X="2" Y="2" Width="1.5" />
+    <Position X="2" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Personal.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Dieb" Collapsed="true">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dieb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Kasse">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Kasse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Einkaufszettel">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Einkaufszettel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Actor" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actor.cs" />
+    <Compile Include="Dieb.cs" />
+    <Compile Include="Einkaufszettel.cs" />
+    <Compile Include="Kasse.cs" />
     <Compile Include="Kunde.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Program.cs" />

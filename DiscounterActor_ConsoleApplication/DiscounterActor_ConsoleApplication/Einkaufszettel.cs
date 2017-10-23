@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace DiscounterActor_ConsoleApplication
 {
-    class Actor
+    class Einkaufszettel
     {
-        private int _einkaufsliste;
-        private int id;
-        private int rolle;
+        private int liste;
 
-        public int einkaufsliste
+        internal Actor Actor
         {
             get
             {
