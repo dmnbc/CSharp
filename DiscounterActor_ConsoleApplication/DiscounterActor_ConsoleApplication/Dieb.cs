@@ -8,5 +8,11 @@ namespace DiscounterActor_ConsoleApplication
 {
     class Dieb:Kunde
     {
+        
+        public Dieb()
+        {
+            this.id = Actor.lfrNr;
+            Console.WriteLine("Ich bin ein Dieb und das Objekt {0}",id);
+        }
     }
 }

@@ -8,8 +8,9 @@ namespace DiscounterActor_ConsoleApplication
 {
     class Actor
     {
+        static public int lfrNr;
         protected Einkaufszettel _einkaufsliste;
-        private int id;
+        protected int id;
         private int rolle;
 
         public Einkaufszettel einkaufsliste
@@ -27,7 +28,9 @@ namespace DiscounterActor_ConsoleApplication
 
         public Actor()
         {
+            lfrNr++;
             _einkaufsliste = new Einkaufszettel();
+            Console.WriteLine("Es wurde zuerst ein Actor aufgerufen");
 
         }
 

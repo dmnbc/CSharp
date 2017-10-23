@@ -10,11 +10,17 @@ namespace DiscounterActor_ConsoleApplication
     {
         static void Main(string[] args)
         {
+            Actor.lfrNr = 0;
+
+
             Personal mi = new Personal();
             mi.Liste_zeigen();
 
             Dieb d = new Dieb();
             d.Liste_zeigen();
+
+            Kunde k = new Kunde();
+            k.Liste_zeigen();
 
             Console.ReadLine();
         }

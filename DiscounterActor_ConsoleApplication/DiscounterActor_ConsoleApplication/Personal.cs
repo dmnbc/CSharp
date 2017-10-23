@@ -7,5 +7,11 @@ namespace DiscounterActor_ConsoleApplication
 {
      class Personal : Actor
     {
+        
+        public Personal()
+        {
+            this.id = Actor.lfrNr;
+            Console.WriteLine("Ich bin beim Personal und das Objekt {0}", id);
+        }
     }
 }

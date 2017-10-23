@@ -8,10 +8,11 @@ namespace DiscounterActor_ConsoleApplication
 {
     class Kunde : Actor
     {
-
+        // private int k_id;
         public Kunde()
         {
-
+            this.id = Actor.lfrNr;
+            Console.WriteLine("Ich bin ein Kunde und das Objekt {0}",id);
         }
     }
 }
