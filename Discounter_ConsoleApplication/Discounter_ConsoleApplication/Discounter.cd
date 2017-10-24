@@ -38,5 +38,19 @@
       <FileName>Artikel.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Einkaufszettel">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="DiscounterActor_ConsoleApplication.Einkaufszettel.zeile" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Einkaufszettel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Einkaufszettel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

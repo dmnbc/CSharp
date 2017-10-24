@@ -70,6 +70,7 @@ namespace DiscounterActor_ConsoleApplication
 
         public void wareEntnehmen()
         {
+            Einkaufszettel einkaufswagen = new Einkaufszettel("Einkaufswagen");
             for(int i = 0; i < _einkaufsliste.liste.Count;i++)
             {
  
@@ -84,9 +85,12 @@ namespace DiscounterActor_ConsoleApplication
                 //              { // zu wenig im Regal, alles was noch da ist
                 // einkaufswagen.liste. = // Verkauf[xx].
                 // Verkauf[xx].   = 0;
-                //               }
-                // einkaufswagen.liste.Add(_einkaufsliste.liste[i]);
-            } 
+                //     
+                Console.WriteLine("{0},{1}", i, _einkaufsliste.liste[i].artikel);
+                Console.ReadLine();
+                einkaufswagen.liste.Add(_einkaufsliste.liste[i]);
+            }
+            Console.WriteLine("Im Wagen sind {0} verschiedene Artikel ", einkaufswagen.liste.Count);          
         }
     }
 }

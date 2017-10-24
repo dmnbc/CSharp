@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artikel.cs" />
+    <Compile Include="CodeFile3.cs" />
     <Compile Include="Display.cs" />
+    <Compile Include="Einkaufszettel.cs" />
     <Compile Include="katalog.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
