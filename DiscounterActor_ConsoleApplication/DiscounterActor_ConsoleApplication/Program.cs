@@ -32,7 +32,9 @@ namespace DiscounterActor_ConsoleApplication
             diverseIndividuen[4] = new Personal();
            
             foreach(Actor betroffen in diverseIndividuen)
-            { betroffen.bezahlen(); }
+            {
+                betroffen.wareEntnehmen();
+                betroffen.bezahlen(); }
             Console.ReadLine();
         }
     }

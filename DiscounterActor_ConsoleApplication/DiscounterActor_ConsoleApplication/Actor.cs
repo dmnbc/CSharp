@@ -8,8 +8,13 @@ namespace DiscounterActor_ConsoleApplication
 {
     class Actor
     {
+        public struct zeile {
+            int art;
+            int anz;
+        }
         static public int lfrNr;
         protected Einkaufszettel _einkaufsliste;
+        protected Einkaufszettel _einkaufswagen;
         protected int id;
         private int rolle;
 
@@ -22,6 +27,19 @@ namespace DiscounterActor_ConsoleApplication
 
             set
             { 
+
+            }
+        }
+
+        public Einkaufszettel einkaufswagen
+        {
+            get
+            {
+                return _einkaufswagen;
+            }
+
+            set
+            {
 
             }
         }
@@ -51,22 +69,27 @@ namespace DiscounterActor_ConsoleApplication
         }
 
         public void wareEntnehmen()
-        {   
-            // temporärer Einkaufswagen ??
-            // typvorlage kann der Einkaufszettel sein
+        {
+            for(int i = 0; i < _einkaufsliste.liste.Count;i++)
+            {
+                // vermindern des Bestands im Regal 
+                //  welches Regal ??  erst wenn integriert in 
+                // um den Einkaufswunsch
+                // also vom Einkaufszettel ablesen 
+                Console.WriteLine(" vom zettel : {0}", _einkaufsliste.liste[i].artikel);
+                //            if(  >  )
+                //             { // genug im Regal
 
-            // vermindern des Bestands im Regal 
-            //  welches Regal ??  erst wenn integriert in 
-
-            // um den Einkaufswunsch
-
-            // also vom Einkaufszettel ablesen
-
-            // solange nach was da ist
-
-            // sonst nur die verfügbare Menge nehmen
-
-            // damit bildet sich der 'Einkaufswagen' 
+                // einkaufswagen.liste.Add = // wunsch
+                // Verkauf[xx].   -= wunsch;
+                //              }
+                //              else
+                //              { // zu wenig im Regal, alles was noch da ist
+                // einkaufswagen.liste. = // Verkauf[xx].
+                // Verkauf[xx].   = 0;
+                //               }
+                einkaufswagen.liste.Add(_einkaufsliste.liste[i]);
+            } 
         }
     }
 }

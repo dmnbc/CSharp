@@ -8,7 +8,7 @@ namespace DiscounterActor_ConsoleApplication
 {
     public class Einkaufszettel
     {
-        public struct zeile
+         public struct zeile
         {
             public int artikel;
             public int anzahl;

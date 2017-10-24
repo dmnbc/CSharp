@@ -2,8 +2,15 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="DiscounterActor_ConsoleApplication.Actor">
     <Position X="4.5" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="DiscounterActor_ConsoleApplication.Actor.zeile" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Actor.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAABAACAAAAAAABBAAAAAAAACAAAAAoA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAADgACAAAAAAABBAAAAAAAACAAAAAoA=</HashCode>
       <FileName>Actor.cs</FileName>
     </TypeIdentifier>
   </Class>
