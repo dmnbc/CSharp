@@ -34,9 +34,20 @@ namespace DiscounterActor_ConsoleApplication
 
         }
 
+        ~Actor()
+        {
+            
+        }
+
         public void Liste_zeigen()
         {
             _einkaufsliste.anzeigen();
+        }
+
+        public void bezahlen()
+        {
+            Console.WriteLine("Der Actor zahlt für");
+            this.Liste_zeigen();
         }
     }
 }

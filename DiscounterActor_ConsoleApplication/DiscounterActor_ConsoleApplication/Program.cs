@@ -22,6 +22,17 @@ namespace DiscounterActor_ConsoleApplication
             Kunde k = new Kunde();
             k.Liste_zeigen();
 
+
+
+            Actor[] diverseIndividuen = new Actor[5];
+            diverseIndividuen[0] = new Kunde();
+            diverseIndividuen[1] = new Actor();
+            diverseIndividuen[2] = new Dieb();
+            diverseIndividuen[3] = new Kunde();
+            diverseIndividuen[4] = new Personal();
+           
+            foreach(Actor betroffen in diverseIndividuen)
+            { betroffen.bezahlen(); }
             Console.ReadLine();
         }
     }

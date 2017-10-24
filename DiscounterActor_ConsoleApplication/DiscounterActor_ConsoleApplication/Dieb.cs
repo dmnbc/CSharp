@@ -14,5 +14,15 @@ namespace DiscounterActor_ConsoleApplication
             this.id = Actor.lfrNr;
             Console.WriteLine("Ich bin ein Dieb und das Objekt {0}",id);
         }
+
+        public new void bezahlen()
+        {
+            Console.WriteLine("Der Dieb zahlt nichts");
+        }
+
+        ~Dieb()
+        {
+          
+        }
     }
 }

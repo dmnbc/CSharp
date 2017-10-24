@@ -20,8 +20,10 @@ namespace DiscounterActor_ConsoleApplication
 
         public Einkaufszettel()
         {
-            for (int von = 1; von <= 3; von++)
-            { liste.Add(new zeile() { artikel = von, anzahl = von }); }
+            Random rnd = new Random(Actor.lfrNr);
+            int bis = rnd.Next(1, 11);
+            for (int von = 1; von <= bis; von++)
+            { liste.Add(new zeile() { artikel = rnd.Next(1, 800), anzahl = rnd.Next(1, 11) }); }
 
         }
 

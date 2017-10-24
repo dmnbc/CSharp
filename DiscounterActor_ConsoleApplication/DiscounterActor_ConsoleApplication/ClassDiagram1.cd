@@ -3,7 +3,7 @@
   <Class Name="DiscounterActor_ConsoleApplication.Actor">
     <Position X="4.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAABAAAAAAAAAAABAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAABAACAAAAAAABBAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Actor.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -36,7 +36,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DiscounterActor_ConsoleApplication.Einkaufszettel">
-    <Position X="7" Y="0.5" Width="1.5" />
+    <Position X="6.25" Y="0.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -48,7 +48,7 @@
       </Struct>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAQAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Einkaufszettel.cs</FileName>
     </TypeIdentifier>
   </Class>
