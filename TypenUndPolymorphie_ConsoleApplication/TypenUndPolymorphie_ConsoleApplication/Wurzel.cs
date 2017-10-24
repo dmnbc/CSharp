@@ -14,6 +14,8 @@ namespace TypenUndPolymorphie_ConsoleApplication
         public Wurzel()
         {
             Console.WriteLine("Es wurde der Konstruktor Wurzel() aufgerufen");
+            Console.WriteLine("Der Auslöser des Aufrufes war ein Objekt vom");
+            Console.WriteLine(this); // this ist Zeiger auf das aufrufende Objekt
         }
 
         public Wurzel(int parameter)
@@ -28,12 +30,27 @@ namespace TypenUndPolymorphie_ConsoleApplication
             {
                 return gekapselteGanzzahl;
             }
+            set
+            {
+                gekapselteGanzzahl = value; 
+            }
         }
 
         // 'klassische' Variante zum getter 
         public int Ganzzahlbeschaffer()
         {
             return gekapselteGanzzahl; 
+        }
+
+        public virtual void normalVerhalten()
+        {
+            Console.WriteLine("Ich bin ganz toll ");
+            aber();
+        }
+
+        private void aber()
+        {
+            Console.WriteLine(", aber ....");
         }
 
     }
