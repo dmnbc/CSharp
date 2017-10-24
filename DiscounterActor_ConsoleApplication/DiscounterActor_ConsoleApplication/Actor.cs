@@ -88,7 +88,7 @@ namespace DiscounterActor_ConsoleApplication
                 // einkaufswagen.liste. = // Verkauf[xx].
                 // Verkauf[xx].   = 0;
                 //               }
-                einkaufswagen.liste.Add(_einkaufsliste.liste[i]);
+                // einkaufswagen.liste.Add(_einkaufsliste.liste[i]);
             } 
         }
     }
