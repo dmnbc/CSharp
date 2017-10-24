@@ -15,7 +15,7 @@ namespace DiscounterActor_ConsoleApplication
             Console.WriteLine("Ich bin ein Dieb und das Objekt {0}",id);
         }
 
-        public new void bezahlen()
+        public override void bezahlen()
         {
             Console.WriteLine("Der Dieb zahlt nichts");
         }

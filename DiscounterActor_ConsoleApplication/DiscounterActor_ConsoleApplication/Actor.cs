@@ -48,7 +48,7 @@ namespace DiscounterActor_ConsoleApplication
         {
             lfrNr++;
             _einkaufsliste = new Einkaufszettel();
-            Console.WriteLine("Es wurde zuerst ein Actor aufgerufen");
+            Console.WriteLine("Es wurde zuerst ein Einkaufszettel erstellt");
 
         }
 
@@ -65,18 +65,15 @@ namespace DiscounterActor_ConsoleApplication
         public virtual void bezahlen()
         {
             Console.WriteLine("Der Actor zahlt für");
-            this.Liste_zeigen();
+           // this.Liste_zeigen();
         }
 
         public void wareEntnehmen()
         {
             for(int i = 0; i < _einkaufsliste.liste.Count;i++)
             {
-                // vermindern des Bestands im Regal 
-                //  welches Regal ??  erst wenn integriert in 
-                // um den Einkaufswunsch
-                // also vom Einkaufszettel ablesen 
-                Console.WriteLine(" vom zettel : {0}", _einkaufsliste.liste[i].artikel);
+ 
+                Console.WriteLine(" Auf dem Zettel : Artikel {0,3} soll {1,3} mal gekauft werden", _einkaufsliste.liste[i].artikel, _einkaufsliste.liste[i].anzahl);
                 //            if(  >  )
                 //             { // genug im Regal
 

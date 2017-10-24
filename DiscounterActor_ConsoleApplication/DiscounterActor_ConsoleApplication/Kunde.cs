@@ -15,9 +15,9 @@ namespace DiscounterActor_ConsoleApplication
             Console.WriteLine("Ich bin ein Kunde und das Objekt {0}",id);
         }
 
-        public new void bezahlen()
+        public override void bezahlen()
         {
-            Console.WriteLine("Der Kunde zahlt");
+            Console.WriteLine("Der Kunde zahlt den offiziellen Preis ");
         }
 
 

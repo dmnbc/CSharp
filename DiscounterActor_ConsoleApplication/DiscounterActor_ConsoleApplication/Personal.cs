@@ -13,7 +13,7 @@ namespace DiscounterActor_ConsoleApplication
             this.id = Actor.lfrNr;
             Console.WriteLine("Ich bin beim Personal und das Objekt {0}", id);
         }
-        public new void bezahlen()
+        public override void bezahlen()
         {
             Console.WriteLine("Das Personal zahlt mit Rabatt");
         }

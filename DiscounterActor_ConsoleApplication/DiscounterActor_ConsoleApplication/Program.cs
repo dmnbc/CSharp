@@ -12,18 +12,6 @@ namespace DiscounterActor_ConsoleApplication
         {
             Actor.lfrNr = 0;
 
-
-            Personal mi = new Personal();
-            mi.Liste_zeigen();
-
-            Dieb d = new Dieb();
-            d.Liste_zeigen();
-
-            Kunde k = new Kunde();
-            k.Liste_zeigen();
-
-
-
             Actor[] diverseIndividuen = new Actor[5];
             diverseIndividuen[0] = new Kunde();
             diverseIndividuen[1] = new Actor();
