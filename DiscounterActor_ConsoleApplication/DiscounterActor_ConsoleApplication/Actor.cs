@@ -44,10 +44,29 @@ namespace DiscounterActor_ConsoleApplication
             _einkaufsliste.anzeigen();
         }
 
-        public void bezahlen()
+        public virtual void bezahlen()
         {
             Console.WriteLine("Der Actor zahlt für");
             this.Liste_zeigen();
+        }
+
+        public void wareEntnehmen()
+        {   
+            // temporärer Einkaufswagen ??
+            // typvorlage kann der Einkaufszettel sein
+
+            // vermindern des Bestands im Regal 
+            //  welches Regal ??  erst wenn integriert in 
+
+            // um den Einkaufswunsch
+
+            // also vom Einkaufszettel ablesen
+
+            // solange nach was da ist
+
+            // sonst nur die verfügbare Menge nehmen
+
+            // damit bildet sich der 'Einkaufswagen' 
         }
     }
 }
