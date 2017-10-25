@@ -23,6 +23,15 @@ namespace Discounter_ConsoleApplication
             v.anzeigen(v.regale);       // der ganze Raum 
                             
             ReadLine();
+            DiscounterActor_ConsoleApplication.Actor testperson = new DiscounterActor_ConsoleApplication.Actor();
+            testperson.Liste_zeigen();
+            testperson.wareEntnehmen();
+            testperson.bezahlen();
+            ReadLine();
+
+
+
+
             // einkaufen testen 
             v.anzeigen(v.regale);
             v.regale[4].aktuellerInhalt  -= 2;
