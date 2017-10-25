@@ -24,19 +24,36 @@ namespace Discounter_ConsoleApplication
                             
             ReadLine();
             DiscounterActor_ConsoleApplication.Actor testperson = new DiscounterActor_ConsoleApplication.Actor();
-            testperson.Liste_zeigen();
-            testperson.wareEntnehmen();
+            //testperson.Liste_zeigen();
+            testperson.wareEntnehmen(v);
+            v.anzeigen(v.regale);
+            ReadLine();
             testperson.bezahlen();
+            DiscounterActor_ConsoleApplication.Kunde k = new DiscounterActor_ConsoleApplication.Kunde();
+//k.Liste_zeigen();
+            k.wareEntnehmen(v);
+            v.anzeigen(v.regale);
+            ReadLine();
+            testperson.bezahlen();
+            DiscounterActor_ConsoleApplication.Personal p = new DiscounterActor_ConsoleApplication.Personal();
+//p.Liste_zeigen();
+            p.wareEntnehmen(v);
+            v.anzeigen(v.regale);
             ReadLine();
 
-
+            for(int i = 0; i < 50; i++)
+            {
+                DiscounterActor_ConsoleApplication.Personal ptemp = new DiscounterActor_ConsoleApplication.Personal();
+                //p.Liste_zeigen();
+                ptemp.wareEntnehmen(v);
+                v.anzeigen(v.regale);
+               // ReadLine();
+            }
 
 
             // einkaufen testen 
             v.anzeigen(v.regale);
-            v.regale[4].aktuellerInhalt  -= 2;
-            v.regale[4].nachfuellen = v.regale[4].aktuellerInhalt < 30;
-            v.anzeigen(v.regale,0,180);
+            
 
 
 

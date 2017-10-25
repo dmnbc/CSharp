@@ -11,6 +11,12 @@ namespace DiscounterActor_ConsoleApplication
         public struct zeile {
             int art;
             int anz;
+
+            public zeile(int i, int j)
+            {
+                art = i;
+                anz = j;
+            }
         }
         static public int lfrNr;
         protected Einkaufszettel _einkaufsliste;
@@ -68,28 +74,31 @@ namespace DiscounterActor_ConsoleApplication
            // this.Liste_zeigen();
         }
 
-        public void wareEntnehmen()
+        public void wareEntnehmen(Discounter_ConsoleApplication.Raum r)
         {
             Einkaufszettel einkaufswagen = new Einkaufszettel("Einkaufswagen");
             for(int i = 0; i < _einkaufsliste.liste.Count;i++)
             {
  
                 Console.WriteLine(" Auf dem Zettel : Artikel {0,3} soll {1,3} mal gekauft werden", _einkaufsliste.liste[i].artikel, _einkaufsliste.liste[i].anzahl);
-                //            if(  >  )
-                //             { // genug im Regal
+                if (r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt >= _einkaufsliste.liste[i].anzahl)
+                { // genug im Regal
+                    Console.WriteLine("genug da");
+                    r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt -= _einkaufsliste.liste[i].anzahl;                    // einkaufswagen.liste.Add = // wunsch
+                    einkaufswagen.liste.Add(_einkaufsliste.liste[i]);
+                }
+                else
+                { // zu wenig im Regal, alles was noch da ist
+                    Console.WriteLine("zu wenig da, Regal wird leer gemacht");
+                   
+                    //   einkaufswagen.liste.Last().anzahl = r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt;
+                    r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt = 0;
 
-                // einkaufswagen.liste.Add = // wunsch
-                // Verkauf[xx].   -= wunsch;
-                //              }
-                //              else
-                //              { // zu wenig im Regal, alles was noch da ist
-                // einkaufswagen.liste. = // Verkauf[xx].
-                // Verkauf[xx].   = 0;
-                //     
-                Console.WriteLine("Im Wagen lfdNr: {0},ArtikelNr:{1}, Anzahl:{2}", i, _einkaufsliste.liste[i].artikel, _einkaufsliste.liste[i].anzahl);
-               
+                }
+                //    Console.WriteLine("Im Wagen lfdNr: {0},ArtikelNr:{1}, Anzahl:{2}", i, _einkaufsliste.liste[i].artikel, _einkaufsliste.liste[i].anzahl);
+                r.regale[_einkaufsliste.liste[i].artikel].nachfuellen = r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt <= r.regale[_einkaufsliste.liste[i].artikel].mindestbestand;
 
-                einkaufswagen.liste.Add(_einkaufsliste.liste[i]);
+
             }
             Console.WriteLine("Im Wagen sind {0} verschiedene Artikel ", einkaufswagen.liste.Count);          
         }

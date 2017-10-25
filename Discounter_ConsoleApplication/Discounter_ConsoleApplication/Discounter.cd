@@ -39,7 +39,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DiscounterActor_ConsoleApplication.Einkaufszettel">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="9.75" Y="2.75" Width="1.5" />
     <NestedTypes>
       <Struct Name="DiscounterActor_ConsoleApplication.Einkaufszettel.zeile" Collapsed="true">
         <TypeIdentifier>
@@ -50,6 +50,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Einkaufszettel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Actor">
+    <Position X="11.5" Y="2.75" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="DiscounterActor_ConsoleApplication.Actor.zeile" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Actor.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAADgACAAAAAAABBAAAAAAAACAAAAAoA=</HashCode>
+      <FileName>Actor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

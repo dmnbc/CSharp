@@ -11,7 +11,7 @@ namespace Discounter_ConsoleApplication
        
         public static void darstellen(ref Regal[] regale,int x, int y)
         {
-            Console.Clear();
+          //  Console.Clear();
             Console.WriteLine("Hier kommt Regal {0} bis {1} auf den Schirm",x,y);
             for (int i = x; i <= y; i++)
             {

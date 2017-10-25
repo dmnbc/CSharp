@@ -47,6 +47,11 @@ namespace Discounter_ConsoleApplication
             }
         }
 
+        public int mindestbestand
+        {
+            get { return _mindestBestand; }
+        }
+
         public bool nachfuellen
         {
             get
@@ -71,7 +76,7 @@ namespace Discounter_ConsoleApplication
             _kapazitaet = (int)(_volumen / _artikel.art_volumen);
             _mindestBestand =(int)( _kapazitaet * .3);
             aktuellerInhalt = _kapazitaet;
-            nachfuellen = aktuellerInhalt > _kapazitaet;
+            nachfuellen = aktuellerInhalt <= _mindestBestand;
             aktuellerWarenwert = aktuellerInhalt * _artikel.art_einzelpreis;
         }
     }
