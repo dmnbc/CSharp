@@ -49,6 +49,7 @@
     <Compile Include="Dieb.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="Einkaufszettel.cs" />
+    <Compile Include="Kasse.cs" />
     <Compile Include="katalog.cs" />
     <Compile Include="Kunde.cs" />
     <Compile Include="Personal.cs" />

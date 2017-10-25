@@ -3,7 +3,7 @@
   <Class Name="Discounter_ConsoleApplication.Regal" Collapsed="true">
     <Position X="8" Y="1.5" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAkKAAACAAAgAAAgAACAAAAAAAIyA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAkKAAACAAAgAAEgAACAAAAAAAIyA=</HashCode>
       <FileName>Regal.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -64,6 +64,48 @@
     <TypeIdentifier>
       <HashCode>AAAAQAAAAAAAAADgACAAAAAAABBAAAAAAAACAAAAAoA=</HashCode>
       <FileName>Actor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Dieb" Collapsed="true">
+    <Position X="15.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Dieb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Kunde" Collapsed="true">
+    <Position X="13" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Kunde.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Personal" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Personal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Warenkatalog" Collapsed="true">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>katalog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discounter_ConsoleApplication.Display" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Display.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Kasse">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAABAAAQAQAAABAAAAAA=</HashCode>
+      <FileName>Kasse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
