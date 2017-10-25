@@ -9,7 +9,7 @@ namespace Discounter_ConsoleApplication
 {
     
 
-     class Program
+    class Program
     {
         // Warenkatalog laden per 
 

@@ -86,7 +86,7 @@ namespace DiscounterActor_ConsoleApplication
                 // einkaufswagen.liste. = // Verkauf[xx].
                 // Verkauf[xx].   = 0;
                 //     
-                Console.WriteLine("{0},{1}", i, _einkaufsliste.liste[i].artikel);
+                Console.WriteLine("Im Wagen lfdNr: {0},ArtikelNr:{1}, Anzahl:{2}", i, _einkaufsliste.liste[i].artikel, _einkaufsliste.liste[i].anzahl);
                 Console.ReadLine();
                 einkaufswagen.liste.Add(_einkaufsliste.liste[i]);
             }

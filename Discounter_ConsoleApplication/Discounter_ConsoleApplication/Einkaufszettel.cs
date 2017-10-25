@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace DiscounterActor_ConsoleApplication
 {
+    
+
     public class Einkaufszettel
     {
          public struct zeile
@@ -20,7 +22,7 @@ namespace DiscounterActor_ConsoleApplication
 
         public Einkaufszettel()
         {
-            Random rnd = new Random(Actor.lfrNr);
+            Random rnd = new Random(42); // (Actor.lfrNr);
             int bis = rnd.Next(1, 11);
             for (int von = 1; von <= bis; von++)
             { liste.Add(new zeile() { artikel = rnd.Next(1, 800), anzahl = rnd.Next(1, 11) }); }
