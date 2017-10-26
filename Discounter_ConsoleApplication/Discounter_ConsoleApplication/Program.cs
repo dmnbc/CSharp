@@ -25,18 +25,27 @@ namespace Discounter_ConsoleApplication
                             
             ReadLine();
 
-            DiscounterActor_ConsoleApplication.Kunde k = new DiscounterActor_ConsoleApplication.Kunde();
-            k.einkaufswagen=k.wareEntnehmen(v);
-            v.anzeigen(v.regale);
-            k.bezahlen(ref kasse); // wird polymorph weitergegeben an  kasse.kunde_abrechnen();
+
+                DiscounterActor_ConsoleApplication.Kunde k = new DiscounterActor_ConsoleApplication.Kunde();
+                k.einkaufswagen = k.wareEntnehmen(v);
+                v.anzeigen(v.regale);
+                k.bezahlen(ref kasse); // wird polymorph weitergegeben an  kasse.kunde_abrechnen();
+               
+               // kunde aus dem Speicher entfernen 
+               //  k = null; GC.Collect();
             ReadLine();
             
             v.anzeigen(v.regale);
 
-            DiscounterActor_ConsoleApplication.Personal p = new DiscounterActor_ConsoleApplication.Personal();
-            p.einkaufswagen = p.wareEntnehmen(v);
+            DiscounterActor_ConsoleApplication.Personal p1 = new DiscounterActor_ConsoleApplication.Personal();
+            p1.einkaufswagen = p1.wareEntnehmen(v);
             v.anzeigen(v.regale);
-            p.bezahlen(ref kasse); // wird polymorph weitergegeben an  kasse.kunde_abrechnen();
+            p1.bezahlen(ref kasse); // wird polymorph weitergegeben an  kasse.kunde_abrechnen();
+            ReadLine();
+            DiscounterActor_ConsoleApplication.Personal p2 = new DiscounterActor_ConsoleApplication.Personal();
+            p2.einkaufswagen = p2.wareEntnehmen(v);
+            v.anzeigen(v.regale);
+            p2.bezahlen(ref kasse); // wird polymorph weitergegeben an  kasse.kunde_abrechnen();
             ReadLine();
 
             v.anzeigen(v.regale);

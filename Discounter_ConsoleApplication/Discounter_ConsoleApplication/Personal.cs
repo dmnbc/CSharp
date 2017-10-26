@@ -16,7 +16,10 @@ namespace DiscounterActor_ConsoleApplication
         public override void bezahlen(ref Kasse ks)
         {
             Console.WriteLine("Das Personal zahlt mit Rabatt");
-            Console.WriteLine("statt {0,6:F2} nur {1,6:F2} Euro", ks.kunde_abrechnen(einkaufswagen), ks.kunde_abrechnen(einkaufswagen)*.7);
+            double origPreis, reduzPreis;
+            origPreis = ks.kunde_abrechnen(einkaufswagen);
+            reduzPreis = origPreis * .7;
+            Console.WriteLine("statt {0,6:F2} nur {1,6:F2} Euro", origPreis, reduzPreis);
         }
 
         ~Personal()

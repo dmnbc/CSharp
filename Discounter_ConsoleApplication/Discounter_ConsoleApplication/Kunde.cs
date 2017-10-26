@@ -25,7 +25,8 @@ namespace DiscounterActor_ConsoleApplication
 
          ~Kunde()
         {
-            
+            Console.WriteLine(" und tschüss");
+            Console.ReadLine();
         }
 
     }

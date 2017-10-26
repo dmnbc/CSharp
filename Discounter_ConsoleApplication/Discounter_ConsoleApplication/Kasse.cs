@@ -29,18 +29,19 @@ namespace DiscounterActor_ConsoleApplication
         }
 
         public double kunde_abrechnen( Einkaufszettel ekw )
-        {
+        {   // für jeden Artikel im Einkaufswagen, muss der passende Preis
+            // aus dem Warenkatalog beschafft werden
             kunde_umsatz = 0.0;
-            for (int i = 0; i < ekw.liste.Count;i++)
+            for (int i = 0; i < ekw.liste.Count;i++)     // durch den Einkaufswagen mit Schleife
             {
-                Console.WriteLine("Artikel {0,3}, {1,3} mal a {2,4:F2} Euro", ekw.liste[i].artikel, ekw.liste[i].anzahl, Warenkatalog.warenkatalog[i].art_einzelpreis);
-                kunde_umsatz += ekw.liste[i].anzahl * Warenkatalog.warenkatalog[i].art_einzelpreis;
+                Console.WriteLine("Artikel {0,3}, {1,3} mal a {2,4:F2} Euro", ekw.liste[i].artikel, ekw.liste[i].anzahl, Warenkatalog.warenkatalog[ekw.liste[i].artikel].art_einzelpreis);
+                kunde_umsatz += ekw.liste[i].anzahl * Warenkatalog.warenkatalog[ekw.liste[i].artikel].art_einzelpreis;
                 
 
 
-            }
+            } // if(this.)
             tages_umsatz += kunde_umsatz;  
-            return kunde_umsatz; 
+            return kunde_umsatz;  // Kasse meldet dem Actor den Warensummenwert
         }
 
         public Einkaufszettel nachfuellen_anfordern()
@@ -49,8 +50,9 @@ namespace DiscounterActor_ConsoleApplication
         }
 
         public Einkaufszettel  fehlbestand_anzeigen()
-        {
-            return new Einkaufszettel();
+        { 
+
+            return new Einkaufszettel("Fehlliste");
         }
     }
 }

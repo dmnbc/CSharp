@@ -69,8 +69,8 @@ namespace DiscounterActor_ConsoleApplication
         {
             _einkaufsliste.anzeigen();
         }
-
-        public virtual void bezahlen(ref Kasse ks)
+                                  // Verweis auf ein Objekt vom Typ Kasse mit Namen ks
+        public virtual void bezahlen(ref Kasse ks) //  in C   Kasse &ks
         {
             Console.WriteLine("Der Actor zahlt für");
            // this.Liste_zeigen();
@@ -82,8 +82,7 @@ namespace DiscounterActor_ConsoleApplication
             Einkaufszettel einkaufswagen = new Einkaufszettel("Einkaufswagen");
             for(int i = 0; i < _einkaufsliste.liste.Count;i++)
             {
- 
-                Console.WriteLine(" Auf dem Zettel : Artikel {0,3} soll {1,3} mal gekauft werden", _einkaufsliste.liste[i].artikel, _einkaufsliste.liste[i].anzahl);
+                 Console.WriteLine(" Auf dem Zettel : Artikel {0,3} soll {1,3} mal gekauft werden", _einkaufsliste.liste[i].artikel, _einkaufsliste.liste[i].anzahl);
                 if (r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt >= _einkaufsliste.liste[i].anzahl)
                 { // genug im Regal
                     Console.WriteLine("genug da");
@@ -95,13 +94,8 @@ namespace DiscounterActor_ConsoleApplication
                     Console.WriteLine("zu wenig da, Regal wird leer gemacht");
                     einkaufswagen.liste.Add(new Einkaufszettel.zeile(i, r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt));
                     r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt = 0;
-          //          einkaufswagen.liste.Add(new Einkaufszettel.zeile(i, r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt));
-
                 }
-                //    Console.WriteLine("Im Wagen lfdNr: {0},ArtikelNr:{1}, Anzahl:{2}", i, _einkaufsliste.liste[i].artikel, _einkaufsliste.liste[i].anzahl);
-                r.regale[_einkaufsliste.liste[i].artikel].nachfuellen = r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt <= r.regale[_einkaufsliste.liste[i].artikel].mindestbestand;
-
-
+                 r.regale[_einkaufsliste.liste[i].artikel].nachfuellen = r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt <= r.regale[_einkaufsliste.liste[i].artikel].mindestbestand;
             }
             Console.WriteLine("Im Wagen sind {0} verschiedene Artikel ", einkaufswagen.liste.Count);
             return einkaufswagen;   // wegen Änderung der Rückgabe von void auf Einkaufszettel

@@ -39,7 +39,7 @@ namespace DiscounterActor_ConsoleApplication
 
         public Einkaufszettel(string s)
         {
-
+ // wird genutzt, um einen leeren Einkaufswagen zu erzeugen
         }
 
         public void anzeigen()

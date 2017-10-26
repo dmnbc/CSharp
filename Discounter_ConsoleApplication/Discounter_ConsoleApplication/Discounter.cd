@@ -102,7 +102,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="DiscounterActor_ConsoleApplication.Kasse">
-    <Position X="0.5" Y="5" Width="2.5" />
+    <Position X="0.5" Y="5" Width="4.25" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAQAAAAAAAAAAAAAAAABAAAQAQAAABAABAAA=</HashCode>
       <FileName>Kasse.cs</FileName>
