@@ -15,9 +15,11 @@ namespace DiscounterActor_ConsoleApplication
             Console.WriteLine("Ich bin ein Kunde und das Objekt {0}",id);
         }
 
-        public override void bezahlen()
+        public override void bezahlen(ref Kasse ks)
         {
             Console.WriteLine("Der Kunde zahlt den offiziellen Preis ");
+           // Console.WriteLine("für {0} Artikel ", einkaufswagen.liste.Count);
+            Console.WriteLine("von {0,6:F2} Euro", ks.kunde_abrechnen(einkaufswagen));
         }
 
 

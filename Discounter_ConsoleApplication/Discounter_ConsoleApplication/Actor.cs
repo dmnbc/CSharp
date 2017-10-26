@@ -22,7 +22,7 @@ namespace DiscounterActor_ConsoleApplication
         protected Einkaufszettel _einkaufsliste;
         protected Einkaufszettel _einkaufswagen;
         protected int id;
-        private int rolle;
+        protected int rolle;
 
         public Einkaufszettel einkaufsliste
         {
@@ -46,7 +46,7 @@ namespace DiscounterActor_ConsoleApplication
 
             set
             {
-
+                _einkaufswagen = value;
             }
         }
 
@@ -54,6 +54,8 @@ namespace DiscounterActor_ConsoleApplication
         {
             lfrNr++;
             _einkaufsliste = new Einkaufszettel();
+            _einkaufswagen = new Einkaufszettel("einkaufswagen");
+            
             Console.WriteLine("Es wurde zuerst ein Einkaufszettel erstellt");
 
         }
@@ -68,13 +70,14 @@ namespace DiscounterActor_ConsoleApplication
             _einkaufsliste.anzeigen();
         }
 
-        public virtual void bezahlen()
+        public virtual void bezahlen(ref Kasse ks)
         {
             Console.WriteLine("Der Actor zahlt für");
            // this.Liste_zeigen();
         }
 
-        public void wareEntnehmen(Discounter_ConsoleApplication.Raum r)
+      //  public void wareEntnehmen(Discounter_ConsoleApplication.Raum r)
+        public Einkaufszettel wareEntnehmen(Discounter_ConsoleApplication.Raum r)
         {
             Einkaufszettel einkaufswagen = new Einkaufszettel("Einkaufswagen");
             for(int i = 0; i < _einkaufsliste.liste.Count;i++)
@@ -90,9 +93,9 @@ namespace DiscounterActor_ConsoleApplication
                 else
                 { // zu wenig im Regal, alles was noch da ist
                     Console.WriteLine("zu wenig da, Regal wird leer gemacht");
-                   
-                    //   einkaufswagen.liste.Last().anzahl = r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt;
+                    einkaufswagen.liste.Add(new Einkaufszettel.zeile(i, r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt));
                     r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt = 0;
+          //          einkaufswagen.liste.Add(new Einkaufszettel.zeile(i, r.regale[_einkaufsliste.liste[i].artikel].aktuellerInhalt));
 
                 }
                 //    Console.WriteLine("Im Wagen lfdNr: {0},ArtikelNr:{1}, Anzahl:{2}", i, _einkaufsliste.liste[i].artikel, _einkaufsliste.liste[i].anzahl);
@@ -100,7 +103,8 @@ namespace DiscounterActor_ConsoleApplication
 
 
             }
-            Console.WriteLine("Im Wagen sind {0} verschiedene Artikel ", einkaufswagen.liste.Count);          
+            Console.WriteLine("Im Wagen sind {0} verschiedene Artikel ", einkaufswagen.liste.Count);
+            return einkaufswagen;   // wegen Änderung der Rückgabe von void auf Einkaufszettel
         }
     }
 }

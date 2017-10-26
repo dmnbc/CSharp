@@ -1,6 +1,6 @@
 ﻿internal class Warenkatalog
 {
-    public Artikel[] warenkatalog = new Artikel[]
+    public static  Artikel[] warenkatalog = new Artikel[]
    {
     new Artikel(
  0,0.015,.99),new Artikel(

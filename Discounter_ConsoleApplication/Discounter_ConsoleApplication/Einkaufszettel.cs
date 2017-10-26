@@ -14,6 +14,14 @@ namespace DiscounterActor_ConsoleApplication
         {
             public int artikel;
             public int anzahl;
+            private int i;
+            private int aktuellerInhalt;
+
+            public zeile(int i, int aktuellerInhalt) : this()
+            {
+                this.i = i;
+                this.aktuellerInhalt = aktuellerInhalt;
+            }
         }
 
         // generic Container nutzen 

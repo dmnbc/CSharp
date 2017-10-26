@@ -18,42 +18,28 @@ namespace Discounter_ConsoleApplication
         {
 
             Warenkatalog wk = new Warenkatalog();
+            DiscounterActor_ConsoleApplication.Kasse kasse = new DiscounterActor_ConsoleApplication.Kasse(ref wk);
 
-            Verkauf v = new Verkauf("Im2.OG_Hohe Strasse",400.0, ref wk.warenkatalog);
+            Verkauf v = new Verkauf("Im2.OG_Hohe Strasse",400.0, ref Warenkatalog.warenkatalog);
             v.anzeigen(v.regale);       // der ganze Raum 
                             
             ReadLine();
-            DiscounterActor_ConsoleApplication.Actor testperson = new DiscounterActor_ConsoleApplication.Actor();
-            //testperson.Liste_zeigen();
-            testperson.wareEntnehmen(v);
-            v.anzeigen(v.regale);
-            ReadLine();
-            testperson.bezahlen();
+
             DiscounterActor_ConsoleApplication.Kunde k = new DiscounterActor_ConsoleApplication.Kunde();
-//k.Liste_zeigen();
-            k.wareEntnehmen(v);
+            k.einkaufswagen=k.wareEntnehmen(v);
             v.anzeigen(v.regale);
+            k.bezahlen(ref kasse); // wird polymorph weitergegeben an  kasse.kunde_abrechnen();
             ReadLine();
-            testperson.bezahlen();
-            DiscounterActor_ConsoleApplication.Personal p = new DiscounterActor_ConsoleApplication.Personal();
-//p.Liste_zeigen();
-            p.wareEntnehmen(v);
-            v.anzeigen(v.regale);
-            ReadLine();
-
-            for(int i = 0; i < 50; i++)
-            {
-                DiscounterActor_ConsoleApplication.Personal ptemp = new DiscounterActor_ConsoleApplication.Personal();
-                //p.Liste_zeigen();
-                ptemp.wareEntnehmen(v);
-                v.anzeigen(v.regale);
-               // ReadLine();
-            }
-
-
-            // einkaufen testen 
-            v.anzeigen(v.regale);
             
+            v.anzeigen(v.regale);
+
+            DiscounterActor_ConsoleApplication.Personal p = new DiscounterActor_ConsoleApplication.Personal();
+            p.einkaufswagen = p.wareEntnehmen(v);
+            v.anzeigen(v.regale);
+            p.bezahlen(ref kasse); // wird polymorph weitergegeben an  kasse.kunde_abrechnen();
+            ReadLine();
+
+            v.anzeigen(v.regale);
 
 
 
