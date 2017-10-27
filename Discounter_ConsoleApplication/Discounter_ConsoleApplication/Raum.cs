@@ -88,17 +88,9 @@ namespace Discounter_ConsoleApplication
             anzahlRegale = (int)(f / .5);
             _regale = new Regal[wk.Length];
             for (int i = 0; i < wk.Length /*anzahlRegale */; i++)
-            { _regale[i] = new Regal(i, wk); }
+            { _regale[i] = new Regal(i, wk, 1.0); }
 
-            /*
-            foreach(Regal r in _regale)
-            {
-
-                Console.WriteLine("Regal aufgestellt mit einer Kapazität: {0} Einheiten ", r.aktuellerInhalt);
-                Console.WriteLine("Das Regal hat einen Wert von {0} Euro\n", r.aktuellerWarenwert);
-
-            } */
-
+            Console.WriteLine("Verkauf erstellt");
         }
 
 
@@ -121,11 +113,15 @@ namespace Discounter_ConsoleApplication
         {
             
         }
-        public Lager(string b,double f):base(b,f)
+        public Lager(string b,double f, ref Artikel[] wk) :base(b,f)
         {
             _kundenErlaubt = false;
-            anzahlRegale = (int)(f / .33);
-            
+            anzahlRegale = 800; // noch durch Formel bestimmen lassen
+            _regale = new Regal[wk.Length];
+            for (int i = 0; i < wk.Length /*anzahlRegale */; i++)
+            { _regale[i] = new Regal(i, wk, .33); }
+            Console.WriteLine("Lager erstellt");
+
         }
     }
 

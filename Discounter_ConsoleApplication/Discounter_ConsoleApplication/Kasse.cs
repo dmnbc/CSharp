@@ -57,24 +57,25 @@ namespace DiscounterActor_ConsoleApplication
             return new Einkaufszettel() ; 
         }
 
-        public void /*Einkaufszettel*/  fehlbestand_anzeigen(Discounter_ConsoleApplication.Raum v)
+        public Einkaufszettel  fehlbestand_feststellen(Discounter_ConsoleApplication.Raum v)
         {
             // Über alle Regale wandern und jedes mit "nachfüllen = True"
             // in die Fehlliste eintragen 
 
-            // for oder foreach  (   == true )
-           //  foreach( Discounter_ConsoleApplication.Regal r  in v )
+            Einkaufszettel arbeitsliste = new Einkaufszettel("Fehlliste");
            for(int i = 0; i < v.regale.Length; i++)
             {
                if( v.regale[i].nachfuellen == true)
                 {
-                    Console.WriteLine(" Regal {0} muss aufgefüllt werden ", i);
-                    Console.WriteLine(" Es fehlen zum Maximalbestand {0} Einheiten", v.regale[i].kapazität - v.regale[i].aktuellerInhalt);
+                  //  Console.WriteLine(" Regal {0} muss aufgefüllt werden ", i);
+                  //  Console.WriteLine(" Es fehlen zum Maximalbestand {0} Einheiten", v.regale[i].kapazität - v.regale[i].aktuellerInhalt);
+                    arbeitsliste.liste.Add(new Einkaufszettel.zeile() { artikel = i, anzahl = v.regale[i].kapazität - v.regale[i].aktuellerInhalt });
+
                 }
             }
   
 
-           // return new Einkaufszettel("Fehlliste");
+           return arbeitsliste;
         }
     }
 }

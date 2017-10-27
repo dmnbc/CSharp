@@ -78,11 +78,12 @@ namespace Discounter_ConsoleApplication
             Console.WriteLine("Regal erstellt");
         }
 
-        public Regal(int id, Artikel[] wk)
+        public Regal(int id, Artikel[] wk, double vol)
         {
             _regal_id = id;
+            _volumen = vol;
             _artikel = new Artikel(_regal_id,wk);
-            _kapazitaet = (int)(_volumen / _artikel.art_volumen);
+            _kapazitaet = (int)(vol / _artikel.art_volumen);
             _mindestBestand =(int)( _kapazitaet * .3);
             aktuellerInhalt = _kapazitaet;
             nachfuellen = aktuellerInhalt <= _mindestBestand;

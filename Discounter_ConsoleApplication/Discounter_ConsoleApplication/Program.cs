@@ -22,7 +22,10 @@ namespace Discounter_ConsoleApplication
 
             Verkauf v = new Verkauf("Im2.OG_Hohe Strasse",400.0, ref Warenkatalog.warenkatalog);
             v.anzeigen(v.regale);       // der ganze Raum 
-                            
+            Lager l = new Lager("gemeinsamer Keller in Ossendorf", 240.0, ref Warenkatalog.warenkatalog);
+            // l.anzeigen(l.regale);
+
+
             ReadLine();
 
 
@@ -50,12 +53,14 @@ namespace Discounter_ConsoleApplication
 
             v.anzeigen(v.regale);
 
-            kasse.fehlbestand_anzeigen(v);
+            // kasse.fehlbestand_anzeigen(v);
+            Console.WriteLine("Der Auftrag an den Lageristen umfasst :");
+            kasse.fehlbestand_feststellen(v).anzeigen();
 
 
-            /*  Console.WriteLine();
-              Lager l = new Lager("gemeinsamer Keller in Ossendorf",240.0);
-              // l.anzeigen(); */
+         
+             
+               
 
 
 
