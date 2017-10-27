@@ -52,6 +52,7 @@
     <Compile Include="Kasse.cs" />
     <Compile Include="katalog.cs" />
     <Compile Include="Kunde.cs" />
+    <Compile Include="Lagerist.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

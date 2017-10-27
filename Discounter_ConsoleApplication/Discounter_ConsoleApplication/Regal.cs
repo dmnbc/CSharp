@@ -64,6 +64,15 @@ namespace Discounter_ConsoleApplication
                 _nachfuellen = value;
             }
         }
+
+        public int kapazität
+            {
+            get
+            {
+                return _kapazitaet;
+            }
+
+            }
         public Regal()
         {
             Console.WriteLine("Regal erstellt");

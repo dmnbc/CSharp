@@ -3,7 +3,7 @@
   <Class Name="Discounter_ConsoleApplication.Regal" Collapsed="true">
     <Position X="8" Y="1.5" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAkKAAACAAAgAAEgAACAAAAAAAIyA=</HashCode>
+      <HashCode>CAAAAAAAAAAAAAAAkKAAACAAAgAAEgAACAAAAAAAIyA=</HashCode>
       <FileName>Regal.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -101,11 +101,18 @@
       <FileName>Display.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DiscounterActor_ConsoleApplication.Kasse">
-    <Position X="0.5" Y="5" Width="4.25" />
+  <Class Name="DiscounterActor_ConsoleApplication.Kasse" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="4.25" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAQAAAAAAAAAAAAAAAABAAAQAQAAABAABAAA=</HashCode>
       <FileName>Kasse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscounterActor_ConsoleApplication.Lagerist">
+    <Position X="15.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Lagerist.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

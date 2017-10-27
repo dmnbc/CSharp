@@ -50,6 +50,7 @@ namespace Discounter_ConsoleApplication
 
             v.anzeigen(v.regale);
 
+            kasse.fehlbestand_anzeigen(v);
 
 
             /*  Console.WriteLine();

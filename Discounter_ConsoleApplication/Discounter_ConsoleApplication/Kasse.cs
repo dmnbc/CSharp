@@ -46,13 +46,35 @@ namespace DiscounterActor_ConsoleApplication
 
         public Einkaufszettel nachfuellen_anfordern()
         {
+            // Auftrag an Personal, die Regale auf der Fehlliste nachzufüllen 
+
+            // dazu braucht man einen lagerspezi, der angesprochen wird 
+
+
+            // Fehlliste mit den Menge   ( also das was bei fehlbestand_anzeigen auf den Schirm kommt )
+
+
             return new Einkaufszettel() ; 
         }
 
-        public Einkaufszettel  fehlbestand_anzeigen()
-        { 
+        public void /*Einkaufszettel*/  fehlbestand_anzeigen(Discounter_ConsoleApplication.Raum v)
+        {
+            // Über alle Regale wandern und jedes mit "nachfüllen = True"
+            // in die Fehlliste eintragen 
 
-            return new Einkaufszettel("Fehlliste");
+            // for oder foreach  (   == true )
+           //  foreach( Discounter_ConsoleApplication.Regal r  in v )
+           for(int i = 0; i < v.regale.Length; i++)
+            {
+               if( v.regale[i].nachfuellen == true)
+                {
+                    Console.WriteLine(" Regal {0} muss aufgefüllt werden ", i);
+                    Console.WriteLine(" Es fehlen zum Maximalbestand {0} Einheiten", v.regale[i].kapazität - v.regale[i].aktuellerInhalt);
+                }
+            }
+  
+
+           // return new Einkaufszettel("Fehlliste");
         }
     }
 }
