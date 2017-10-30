@@ -4,25 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiscounterActor_ConsoleApplication
+namespace Discounter_ConsoleApplication
 {
-    class Dieb:Kunde
-    {
-        
+    // versiegelt, von Dieb kann nicht weiter abgeleitet werden
+    sealed class Dieb:Kunde  
+    {        
         public Dieb()
         {
-            this.id = Actor.lfrNr;
-            Console.WriteLine("Ich bin ein Dieb und das Objekt {0}",id);
+            this.id = Actor.lfrNr; // statische Klasenvariable wird in Actor fortlaufend erhöht
+            if (Program.TESTMODE) { Console.WriteLine("Ich bin ein Dieb und habie die id: {0}", id); }
         }
 
         public override void bezahlen(ref Kasse ks)
         {
-            Console.WriteLine("Der Dieb zahlt nichts");
-        }
-
-        ~Dieb()
-        {
-          
+            if (Program.TESTMODE) { Console.WriteLine("Der Dieb zahlt nichts"); }
         }
     }
 }

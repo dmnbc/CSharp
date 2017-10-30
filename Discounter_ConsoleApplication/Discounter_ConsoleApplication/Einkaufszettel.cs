@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiscounterActor_ConsoleApplication
-{
-    
-
-    public class Einkaufszettel
+namespace Discounter_ConsoleApplication
+{  
+    public class WasWieOft_Liste
     {
          public struct zeile
         {
@@ -24,27 +22,48 @@ namespace DiscounterActor_ConsoleApplication
             }
         }
 
-        // generic Container nutzen 
+        // generic Container List nutzen 
         public List<zeile> liste = new List<zeile>();
 
-
-        public Einkaufszettel()
+        public WasWieOft_Liste()
         {
-            Random rnd = new Random(Actor.lfrNr);
+            if (Program.TESTMODE)
+            {
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("WasWieOft_Liste() startet, ");
+                Console.ForegroundColor = ConsoleColor.Black;
+            }
+            Random rnd = new Random(Actor.lfrNr);  // noch keine echten Zufälle, jedes Objekt mit gleicher id ist gleich
             int bis = rnd.Next(1, 11);
             for (int von = 1; von <= bis; von++)
-            { liste.Add(new zeile() { artikel = rnd.Next(1, 800), anzahl = rnd.Next(1, 100) }); }
-
+            { liste.Add(new zeile() { artikel = rnd.Next(1, 800), anzahl = rnd.Next(1, 20) }); }
+            if (Program.TESTMODE)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                anzeigen();
+                Console.WriteLine("WasWieOft_Liste() endet");
+                Console.ForegroundColor = ConsoleColor.Black;
+            }
         }
 
-        public Einkaufszettel(string s)
+        public WasWieOft_Liste(string s, [System.Runtime.CompilerServices.CallerMemberName] string memberName = "",
+                                         [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
+                                         [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
         {
- // wird genutzt, um einen leeren Einkaufswagen zu erzeugen
+            if (Program.TESTMODE)
+            { Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("WasWieOft_Liste(string s) aufgerufen,");
+                Console.WriteLine("Leerer {0} wurde bereitgestellt. Aufruf durch {1} ", s,memberName);
+                Console.WriteLine("in {0}: {1}", sourceFilePath, sourceLineNumber);
+                Console.ForegroundColor = ConsoleColor.Black; }
+            ; // wird genutzt, um einen leeren Einkaufswagen zu erzeugen
         }
 
         public void anzeigen()
-        {
-            foreach(zeile einzelzeile in liste )
+        {   // zeigt die Zeilen des  WasWieOft_Liste - Objektes an
+            // dabei kann es sich um Einkaufszettel, Einkaufswagen, Fehlliste und Lageraufträge handeln.
+            foreach (zeile einzelzeile in liste )
             { Console.WriteLine("Artikel {0}:{1} mal", einzelzeile.artikel, einzelzeile.anzahl); }
         }
     }

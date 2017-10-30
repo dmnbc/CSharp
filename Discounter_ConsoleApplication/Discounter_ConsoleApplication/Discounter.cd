@@ -31,19 +31,12 @@
       <FileName>Raum.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Artikel" Collapsed="true">
-    <Position X="8" Y="0.75" Width="3.25" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAEAAAAAAABAAAAAAAAAAAAIAAAACAAAA=</HashCode>
-      <FileName>Artikel.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="DiscounterActor_ConsoleApplication.Einkaufszettel">
+  <Class Name="Discounter_ConsoleApplication.WasWieOft_Liste">
     <Position X="9.75" Y="2.75" Width="1.5" />
     <NestedTypes>
-      <Struct Name="DiscounterActor_ConsoleApplication.Einkaufszettel.zeile" Collapsed="true">
+      <Struct Name="Discounter_ConsoleApplication.WasWieOft_Liste.zeile" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Einkaufszettel.cs</NewMemberFileName>
+          <NewMemberFileName>WasWieOft_Liste.cs</NewMemberFileName>
         </TypeIdentifier>
       </Struct>
     </NestedTypes>
@@ -52,35 +45,35 @@
       <FileName>Einkaufszettel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DiscounterActor_ConsoleApplication.Actor">
+  <Class Name="Discounter_ConsoleApplication.Actor">
     <Position X="11.5" Y="2.75" Width="1.5" />
     <NestedTypes>
-      <Struct Name="DiscounterActor_ConsoleApplication.Actor.zeile" Collapsed="true">
+      <Struct Name="Discounter_ConsoleApplication.Actor.zeile" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Actor.cs</NewMemberFileName>
         </TypeIdentifier>
       </Struct>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAAAADgACAAAAAAABBAAAAAAAACAAAAAoA=</HashCode>
+      <HashCode>AAAAQAAAAAAAAADgACAAAAAAABBAAAAgAAACAAAAAoA=</HashCode>
       <FileName>Actor.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DiscounterActor_ConsoleApplication.Dieb">
+  <Class Name="Discounter_ConsoleApplication.Dieb">
     <Position X="15.5" Y="1" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>Dieb.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DiscounterActor_ConsoleApplication.Kunde">
+  <Class Name="Discounter_ConsoleApplication.Kunde">
     <Position X="13" Y="1" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>Kunde.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DiscounterActor_ConsoleApplication.Personal">
+  <Class Name="Discounter_ConsoleApplication.Personal">
     <Position X="13.75" Y="3.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
@@ -101,18 +94,25 @@
       <FileName>Display.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DiscounterActor_ConsoleApplication.Kasse" Collapsed="true">
-    <Position X="0.5" Y="5.75" Width="4.25" />
+  <Class Name="Discounter_ConsoleApplication.Kasse">
+    <Position X="0.5" Y="6" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>AAAgAAAAAQAAAAAAAAAAAAAAAABAAAQAQAAABAABAAA=</HashCode>
+      <HashCode>AAAgAAAAAQAAAAAAAAAAAAAAAABAAAAAAAAABAQAAAA=</HashCode>
       <FileName>Kasse.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DiscounterActor_ConsoleApplication.Lagerist">
-    <Position X="15.75" Y="5.5" Width="1.5" />
+  <Class Name="Discounter_ConsoleApplication.Lagerist">
+    <Position X="15.75" Y="5.5" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Lagerist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Artikel" Collapsed="true">
+    <Position X="8" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAEAAAAAAABAAAAAAAAAAAAIAAAACAAAA=</HashCode>
+      <FileName>Artikel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

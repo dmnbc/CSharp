@@ -8,27 +8,37 @@ namespace Discounter_ConsoleApplication
 {
     internal static class Display
     {
-       
         public static void darstellen(ref Regal[] regale,int x, int y)
         {
-          //  Console.Clear();
-            Console.WriteLine("Hier kommt Regal {0} bis {1} auf den Schirm",x,y);
+            if (!Program.TESTMODE) { Console.Clear(); }
+            else
+            {
+                Console.WriteLine("Hier kommt Regal {0} bis {1} auf den Schirm", x, y);
+                Console.WriteLine(" 0123456789012345678901234567890123456789");
+            }
             for (int i = x; i <= y; i++)
             {
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                if (i % 40 == 0)
+                Console.ForegroundColor = ConsoleColor.Black;
+                if (i % 40 == 0)  // nach jeder Reihe von Regalen
                 {
                     Console.BackgroundColor = ConsoleColor.DarkGray;
-                    Console.Write(" ");
-                    Console.WriteLine();
-                    Console.Write(" ");
-                    if (i % 80==0)
+                    Console.Write(" \n ");
+                    if (i % 80==0) // nach jeder Doppelreihe von Regalen
                     {
-                        Console.BackgroundColor = ConsoleColor.DarkGray;
-                        Console.WriteLine("{0,40}", " ");
+                        Console.WriteLine("{0,40}", " "); // einen Gang
                         Console.Write(" ");
                     }
-                }
+                    if (regale[i].nachfuellen)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.Write("!");
+                        Console.BackgroundColor = ConsoleColor.Green;
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = ConsoleColor.Green;
+                         Console.Write("#"); }
+                    }
                 else
                 {
                     Console.BackgroundColor = ConsoleColor.Green;
@@ -39,15 +49,12 @@ namespace Discounter_ConsoleApplication
                         Console.BackgroundColor = ConsoleColor.Green;
                     }
                     else
-                    { Console.Write("#"); }
+                    {   Console.Write("#"); }
                 }
-            }
-            
+            }           
             Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.WriteLine(" ");
-            Console.WriteLine("{0,41}", " ");
-           
+            Console.WriteLine("{0,41}", " ");          
         }
-
     }
 }

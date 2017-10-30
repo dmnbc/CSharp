@@ -4,30 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiscounterActor_ConsoleApplication
+namespace Discounter_ConsoleApplication
 {
     class Kunde : Actor
     {
-        // private int k_id;
         public Kunde()
         {
-            this.id = Actor.lfrNr;
-            Console.WriteLine("Ich bin ein Kunde und das Objekt {0}",id);
+            ConsoleColor temp = Console.ForegroundColor;
+            if (Program.TESTMODE) {  Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Kunde() startet");
+            } 
+                this.id = Actor.lfrNr;
+            if (Program.TESTMODE)
+               { Console.WriteLine("Kunde() endet:  Actor-Objekt {0}", id);
+               Console.ForegroundColor = temp;
+                Console.ReadLine();
+            }       
         }
 
         public override void bezahlen(ref Kasse ks)
         {
-            Console.WriteLine("Der Kunde zahlt den offiziellen Preis ");
-           // Console.WriteLine("für {0} Artikel ", einkaufswagen.liste.Count);
-            Console.WriteLine("von {0,6:F2} Euro", ks.kunde_abrechnen(einkaufswagen));
+            ConsoleColor temp = Console.ForegroundColor;
+            if (Program.TESTMODE)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Kunde.bezahlen() startet");
+            }
+            double umsatz;
+            umsatz = ks.kunde_abrechnen(einkaufswagen);
+            if (Program.TESTMODE)
+            {
+                Console.WriteLine("Der Kunde zahlt den offiziellen Preis ");
+                Console.WriteLine("von {0,6:F2} Euro", umsatz);
+                Console.WriteLine("Kunde.bezahlen() endet");
+                Console.ForegroundColor = temp;
+                Console.ReadLine();
+            }
         }
-
-
-         ~Kunde()
-        {
-            Console.WriteLine(" und tschüss");
-            Console.ReadLine();
-        }
-
     }
 }
