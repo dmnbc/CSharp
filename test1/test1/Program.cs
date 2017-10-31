@@ -7,7 +7,7 @@ namespace test1
     {
         static void Main()
         {
-            WriteLine("Hello World of repos");
+            WriteLine("Hello World");
             ReadLine();
         }
     }
