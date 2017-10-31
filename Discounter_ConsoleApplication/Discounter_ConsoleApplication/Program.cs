@@ -10,6 +10,7 @@ namespace Discounter_ConsoleApplication
     class Program
     {
         public static bool TESTMODE = true;
+        public static bool STEPWISE = true;
         static void Main(string[] args)
         {
 
@@ -36,6 +37,7 @@ namespace Discounter_ConsoleApplication
             
             v.anzeigen(v.regale);
 
+            /*
             Discounter_ConsoleApplication.Personal p1 = new Discounter_ConsoleApplication.Personal();
             p1.einkaufswagen = p1.wareEntnehmen(v);
             v.anzeigen(v.regale);
@@ -48,17 +50,25 @@ namespace Discounter_ConsoleApplication
             ReadLine();
 
             v.anzeigen(v.regale);
-
+            */
             // 
             Console.WriteLine("Der Auftrag an den Lageristen umfasst :");
             kasse.fehlbestand_feststellen(v).anzeigen();
 
-           
-            Discounter_ConsoleApplication.Lagerist laggy = new Discounter_ConsoleApplication.Lagerist();
+            if (Program.TESTMODE)
+            {
+                ConsoleColor tmp = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine("Instanzierung des Lageristen ");
+                if (Program.STEPWISE) { Console.WriteLine("Weiter mit ┘"); Console.ReadLine(); }
+                Console.ForegroundColor = tmp;
+            }
+            Lagerist laggy = new Lagerist();
             laggy.umlagern(kasse.fehlbestand_feststellen(v),ref l,ref v);
             // filialleiter.bestellen(kasse.fehlbestand_feststellen(l),ref lief,ref l);
-            Console.WriteLine("Lagerist ist fertig ");
-           
+            if (Program.STEPWISE) { Console.WriteLine("Weiter mit ┘"); Console.ReadLine(); }
+
+
 
             v.anzeigen(v.regale);
              

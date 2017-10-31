@@ -1,4 +1,4 @@
-﻿internal class Warenkatalog
+﻿public class Warenkatalog
 {
     public static  Artikel[] warenkatalog = new Artikel[]
    {

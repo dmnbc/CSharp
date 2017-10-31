@@ -52,6 +52,12 @@ namespace Wdh20173010ConsoleApplication
             ta.ausbezahlen();
             l.ausbezahlen();
 
+
+            Abteilung versand = new Abteilung(abteilungsleiterVersand);
+            Console.WriteLine(" Im Versand arbeiten ");
+            versand.chef.zeigeMeineMitarbeiter();
+
+
             Console.ReadLine();
         }
     }

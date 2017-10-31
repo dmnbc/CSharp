@@ -75,19 +75,39 @@ namespace Discounter_ConsoleApplication
             }
         public Regal()
         {
+            ConsoleColor tmp = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("Regal erstellt");
+            Console.ForegroundColor = tmp;
+
         }
 
         public Regal(int id, Artikel[] wk, double vol)
         {
+            if (Program.TESTMODE)
+            {
+                ConsoleColor tmp = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("Regal( id, wk, vol ) gestartet.");
+                Console.ForegroundColor = tmp;
+
+            }
             _regal_id = id;
             _volumen = vol;
             _artikel = new Artikel(_regal_id,wk);
             _kapazitaet = (int)(vol / _artikel.art_volumen);
-            _mindestBestand =(int)( _kapazitaet * .3);
+            _mindestBestand =(int)( _kapazitaet * .8); // muss relativ zur Größe der Lagerregale bestimmt werden
             aktuellerInhalt = _kapazitaet;
             nachfuellen = aktuellerInhalt <= _mindestBestand;
             aktuellerWarenwert = aktuellerInhalt * _artikel.art_einzelpreis;
+            if (Program.TESTMODE)
+            {
+                ConsoleColor tmp = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("Regal {0} mit {1} Einheiten aufgestellt. Nachfüllen bei weniger als {2}",
+                    id,aktuellerInhalt,_mindestBestand);
+                Console.ForegroundColor = tmp;
+            }
         }
     }
 }

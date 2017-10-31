@@ -1,0 +1,9 @@
+Farben der Klassen während der Testausgaben:
+Actor White;
+Kasse Green;
+Kunde Blue;
+WasWieOft_Liste Yellow;   // wird benutzt als Einkaufszettel, Einkaufswagen und Transportwagen,Aufragsliste an Lagerist
+Lagerist DarkMagenta;
+Regal DarkYellow;
+
+Rot ist für Alarme vorgesehen

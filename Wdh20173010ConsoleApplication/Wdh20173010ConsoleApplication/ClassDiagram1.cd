@@ -3,36 +3,43 @@
   <Class Name="Wdh20173010ConsoleApplication.Personal">
     <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAIAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Personal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Wdh20173010ConsoleApplication.Angestellter">
     <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAACAgA=</HashCode>
       <FileName>Angestellter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Wdh20173010ConsoleApplication.Zeitarbeiter">
     <Position X="5.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Zeitarbeiter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Wdh20173010ConsoleApplication.TarifgebundenerAngestellter">
     <Position X="0.5" Y="3.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tarifgebunden.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Wdh20173010ConsoleApplication.LeitenderAngestellter">
     <Position X="3.75" Y="3.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAQAAAAAAAAAACAAAAAAAABCAAABA=</HashCode>
       <FileName>LeitenderAngestellter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wdh20173010ConsoleApplication.Abteilung">
+    <Position X="8" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAgAAAAAAAAA=</HashCode>
+      <FileName>Abteilung.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
