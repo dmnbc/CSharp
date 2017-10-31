@@ -16,9 +16,8 @@ namespace LinqKennenleren_ConsoleApplication
         {
             Warenkatalog wk = new Warenkatalog();
             double volKleiner = 0.01;
-
+                     // Bereichsvariable art 
             var query = from art in Warenkatalog.warenkatalog where art.art_volumen < volKleiner select art;
-
             // SQL: result = select * form Warenkatalog.warenkatalog where art.art_volumen < .09
             foreach (var item in query )
             {
