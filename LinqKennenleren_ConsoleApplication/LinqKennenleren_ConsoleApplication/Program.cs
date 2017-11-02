@@ -10,52 +10,77 @@ namespace LinqKennenleren_ConsoleApplication
     {
         static void warten()
         {
+            Console.WriteLine("Weiter mit ┘ ");
             Console.ReadLine();
+        }
+
+        static int verdopple( int i)
+        {
+            return i * 2;
         }
         static void Main(string[] args)
         {
             Warenkatalog wk = new Warenkatalog();
-            double volKleiner = 0.01;
-                     // Bereichsvariable art 
-            var query = from art in Warenkatalog.warenkatalog where art.art_volumen < volKleiner select art;
-            // SQL: result = select * form Warenkatalog.warenkatalog where art.art_volumen < .09
-            foreach (var item in query )
+            //    foreach( Artikel item in wk)  braucht immer Enumerable  Daten 
+            /*      for(int i = 0; i < Warenkatalog.warenkatalog.Length; i++)
+                      {
+                          Console.WriteLine("{0}\t{1}\t{2}",
+                                  Warenkatalog.warenkatalog[i].art_id, 
+                                  Warenkatalog.warenkatalog[i].art_volumen, 
+                                  Warenkatalog.warenkatalog[i].art_einzelpreis);
+                      }
+
+                      // in SQL :    select * from Warenkatalog.warenkatalog  
+                      //                               Quelle  /  Table 
+                     var artikelliste = from artikel in Warenkatalog.warenkatalog select artikel;    // in LINQ Syntax
+
+
+
+                      foreach (var item  in artikelliste)
+                      {
+                          Console.WriteLine("{0}\t{1}\t{2}", 
+                              item.art_id,
+                              item.art_volumen,
+                              item.art_einzelpreis);
+                      }
+                      warten();
+            //      in SQL: select volumen  from Warenkatalog.warenkatalog
+            var artikelvolumen = from artikel in Warenkatalog.warenkatalog select artikel.art_volumen;    // in LINQ Syntax
+
+
+
+            foreach (var item in artikelvolumen)
             {
-                Console.WriteLine(" Treffer bei Artikel {0} mit Volumen {1} ", item.art_id, item.art_volumen);
-            }
-             Console.WriteLine(" {0} Treffer mit Volumen kleiner {1}",query.Count(),volKleiner); // .Count wird nicht arbeiten
+                Console.WriteLine("{0}",item  );
+            }*/
             warten();
+            // Select mit berechnetem Ergebnis aus einer Spalte 
+            var artikelImRegal = from artikel in Warenkatalog.warenkatalog select (int)(1.0/artikel.art_volumen);    // in LINQ Syntax
 
-            var mehrAls100Drin = from art in Warenkatalog.warenkatalog where 1.0/art.art_volumen > 100 select art;
-            foreach (var item in mehrAls100Drin)
+
+
+            foreach (var item in artikelImRegal)
             {
-                Console.WriteLine(" Treffer bei Artikel {0} mit Volumen {1} ", item.art_id, item.art_volumen);
+                Console.WriteLine("{0}",item);
             }
-            Console.WriteLine(" {0} Treffer für Artikel mit mehr als 100 Einheiten im Regal", mehrAls100Drin.Count()); // .Count wird nicht arbeiten
+            
+           warten();
 
-            warten();
-            var mehrAls100Wert = from art in Warenkatalog.warenkatalog where 1.0 / art.art_volumen*art.art_einzelpreis > 100 select art;
-            foreach (var item in mehrAls100Wert)
+            // Select mit berechnetem Ergebnis aus mehreren  Spalten 
+            var Regalwert = from artikel in Warenkatalog.warenkatalog select ((int)(1.0 / artikel.art_volumen))*artikel.art_einzelpreis;    // in LINQ Syntax
+
+
+
+            foreach (var item in Regalwert)
             {
-                Console.WriteLine(" Treffer bei Artikel {0} mit Anzahl {1} mal {2} = {3}", item.art_id, 1.0/item.art_volumen,item.art_einzelpreis, 1.0 / item.art_volumen*
-                    item.art_einzelpreis);
+                Console.WriteLine("{0}", item);
             }
-            Console.WriteLine(" {0} Treffer für Regale mit mehr als 100 Warenwert", mehrAls100Wert.Count()); // .Count wird nicht arbeiten
-
-            warten();
-            var wenigerAls100Wert = from art in Warenkatalog.warenkatalog where 1.0 / art.art_volumen * art.art_einzelpreis <= 100 select art;
-            foreach (var item in wenigerAls100Wert)
-            {
-                Console.WriteLine(" Treffer bei Artikel {0} mit Anzahl {1} mal {2}", item.art_id, 1.0 / item.art_volumen, item.art_einzelpreis);
-            }
-            Console.WriteLine(" {0} Treffer für Regale mit unter 100 Wert",wenigerAls100Wert.Count()); // .Count wird nicht arbeiten
 
             warten();
 
-            var volums = from art in Warenkatalog.warenkatalog select art.art_volumen;
-            double avg = volums.Average();
-            Console.WriteLine("Durchschnittliche Größe eines Artikeln {0,4:F2}", avg);
-            warten();
+
+
+
         }
     }
 }
