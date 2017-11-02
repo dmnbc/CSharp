@@ -78,6 +78,20 @@ namespace LinqKennenleren_ConsoleApplication
 
             warten();
 
+            // Select mit berechnetem Ergebnis aus mehreren  Spalten und einer Spalte, wie AS in SQL 
+            var idUndRegalwert = from artikel in Warenkatalog.warenkatalog select new { id=artikel.art_id,
+                                                                                        wert = ((int)(1.0 / artikel.art_volumen)) * artikel.art_einzelpreis
+                                                                                      };    // in LINQ Syntax
+
+
+
+            foreach (var item in idUndRegalwert)
+            {
+                Console.WriteLine("Regal {0} hat den Wert \t{1,4:F2}", item.id, item.wert);
+            }
+
+            warten();
+
 
 
 
