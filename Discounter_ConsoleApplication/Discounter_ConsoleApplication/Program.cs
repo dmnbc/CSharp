@@ -19,7 +19,21 @@ namespace Discounter_ConsoleApplication
 
             Verkauf v = new Verkauf("Im2.OG_Hohe Strasse",400.0, ref Warenkatalog.warenkatalog);
             v.anzeigen(v.regale);       // der ganze Raum 
-            Lager l = new Lager("gemeinsamer Keller in Ossendorf", 240.0, ref Warenkatalog.warenkatalog);
+
+            Console.WriteLine("Wert aller Regale bei der Eröffnung: {0} ", kasse.momentanWert(v));
+
+            //gesucht werden alle Regal-IDs, wo die Regale mehr Wert sind als 500 Euro
+            var mehrAls500Wert = from inhalt in v.regale where  inhalt.aktuellerWarenwert >500 select inhalt.regal_id;
+            foreach(var item in mehrAls500Wert)
+            {
+                Console.WriteLine("Das Regal {0} ist mehr als 500 Euro wert ",item);
+            }
+
+
+            if (Program.TESTMODE)
+            { Console.ReadLine(); }
+
+                Lager l = new Lager("gemeinsamer Keller in Ossendorf", 240.0, ref Warenkatalog.warenkatalog);
             // l.anzeigen(l.regale);
 
 
@@ -36,6 +50,12 @@ namespace Discounter_ConsoleApplication
             ReadLine();
             
             v.anzeigen(v.regale);
+
+            /*
+            Console.WriteLine("Wert aller Regale nach den Einkäufen: {0} ", kasse.momentanWert(v));
+            if (Program.TESTMODE)
+            { Console.ReadLine(); }
+            */
 
             /*
             Discounter_ConsoleApplication.Personal p1 = new Discounter_ConsoleApplication.Personal();

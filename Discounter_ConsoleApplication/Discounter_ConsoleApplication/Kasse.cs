@@ -16,7 +16,7 @@ namespace Discounter_ConsoleApplication
         private double kunde_umsatz;
         private double tages_umsatz;
         public bool offen;
- 
+
         // Methoden
         public Kasse(ref Warenkatalog wk)
         {
@@ -33,7 +33,7 @@ namespace Discounter_ConsoleApplication
             }
         }
 
-        public double kunde_abrechnen( WasWieOft_Liste ekw )
+        public double kunde_abrechnen(WasWieOft_Liste ekw)
         {   // für jeden Artikel im Einkaufswagen, muss der passende Preis
             // aus dem Warenkatalog beschafft werden
             if (Program.TESTMODE)
@@ -45,9 +45,10 @@ namespace Discounter_ConsoleApplication
                 Console.ForegroundColor = tmp;
             }
             kunde_umsatz = 0.0;
-            for (int i = 0; i < ekw.liste.Count;i++)     // durch den Einkaufswagen mit Schleife
+            for (int i = 0; i < ekw.liste.Count; i++)     // durch den Einkaufswagen mit Schleife
             {
-                if (Program.TESTMODE) {
+                if (Program.TESTMODE)
+                {
                     ConsoleColor tmp = Console.ForegroundColor;
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Artikel {0,3}, {1,3} mal a {2,4:F2} Euro",
@@ -64,11 +65,11 @@ namespace Discounter_ConsoleApplication
                 if (Program.STEPWISE) { Console.WriteLine("Weiter mit ┘"); Console.ReadLine(); }
                 Console.ForegroundColor = tmp;
             }
-            tages_umsatz += kunde_umsatz;  
+            tages_umsatz += kunde_umsatz;
             return kunde_umsatz;  // Kasse meldet dem Actor den Warensummenwert
         }
 
-        public WasWieOft_Liste  fehlbestand_feststellen(Discounter_ConsoleApplication.Raum v)
+        public WasWieOft_Liste fehlbestand_feststellen(Discounter_ConsoleApplication.Raum v)
         {
             // Über alle Regale wandern und jedes mit "nachfüllen = True"
             // in die Fehlliste eintragen 
@@ -81,10 +82,11 @@ namespace Discounter_ConsoleApplication
             }
 
             WasWieOft_Liste arbeitsliste = new WasWieOft_Liste("Fehlliste");
-           for(int i = 0; i < v.regale.Length; i++)
+            for (int i = 0; i < v.regale.Length; i++)
             {
-               if( v.regale[i].nachfuellen == true)
-                { if (Program.TESTMODE)
+                if (v.regale[i].nachfuellen == true)
+                {
+                    if (Program.TESTMODE)
                     {
                         ConsoleColor tmp = Console.ForegroundColor;
                         Console.ForegroundColor = ConsoleColor.Green;
@@ -96,7 +98,15 @@ namespace Discounter_ConsoleApplication
                     { artikel = i, anzahl = v.regale[i].kapazität - v.regale[i].aktuellerInhalt });
                 }
             }
-             return arbeitsliste;
+            return arbeitsliste;
+        }
+
+        public double momentanWert(Raum r)
+        {
+            double gesamtWert = 0;
+            var warenwert = from inhalt in r.regale select inhalt.aktuellerWarenwert;
+            gesamtWert = warenwert.Sum();
+            return gesamtWert;
         }
     }
 }
