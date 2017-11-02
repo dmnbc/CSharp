@@ -79,26 +79,34 @@ namespace Discounter_ConsoleApplication
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Kasse.fehlbestand_feststellen( in einem Raum) ");
                 Console.ForegroundColor = tmp;
-            }
 
-            WasWieOft_Liste arbeitsliste = new WasWieOft_Liste("Fehlliste");
-            for (int i = 0; i < v.regale.Length; i++)
-            {
-                if (v.regale[i].nachfuellen == true)
-                {
-                    if (Program.TESTMODE)
-                    {
-                        ConsoleColor tmp = Console.ForegroundColor;
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(" Regal {0} muss aufgefüllt werden ", i);
-                        Console.WriteLine(" Es fehlen zum Maximalbestand {0} Einheiten", v.regale[i].kapazität - v.regale[i].aktuellerInhalt);
-                        Console.ForegroundColor = tmp;
-                    }
-                    arbeitsliste.liste.Add(new WasWieOft_Liste.zeile()
-                    { artikel = i, anzahl = v.regale[i].kapazität - v.regale[i].aktuellerInhalt });
-                }
             }
-            return arbeitsliste;
+            WasWieOft_Liste arbeitsliste = new WasWieOft_Liste("Lagerist");
+
+            var fehlliste = from inhalt in v.regale
+                            where inhalt.nachfuellen
+                            select new { id = inhalt.regal_id,
+                                menge = inhalt.kapazität - inhalt.aktuellerInhalt };
+
+            foreach (var item in fehlliste)
+            { arbeitsliste.liste.Add(new WasWieOft_Liste.zeile(item.id, item.menge));
+
+
+
+
+
+
+                if (Program.TESTMODE)
+            {
+                ConsoleColor tmp = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("{0}\t{1}", item.id, item.menge);
+                    Console.ForegroundColor = tmp;
+
+
+            }
+          } 
+             return arbeitsliste;
         }
 
         public double momentanWert(Raum r)

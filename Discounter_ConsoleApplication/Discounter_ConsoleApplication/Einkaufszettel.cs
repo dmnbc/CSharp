@@ -19,7 +19,9 @@ namespace Discounter_ConsoleApplication
             {
                 this.i = i;
                 this.aktuellerInhalt = aktuellerInhalt;
-            }
+                artikel = i; ;
+                anzahl = aktuellerInhalt;
+        }
         }
 
         // generic Container List nutzen 
