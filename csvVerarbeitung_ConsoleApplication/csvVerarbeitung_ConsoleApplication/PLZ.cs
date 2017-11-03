@@ -8,33 +8,97 @@ namespace csvVerarbeitung_ConsoleApplication
 {
    
 
-        class PLZ
+     internal class PLZ
         {
         // Attribute   
 
-        struct Zeile {
-            string id;
-            int plz;
-            string ort;
-            int kreisnr;
-            string kreisname;
-            int landnr;
-            string bundesland;
-    public  Zeile (string i, int p, string o, int k, string kr, int l, string b)
+        public struct Zeile
+        {
+            private string _id;
+            private int _plz;
+            private string _ort;
+            private int _kreisnr;
+            private string _kreisname;
+            private int _landnr;
+            private string _bundesland;
+
+            public Zeile(string i, int p, string o, int k, string kr, int l, string b)
             {
-                id = i;
-                plz = p;
-                ort = o;
-                kreisnr = k;
-                kreisname = kr;
-                landnr = l;
-                bundesland = b;
+                _id = i;
+                _plz = p;
+                _ort = o;
+                _kreisnr = k;
+                _kreisname = kr;
+                _landnr = l;
+                _bundesland = b;
             }
-                
+            public string id
+            {
+                get
+                {
+                    return _id;
                 }
 
+            }
+
+            public int plz
+            {
+                get
+                {
+                    return _plz;
+                }
+
+            }
+
+            public string ort
+            {
+                get
+                {
+                    return _ort;
+                }
+
+            }
+
+            public int kreisnr
+            {
+                get
+                {
+                    return _kreisnr;
+                }
+
+            }
+
+            public string kreisname
+            {
+                get
+                {
+                    return _kreisname;
+                }
+
+            }
+
+            public int landnr
+            {
+                get
+                {
+                    return _landnr;
+                }
+
+            }
+
+            public string bundesland
+            {
+                get
+                {
+                    return _bundesland;
+                }
+
+            }
+
+        }             
+
        
-        List<Zeile>ortsangaben = new List<Zeile>();
+      public List<Zeile>ortsangaben = new List<Zeile>();
 
         // Konstruktor
         public PLZ()
@@ -239,7 +303,7 @@ namespace csvVerarbeitung_ConsoleApplication
 ));ortsangaben.Add(new Zeile("198",2708,"Kittlitz",14286,"Löbau-Zittau",14,"Sachsen"
 ));ortsangaben.Add(new Zeile("199",2708,"Großschweidnitz",14286,"Löbau-Zittau",14,"Sachsen"
 ));ortsangaben.Add(new Zeile("200",2708,"Lawalde",14286,"Löbau-Zittau",14,"Sachsen"
-/*));ortsangaben.Add(new Zeile("201",2708,"Rosenbach",14286,"Löbau-Zittau",14,"Sachsen"
+));ortsangaben.Add(new Zeile("201",2708,"Rosenbach",14286,"Löbau-Zittau",14,"Sachsen"
 ));ortsangaben.Add(new Zeile("202",2708,"Obercunnersdorf",14286,"Löbau-Zittau",14,"Sachsen"
 ));ortsangaben.Add(new Zeile("203",2708,"Löbau",14286,"Löbau-Zittau",14,"Sachsen"
 ));ortsangaben.Add(new Zeile("204",2708,"Schönbach",14286,"Löbau-Zittau",14,"Sachsen"
@@ -14988,7 +15052,7 @@ namespace csvVerarbeitung_ConsoleApplication
 ));ortsangaben.Add(new Zeile("14947",99988,"Heyerode",16064,"Unstrut-Hainich-Kreis",16,"Thüringen"
 ));ortsangaben.Add(new Zeile("14948",99991,"Großengottern",16064,"Unstrut-Hainich-Kreis",16,"Thüringen"
 ));ortsangaben.Add(new Zeile("14949",99991,"Altengottern",16064,"Unstrut-Hainich-Kreis",16,"Thüringen"
-));ortsangaben.Add(new Zeile("14950",99991,"Heroldishausen",16064,"Unstrut-Hainich-Kreis",16,"Thüringen" */
+));ortsangaben.Add(new Zeile("14950",99991,"Heroldishausen",16064,"Unstrut-Hainich-Kreis",16,"Thüringen" 
 ));ortsangaben.Add(new Zeile("14951",99994,"Schlotheim",16064,"Unstrut-Hainich-Kreis",16,"Thüringen"
 ));ortsangaben.Add(new Zeile("14952",99994,"Marolterode",16064,"Unstrut-Hainich-Kreis",16,"Thüringen"
 ));ortsangaben.Add(new Zeile("14953",99996,"Obermehler",16064,"Unstrut-Hainich-Kreis",16,"Thüringen"
