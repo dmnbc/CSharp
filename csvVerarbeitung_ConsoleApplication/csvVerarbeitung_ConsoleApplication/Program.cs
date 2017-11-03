@@ -20,8 +20,8 @@ namespace csvVerarbeitung_ConsoleApplication
         {
 
             // Abfragen ( LINQ ) an die csv-Datei richten 
-
-            var query = from csvZeile in File.ReadAllLines("plz.csv")
+/*
+            var queryDatenAusCSV = from csvZeile in File.ReadAllLines("plz.csv")
             let ortsdaten = csvZeile.Split(',')
                         select new
                         {
@@ -33,23 +33,27 @@ namespace csvVerarbeitung_ConsoleApplication
             landnr = ortsdaten[5],
             bundesland = ortsdaten[6]
         };
+*/
+            var alleOrte =  (from orte in
+                             from
+                             csvZeile in File.ReadAllLines("plz.csv")
+                             let ortsdaten = csvZeile.Split(',') where ortsdaten[2].Contains("haus") &&  ortsdaten[6] == "\"Bayern\""
+                             select new
+                             {
+                                 id  = ortsdaten[0],
+                                 plz = ortsdaten[1],
+                                 ort = ortsdaten[2],
+                                 kreisnr    = ortsdaten[3],
+                                 kreisname  = ortsdaten[4],
+                                 landnr     = ortsdaten[5],
+                                 bundesland = ortsdaten[6]
+                             } orderby orte.ort select orte.ort).Distinct();
 
-            foreach(var item in query)
+            foreach (var item in alleOrte)
             {
-                Console.WriteLine("Orte mit Postleitzahlen : {0} \t {1}",item.ort,item.plz );
+                Console.WriteLine(item);
             }
 
-            // alle vorhandenen Orte nennen,
-            
-        /*                   var alleOrte = (from orte in meineDaten.ortsangaben orderby orte.ort select orte.ort).Distinct();
-                        //     var alleOrte = (from orte in meineDaten.ortsangaben select orte.ort).Distinct().OrderBy( x => x);
-                        foreach ( var item in alleOrte)
-                        {
-                            Console.WriteLine(item);
-                        }
-
-    */
-            
             warten();
 
         }
