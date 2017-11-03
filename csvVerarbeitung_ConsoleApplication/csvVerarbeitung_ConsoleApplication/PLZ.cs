@@ -34,12 +34,12 @@ namespace csvVerarbeitung_ConsoleApplication
                 }
 
        
-        List<Zeile> ));ortsangaben = new List<Zeile>();
+        List<Zeile>ortsangaben = new List<Zeile>();
 
         // Konstruktor
         public PLZ()
         {
-      ortsangaben.Add(new Zeile("1", 1067, "Dresden", 14262, "Dresden, Stadt", 14, "Sachsen" ));
+   ortsangaben.Add(new Zeile("1", 1067, "Dresden", 14262, "Dresden, Stadt", 14, "Sachsen"
 ));ortsangaben.Add(new Zeile("2", 1069, "Dresden", 14262, "Dresden, Stadt", 14, "Sachsen"
 ));ortsangaben.Add(new Zeile("3", 1097, "Dresden", 14262, "Dresden, Stadt", 14, "Sachsen"
 ));ortsangaben.Add(new Zeile("4",1099,"Dresden",14262,"Dresden, Stadt",14,"Sachsen"
@@ -14994,7 +14994,7 @@ namespace csvVerarbeitung_ConsoleApplication
 ));ortsangaben.Add(new Zeile("14953",99996,"Obermehler",16064,"Unstrut-Hainich-Kreis",16,"Thüringen"
 ));ortsangaben.Add(new Zeile("14954",99996,"Menteroda",16064,"Unstrut-Hainich-Kreis",16,"Thüringen"
 ));ortsangaben.Add(new Zeile("14955",99998,"Körner",16064,"Unstrut-Hainich-Kreis",16,"Thüringen"
-));ortsangaben.Add(new Zeile("14956", 99998, "Weinbergen", 16064, "Unstrut-Hainich-Kreis", 16, "Thüringen";
+));ortsangaben.Add(new Zeile("14956", 99998, "Weinbergen", 16064, "Unstrut-Hainich-Kreis", 16, "Thüringen"));
 }
 
 
