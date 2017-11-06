@@ -65,24 +65,22 @@ namespace ListMethoden
         {
 
             LKW_Ladung HH_M = new LKW_Ladung();
-            HH_M.beladen(1.40);
-
-            HH_M.beladen(2.60);
-            HH_M.beladen(2.60);
-            HH_M.beladen(.75);
-            HH_M.beladen(.4);  // geht nicht mehr
-            HH_M.entladen();   // dann ist der.75 runter
-            HH_M.beladen(.4);
-            HH_M.Ladeliste();
+           
 
 
+            //   Aufgabe 
+            // eingaben von Frachtstücken durch den Anwender
+
+            // wenn Gesamtgewicht überschritten, soll er eine Angabe machen können,
+
+            // entweder, welches Stück wieder abgelden wird.
+
+            // oder  er nennt ein Gewicht, dass abgeladen werden soll.
+            // entfernt werden soll dann ein Frachtstücke, dass mindestens x wiegt.
 
 
 
 
-            /*   HH_M.beladen(3.0);
-               HH_M.beladen(2.0);
-               HH_M.beladen(1.0); */
 
 
             Console.ReadLine();
