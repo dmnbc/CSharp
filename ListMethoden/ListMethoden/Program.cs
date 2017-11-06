@@ -63,9 +63,14 @@ namespace ListMethoden
                         Console.WriteLine("Es wird ein Frachstück mit mehr als {0} Tonnen abgeladen", eingabeGewicht);
                         int foundAT = -1;
                         int index = 0;
+                        bool someThingFound = false;
                         foreach (double gewicht in frachtliste)
                         { if (gewicht >= eingabeGewicht)
-                                { foundAT = index; }
+                            {
+                                foundAT = index;
+                                someThingFound = true;
+                            }
+                            if (someThingFound) { break; }
                             index++;
                         }
                         frachtliste.RemoveAt(foundAT);
