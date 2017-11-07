@@ -20,6 +20,7 @@ namespace ABCAnalyseConsoleApplication
             Console.WriteLine("Anzahl der Nennungen: {0} ", nennungen.Count);
 
             var query = (from anzahl in nennungen
+
                          group anzahl by anzahl into anzahl1
 
                          orderby (anzahl1.Count()) descending
