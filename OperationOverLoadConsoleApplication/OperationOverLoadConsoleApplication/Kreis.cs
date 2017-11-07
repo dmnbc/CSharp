@@ -25,5 +25,13 @@ namespace OperationOverLoadConsoleApplication
             }
         }
 
+        public static Kreis operator +( Kreis k1, Kreis k2)
+        {
+            double gesamtflaeche = k1.flaeche + k2.flaeche;
+            double r = Math.Sqrt (gesamtflaeche / Math.PI);
+
+            return new Kreis(r); 
+        }
+
     }
 }

@@ -35,7 +35,18 @@ namespace OperationOverLoadConsoleApplication
 
             Console.WriteLine("{0} mal {1}", neuesRechteck.breite, neuesRechteck.laenge);
 
+            Console.ReadLine();
 
+            // auf ein existierendes Rechteck ein weiteres hinzuaddieren
+            blumenbeet += rasen;
+            Console.WriteLine("Der Zaun ums neue Blumenbeet ist {0} Meter lang", blumenbeet.umfang);
+           
+            Console.WriteLine("Es müssen hier jetzt {0,4:F2} Qudratmeter begossen werden ", blumenbeet.flaeche);
+            Console.ReadLine();
+
+            Kreis _1meterTeich = new Kreis(1);
+            Kreis neuTeich = _1meterTeich + _1meterTeich;
+            Console.WriteLine(" Neuteich  Umfang: {0,3:F2}, Fläche: {1,3:F2}", neuTeich.umfang, neuTeich.flaeche);
 
 
 
