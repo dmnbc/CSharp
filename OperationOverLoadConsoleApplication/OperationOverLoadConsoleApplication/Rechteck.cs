@@ -23,16 +23,30 @@ namespace OperationOverLoadConsoleApplication
             }
         }
 
-
-
-        // gibt den Umfang eine Rechtecks zurück
-        public double umfang
+        public double breite
         {
             get
             {
-                return _umfang;
+                return _breite;
             }
-            
+
+            set
+            {
+                _breite = value;
+            }
+        }
+
+        public double laenge
+        {
+            get
+            {
+                return _laenge;
+            }
+
+            set
+            {
+                _laenge = value;
+            }
         }
 
         public Rechteck(double b, double l)
@@ -40,8 +54,16 @@ namespace OperationOverLoadConsoleApplication
             _breite = b;
             _laenge = l;
             _umfang = 2 * (_breite + _laenge);  // hier steht nicht  value !!!!!!
-        } 
+            _flaeche = _breite * _laenge;
+        }
+        // typ der entsteht      welches Rechenzeichen   Beteiligten 
+        public static Rechteck operator +(Rechteck r1, Rechteck r2)
+        {
 
-
+            Rechteck tmp = new Rechteck(0, 0);
+            tmp._flaeche = r1.flaeche + r2.flaeche;
+            tmp._umfang = r1.umfang + r2.umfang;
+            return tmp;
+        }
     }
 }
