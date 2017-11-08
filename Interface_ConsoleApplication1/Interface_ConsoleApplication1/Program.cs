@@ -21,7 +21,7 @@ namespace Interface_ConsoleApplication1
             Console.ReadLine();
             AbgeleitetVonAndereAbleitung aVonaA = new AbgeleitetVonAndereAbleitung();
             
-
+           List<int> intList = new List<int>
             Console.ReadLine();
         }
     }

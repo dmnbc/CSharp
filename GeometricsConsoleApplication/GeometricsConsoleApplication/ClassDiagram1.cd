@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GeometricsConsoleApplication.Figur">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIgAAACIAAAAAAAAAAASAAAAAgAAAAQAAAAAABAAAAA=</HashCode>
+      <FileName>Figur.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GeometricsConsoleApplication.Ellipse">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ellipse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeometricsConsoleApplication.Kreis">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Kreis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeometricsConsoleApplication.Dreieck">
+    <Position X="2.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dreieck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeometricsConsoleApplication.Viereck">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Viereck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeometricsConsoleApplication.Rechteck">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rechteck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeometricsConsoleApplication.Trapez">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Trapez.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeometricsConsoleApplication.Quadrat">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Quadrat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GeometricsConsoleApplication.IVerschiebbar">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>IVerschiebbar.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GeometricsConsoleApplication.IAnzeige">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>IAnzeige.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
