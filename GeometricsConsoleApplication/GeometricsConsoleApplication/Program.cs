@@ -23,8 +23,11 @@ namespace GeometricsConsoleApplication
             Quadrat qua = new Quadrat(12, 5);
             qua.Anzeige();
             Console.ReadLine();
+            tra = new Trapez(tra.Verschieben(-11,-3).Key, tra.Verschieben(-11,-3).Value);
+            tra.Anzeige();
             qua = new Quadrat(qua.Verschieben(3, 10).Key, qua.Verschieben(3, 10).Value );
             qua.Anzeige();
+            
             Console.ReadLine();
 
         }
