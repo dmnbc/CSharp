@@ -12,27 +12,33 @@ namespace tryCatchConsoleApplication
         {
             int i;
             Console.Write("Bitte geben Sie einen Monat ein :");
-            int.TryParse(Console.ReadLine(), out i);
-            try
+            if (int.TryParse(Console.ReadLine(), out i))
             {
+                try
+                {
 
-                Console.WriteLine(k.monat[i]);  // keine meldung vom Compiler
+                    Console.WriteLine(k.monat[i]);  // keine meldung vom Compiler
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Es ist etwas schief gegangen");
+                    //     Console.WriteLine(e.ToString());
+                    //     Console.WriteLine(e.Data);
+                    Console.WriteLine(e.GetType());
+                    //     Console.WriteLine(e.GetType().BaseType);
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Der maximal Index darf {0} nicht übersteigen ", k.monat.Count() - 1);
+                    Console.WriteLine(e.Source);
+                    Console.WriteLine(e.TargetSite);
+
+                }
+
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine("Es ist etwas schief gegangen");
-                //     Console.WriteLine(e.ToString());
-                //     Console.WriteLine(e.Data);
-                Console.WriteLine(e.GetType());
-                //     Console.WriteLine(e.GetType().BaseType);
-                Console.WriteLine(e.Message);
-                Console.WriteLine("Der maximal Index darf {0} nicht übersteigen ", k.monat.Count() - 1);
-                Console.WriteLine(e.Source);
-                Console.WriteLine(e.TargetSite);
-
+                Console.WriteLine("leider habe Sie keine Zahl eingegeben");
+                //  ....
             }
-
-
         }
 
         public class Kalender
