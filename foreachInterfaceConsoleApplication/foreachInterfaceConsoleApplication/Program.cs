@@ -47,7 +47,7 @@ namespace foreachInterfaceConsoleApplication
 
             foreach(var element in meineAs)
             {
-                foreach( var zahl in element.zahlen)
+                foreach( var zahl in element)
                 {
                     Console.WriteLine(zahl);
                 }
