@@ -27,7 +27,7 @@ namespace erstes_WpfApplication
             Button clickedButton = (Button)sender;
             if (button_switch)
             {
-                clickedButton.Content = "auf Verkaufsraum umschalten";
+                clickedButton.Content = "auf Verkaufsraumansicht umschalten";
                 textBlock.Text = "Das Lager";
                 button_switch = false;
                 Background = new SolidColorBrush(Colors.Red);
