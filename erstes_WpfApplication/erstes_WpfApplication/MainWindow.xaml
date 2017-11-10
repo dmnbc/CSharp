@@ -9,6 +9,15 @@
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,10,10" TextWrapping="Wrap" Text="Der Verkaufsraum" VerticalAlignment="Top"/>
         <Button x:Name="button" Content="auf Lageransicht umschalten" HorizontalAlignment="Left" Margin="700,11,10,10" VerticalAlignment="Top" Width="auto" />
-
+        <Button x:Name="button_to_quit" Content="Anwendung beenden" HorizontalAlignment="Left" Margin="700,700,10,10" VerticalAlignment="Top" Width="auto" />
+        <Popup Name="EndPopUp"  IsOpen="false" PopupAnimation="Slide" HorizontalOffset="100px" VerticalOffset="100px" AllowsTransparency="False" Width="auto">
+            <TextBlock Name="Frage" Background="SlateBlue" 
+                       Text="Wollen Sie &#10;  wirklich schon gehen ? &#10;" 
+                       Margin="15,15,15,15" Width="auto" Height="auto" >  
+                 <Button x:Name="button_yes" Content="ja"  HorizontalAlignment="Left"  Margin="15,15,15,15" Width="auto" Height="auto"/>
+                 <Button x:Name="button_no" Content="nein" HorizontalAlignment="Right" Margin="15,15,15,15" Width="auto" Height="auto" />
+            </TextBlock>
+           
+        </Popup>
     </Grid>
 </Window>

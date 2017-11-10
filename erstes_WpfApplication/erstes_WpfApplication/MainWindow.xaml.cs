@@ -19,7 +19,15 @@ namespace erstes_WpfApplication
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {   public void  end_Click(object sender, RoutedEventArgs e)
+        {  //
+            
+            Background = new SolidColorBrush(Colors.Black);
+            EndPopUp.IsOpen = true;
+            
+            //  SystemCommands.CloseWindow(this);
+        }
+    
         public static bool button_switch;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -27,20 +35,21 @@ namespace erstes_WpfApplication
             Button clickedButton = (Button)sender;
             if (button_switch)
             {
+                
                 clickedButton.Content = "auf Verkaufsraumansicht umschalten";
                 textBlock.Text = "Das Lager";
-                button_switch = false;
-                Background = new SolidColorBrush(Colors.Red);
+                Background = new SolidColorBrush(Colors.Red); 
 
             }
             else
             {
                 clickedButton.Content = "auf Lageransicht umschalten";
                 textBlock.Text = "Der Verkaufsraum";
-                button_switch = true;
                 Background = new SolidColorBrush(Colors.Aqua);
             }
-
+            button_switch ^= true;   // an, aus, an, aus , an, aus 
+                                     // statt button_switch = !button_switch
+         //    clickedButton.Visibility = Visibility.Hidden; 
         }
 
         public MainWindow()
@@ -48,8 +57,13 @@ namespace erstes_WpfApplication
             InitializeComponent();
             button_switch = true;
             button.Click += Button_Click;
-       
-
+            button_to_quit.Click += end_Click;
+            button_yes.Click += new RoutedEventHandler
+                                (delegate (Object sender, RoutedEventArgs e)
+           { SystemCommands.CloseWindow(this); });   // lambda
+            button_no.Click += new RoutedEventHandler
+                               (delegate (Object sender, RoutedEventArgs e)
+           { EndPopUp.IsOpen = false ; });          // lambda 
         }
 
        
