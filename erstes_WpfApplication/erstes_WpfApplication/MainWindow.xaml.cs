@@ -60,7 +60,8 @@ namespace erstes_WpfApplication
             button_to_quit.Click += end_Click;
             button_yes.Click += new RoutedEventHandler
                                 (delegate (Object sender, RoutedEventArgs e)
-           { SystemCommands.CloseWindow(this); });   // lambda
+           { SystemCommands.CloseWindow(this); });   // lambda, 
+                                                     // erscheint nicht in Klassendiagrammen
             button_no.Click += new RoutedEventHandler
                                (delegate (Object sender, RoutedEventArgs e)
            { EndPopUp.IsOpen = false ; });          // lambda 

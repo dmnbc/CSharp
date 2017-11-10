@@ -13,6 +13,7 @@ namespace erstes_WpfApplication
     /// </summary>
     public partial class App : Application
     {
+
         
     }
 }
