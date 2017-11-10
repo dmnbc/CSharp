@@ -1,0 +1,14 @@
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\bin\Debug\erstes_WpfApplication.exe.config
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\bin\Debug\erstes_WpfApplication.exe
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\bin\Debug\erstes_WpfApplication.pdb
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\erstes_WpfApplication.csprojResolveAssemblyReference.cache
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\MainWindow.g.cs
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\App.g.cs
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\erstes_WpfApplication_MarkupCompile.cache
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\erstes_WpfApplication_MarkupCompile.lref
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\MainWindow.baml
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\erstes_WpfApplication.g.resources
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\erstes_WpfApplication.Properties.Resources.resources
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\erstes_WpfApplication.csproj.GenerateResource.Cache
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\erstes_WpfApplication.exe
+C:\D\_freiberuflich\github\csharp\beispieldateien\erstes_WpfApplication\erstes_WpfApplication\obj\Debug\erstes_WpfApplication.pdb
