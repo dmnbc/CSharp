@@ -14,13 +14,37 @@ namespace DelegateConsoleApplication
         {
             ConsoleHandler faerbe;
 
-            faerbe = new ConsoleHandler(ScreenManipulation.schriftfarbe);
+            faerbe =  new ConsoleHandler(ScreenManipulation.schriftfarbe);
+            faerbe += new ConsoleHandler(ScreenManipulation.hintergrundfarbe);
 
             faerbe(ConsoleColor.Green);
-            Console.Write("abcde");
+            Console.WriteLine("abcde");
+            faerbe(ConsoleColor.Black);
+            Console.WriteLine("abcde");
+
+            for(int i = 0; i <16; i++)
+            { faerbe((ConsoleColor)i);
+                Console.WriteLine("abcde");
+            }
 
             Console.ReadLine();
-           
+
+            /*  vom Arbeitsvorbereiter definierte Liste der Jobs */
+            List<ConsoleHandler> myJobs = new List<ConsoleHandler>();
+            myJobs.Add(ScreenManipulation.schriftfarbe);
+            myJobs.Add(ScreenManipulation.hintergrundfarbe);
+            myJobs.Add(ScreenManipulation.drawLine);
+
+            /* Abarbeiten einer Liste mit unbekantem Inhalt */
+            ConsoleHandler delJobs = new ConsoleHandler(ScreenManipulation.start);
+            foreach(ConsoleHandler task in myJobs)
+            { delJobs += task; }   // alle Jobs der Liste annehmen
+
+            delJobs(ConsoleColor.White);
+            Console.WriteLine("xyz");
+
+
+            Console.ReadLine();
         }
     }
 
@@ -29,6 +53,20 @@ namespace DelegateConsoleApplication
         public static void schriftfarbe(ConsoleColor f)
         {
             Console.ForegroundColor = f;
+        }
+
+        public static void hintergrundfarbe(ConsoleColor f)
+        {
+            ConsoleColor komp = (ConsoleColor)(15 - f);
+            Console.BackgroundColor =komp;
+        }
+        public static void start(ConsoleColor f)
+        {
+            ;
+        }
+        public static void drawLine(ConsoleColor f)
+        {
+           Console.WriteLine("_______________________________");
         }
     }
 }
