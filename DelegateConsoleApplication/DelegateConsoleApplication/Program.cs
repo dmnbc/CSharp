@@ -28,12 +28,13 @@ namespace DelegateConsoleApplication
             }
 
             Console.ReadLine();
-
+            int i;
             /*  vom Arbeitsvorbereiter definierte Liste der Jobs */
             List<ConsoleHandler> myJobs = new List<ConsoleHandler>();
             myJobs.Add(ScreenManipulation.schriftfarbe);
             myJobs.Add(ScreenManipulation.hintergrundfarbe);
             myJobs.Add(ScreenManipulation.drawLine);
+           
 
             /* Abarbeiten einer Liste mit unbekantem Inhalt */
             ConsoleHandler delJobs = new ConsoleHandler(ScreenManipulation.start);
