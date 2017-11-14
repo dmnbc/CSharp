@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace DelegateFactoryConsoleApplication
 {
+    /* class Button
+    {
+      public static click(Button btn)
+        {
+                                     Aufruf durch  
+         }
+    } */
+
     class StepsToBuild
     {
         public static void  rohKarrosse_bereitstellen(string auftragsnummer)
