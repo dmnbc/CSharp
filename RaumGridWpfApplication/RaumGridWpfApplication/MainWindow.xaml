@@ -1,0 +1,25 @@
+﻿<Window x:Class="RaumGridWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RaumGridWpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="600">
+    <Grid Name="verkauf">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Calendar Grid.Row="0" Grid.Column="0" Background="Cornsilk" MouseEnter="heute" MouseLeave="Calendar_MouseLeave"/>
+        <Button Name="btn_ok" Grid.Row="1" Grid.Column="1" Background="Violet" Content="OK" Click="Button_Click"/>
+        <TextBlock Name="text_blox" Grid.Row="2" Grid.ColumnSpan="2" Background="Gold" FontSize="20"> Mal was langes schreiben, über die Grenzen der Zellen hinweg.</TextBlock>
+        <DataGrid x:Name="dataGrid" Grid.Column="1" HorizontalAlignment="Left" Margin="121.2,84,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

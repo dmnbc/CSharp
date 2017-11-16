@@ -1,0 +1,28 @@
+﻿<Window x:Class="DependencyWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DependencyWpfApplication"
+        mc:Ignorable="d"
+        Title="Mein erstes Fenster" Height="400" Width="1111">
+    <Grid Margin="900,250,20,2">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>            
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Content="der erste" Margin="20" ToolTip="heh click mich" />
+        <Button Grid.Row="1" Content="der zweite" Margin="20" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Content="der erste im UnterGrid" />
+
+        </Grid>
+    </Grid>
+   
+</Window>

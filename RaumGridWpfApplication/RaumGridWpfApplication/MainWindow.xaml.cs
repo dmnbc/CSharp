@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace mainWindows_wpf
+namespace RaumGridWpfApplication
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
@@ -25,19 +25,24 @@ namespace mainWindows_wpf
             InitializeComponent();
         }
 
-        void btn_AnfrageClicked(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(string.Format("Es ist {0:HH:mm:ss} Uhr", DateTime.Now));
+            MessageBox.Show("hast mich");
         }
 
-        void testmethode(object sender, RoutedEventArgs e)
+        private void heute(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("Hallo");
+            btn_ok.Background = Brushes.Crimson;
+            MessageBox.Show("Heute ist der " + DateTime.Now.ToShortDateString());
         }
 
-        private void btn_Anfrage_Click(object sender, RoutedEventArgs e)
+       
+
+        private void Calendar_MouseLeave(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("nochmal Hallo ");
+            text_blox.Background = Brushes.Chocolate;
+                MessageBox.Show("wieder draussen");
+            
         }
     }
 }

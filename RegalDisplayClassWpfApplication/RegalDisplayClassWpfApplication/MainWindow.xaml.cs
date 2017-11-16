@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace mainWindows_wpf
+namespace RegalDisplayClassWpfApplication
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
@@ -23,21 +23,9 @@ namespace mainWindows_wpf
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        void btn_AnfrageClicked(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(string.Format("Es ist {0:HH:mm:ss} Uhr", DateTime.Now));
-        }
-
-        void testmethode(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Hallo");
-        }
-
-        private void btn_Anfrage_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("nochmal Hallo ");
+            RegalDisplay.Display.margin_from_top = 2;
+            RegalDisplay erstesRegal = new RegalDisplay();
+            erstesRegal.regaldisplay(anzeigeFeld,erstesRegal);
         }
     }
 }

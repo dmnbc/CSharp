@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6284A334-BAB2-4E27-A94A-9F3EBD33F8F0}</ProjectGuid>
+    <ProjectGuid>{A452898C-3E76-4108-A3B5-821BAE3CE852}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>mainWindows_wpf</RootNamespace>
-    <AssemblyName>mainWindows_wpf</AssemblyName>
+    <RootNamespace>RaumGridWpfApplication</RootNamespace>
+    <AssemblyName>RaumGridWpfApplication</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

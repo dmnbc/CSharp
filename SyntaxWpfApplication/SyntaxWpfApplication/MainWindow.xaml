@@ -1,0 +1,27 @@
+﻿<Window x:Class="SyntaxWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SyntaxWpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <UniformGrid Name="anzeigeFeld">
+
+        <!--   beispiele für schreibweisen -->
+
+        <Button Name="btn_1"   />
+        <Button Name="btn_2"   />
+        <Button Name="btn_3"   />
+        <Button Name="btn_4"   />
+        <Label Content="label" />
+        <Button Name="btn_5" Content="Nummer 5 will auch Platz haben"  />
+        <Button Name="btn_6">k6</Button>
+        <Label Content="label" Name="anzahlAnzeige"/>
+        <Button Name="btn_7">k7</Button>
+        <Button Name="btn_8">k8</Button>
+        <Button Name="btn_9">k9</Button>
+        <Button Name="btn_10">k10</Button>
+      
+    </UniformGrid>
+</Window>

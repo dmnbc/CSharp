@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace mainWindows_wpf
+namespace WpfApplication
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
@@ -23,21 +23,6 @@ namespace mainWindows_wpf
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        void btn_AnfrageClicked(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(string.Format("Es ist {0:HH:mm:ss} Uhr", DateTime.Now));
-        }
-
-        void testmethode(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Hallo");
-        }
-
-        private void btn_Anfrage_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("nochmal Hallo ");
         }
     }
 }

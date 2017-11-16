@@ -11,8 +11,9 @@
             Margin="5" 
             Name="btn_Anfrage" 
             Content="Wie spät ist es?"             
-            Width="250" Height="150"
-            Click = "btn_AnfrageClicked"  
+            Width="250" Height="150" Click="btn_Anfrage_Click"
+         
+            
             />
 
     </Grid>

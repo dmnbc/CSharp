@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace mainWindows_wpf
+namespace SliderWpfApplication
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
@@ -25,19 +25,13 @@ namespace mainWindows_wpf
             InitializeComponent();
         }
 
-        void btn_AnfrageClicked(object sender, RoutedEventArgs e)
+        private void bewegt(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            MessageBox.Show(string.Format("Es ist {0:HH:mm:ss} Uhr", DateTime.Now));
-        }
-
-        void testmethode(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Hallo");
-        }
-
-        private void btn_Anfrage_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("nochmal Hallo ");
+            Anzeige.Text = volumen.Value.ToString();
+            Fenster.Height = 350 - volumen.Value;
+            Color myrgb = new Color();
+            myrgb = Color.FromRgb(255, 225, (byte)volumen.Value);
+            Fenster.Background = new SolidColorBrush(myrgb);
         }
     }
 }
