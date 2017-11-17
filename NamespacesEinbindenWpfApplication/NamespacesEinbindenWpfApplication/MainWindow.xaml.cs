@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RegalDisplayClassWpfApplication
+namespace NamespacesEinbindenWpfApplication
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
@@ -23,15 +23,6 @@ namespace RegalDisplayClassWpfApplication
         public MainWindow()
         {
             InitializeComponent();
-            Regal.Display.margin_from_top = 2;
-            for (int i = 0; i < 64; i++)
-            { Regal erstesRegal = new Regal();
-
-                anzeigeFeld.Children.Add(erstesRegal.regaldisplay(erstesRegal)); }
-
-            /*
-            RegalDisplay zweitesRegal = new RegalDisplay();
-            zweitesRegal.regaldisplay(anzeigeFeld, zweitesRegal); */
         }
     }
 }

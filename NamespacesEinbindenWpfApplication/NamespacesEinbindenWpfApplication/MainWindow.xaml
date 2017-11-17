@@ -1,12 +1,13 @@
-﻿<Window x:Class="RegalDisplayClassWpfApplication.MainWindow"
+﻿<Window x:Class="NamespacesEinbindenWpfApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RegalDisplayClassWpfApplication"
+        xmlns:local="clr-namespace:NamespacesEinbindenWpfApplication"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <UniformGrid Name="anzeigeFeld">
-        
-    </UniformGrid>
+    <Grid>
+        <sys:String>text</sys:String>
+    </Grid>
 </Window>

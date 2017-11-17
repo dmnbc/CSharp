@@ -15,8 +15,10 @@ using System.Windows.Shapes;
 
 namespace RegalDisplayClassWpfApplication
 {
-    class RegalDisplay
+    class Regal
     {
+        /* attribute */ 
+
         public class Display
         {
             public static int margin_from_top; 
@@ -24,10 +26,9 @@ namespace RegalDisplayClassWpfApplication
             public Label inhalt = new Label();
             public Display()
             {
-                num.Content = 1;
-                num.Margin = new Thickness(5, margin_from_top, 5, 5);
+                num.Content = 1;               
                 inhalt.Content = 42;
-                inhalt.Margin = new Thickness(5, margin_from_top+=20, 5, 5);
+              
             }
 
             
@@ -36,14 +37,17 @@ namespace RegalDisplayClassWpfApplication
 
         public Display d;
 
-         public RegalDisplay()
+         public Regal()
         {
             d = new Display();
         }
-        public void regaldisplay(Grid wo, RegalDisplay r)
+        public Label regaldisplay (Regal r)
         {
-            wo.Children.Add(r.d.num);
-            wo.Children.Add(r.d.inhalt);
+
+            Label l = new Label();
+            l.Content = r.d.inhalt;
+           
+            return l;//
         }
     }
 }

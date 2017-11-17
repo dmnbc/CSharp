@@ -28,7 +28,10 @@ namespace MoreClassesWpfApplication
                 Label label = new Label();
                 Raster.Children.Add(label);  // kann nur call by reference sein 
                 label.Name = "label" + i;
-                label.Content = label.Name; 
+             //   label.Content = label.Name;
+                Binding binding = new Binding("Name");
+                binding.Source = label; //binden an das objekt, wo ich abhole
+                label.SetBinding(Label.ContentProperty, binding);
                
                 label.MouseDown += label_clicked;
 
