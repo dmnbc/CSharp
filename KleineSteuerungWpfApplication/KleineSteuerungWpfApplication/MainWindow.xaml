@@ -1,0 +1,22 @@
+﻿<Window x:Class="KleineSteuerungWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KleineSteuerungWpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+
+    <UniformGrid Margin="597,22,25.6,385.4">
+        <Label></Label>
+        <Button Foreground="Black"  Content="Nord" Click="richtung_eintragen"></Button>
+        <Label></Label>
+        <Button Click="richtung_eintragen">West</Button>
+        <TextBlock Name="anzeige" FontSize="10" TextWrapping="WrapWithOverflow" >Richtungen</TextBlock>
+        <Button Click="richtung_eintragen">Ost</Button>
+        <Label></Label>
+        <Button Click="richtung_eintragen">Süd</Button>
+        <Label></Label>
+
+    </UniformGrid>
+</Window>
