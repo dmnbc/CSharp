@@ -35,12 +35,21 @@ namespace RaumdarstellungWpfApplication
                 StackPanel gang = new StackPanel();
                 gang.Name = "Gang" + i;
                 gang.Orientation=System.Windows.Controls.Orientation.Horizontal;
+                StackPanel gangVor = new StackPanel();
+                gangVor.Orientation = System.Windows.Controls.Orientation.Vertical;
+                Label leerVorO = new Label { Content = " " }; leerVorO.Background = Brushes.Red;
+                Label leerVorM = new Label { Content = " " }; leerVorM.Background = Brushes.Red;
+                Label leerVorU = new Label { Content = " " }; leerVorU.Background = Brushes.Red;
+                gangVor.Children.Add(leerVorO);
+                gangVor.Children.Add(leerVorM);
+                gangVor.Children.Add(leerVorU);
+                gang.Children.Add(gangVor);
                 for (int j = 0; j < 40; j++)
                 {
                     StackPanel rgr = new StackPanel();
                     rgr.Orientation = System.Windows.Controls.Orientation.Vertical;
                     Label regal_l = new Label { Content = "R"+ ((i*40+j)*2).ToString("D3") };
-                    Label leer    = new Label { Content = " " }; leer.Background = Brushes.AntiqueWhite;
+                    Label leer    = new Label { Content = " " }; leer.Background = Brushes.Red;
                     Label regal_r = new Label { Content = "R"+(((i * 40 + j) * 2)+1).ToString("D3") };
                     rgr.Children.Add(regal_l);
                     rgr.Children.Add(leer);
@@ -48,7 +57,15 @@ namespace RaumdarstellungWpfApplication
 
                     gang.Children.Add(rgr);
                 }
-                
+                StackPanel gangNach = new StackPanel();
+                gangNach.Orientation = System.Windows.Controls.Orientation.Vertical;
+                Label leerNachO = new Label { Content = " " }; leerNachO.Background = Brushes.Red;
+                Label leerNachM = new Label { Content = " " }; leerNachM.Background = Brushes.Red;
+                Label leerNachU = new Label { Content = " " }; leerNachU.Background = Brushes.Red;
+                gangNach.Children.Add(leerNachO);
+                gangNach.Children.Add(leerNachM);
+                gangNach.Children.Add(leerNachU);
+                gang.Children.Add(gangNach);
                 Verkauf.Children.Add(gang);
             }
             
