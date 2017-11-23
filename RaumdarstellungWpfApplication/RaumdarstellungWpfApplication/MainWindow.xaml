@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:RaumdarstellungWpfApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="820">
-    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+    <DockPanel Margin="5,15,0,0">
+        <Label DockPanel.Dock="Top" Width="100" Background="CadetBlue" >HeadLine</Label>
+        <Label DockPanel.Dock="Left" Width="30" Background="CadetBlue" 
+               MouseEnter="mover" 
+               MouseLeave="moout" Name="LeftDock">Left</Label>
+        <Label DockPanel.Dock="Right" Width="auto" Background="CadetBlue">Right</Label>
+        <Label DockPanel.Dock="Bottom" Width="100" Background="CadetBlue">BottomInfo</Label>
+        <Button DockPanel.Dock="Bottom" >Ende</Button>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto"
                  VerticalScrollBarVisibility="Auto">
         <StackPanel Name="Verkauf"  Orientation="Vertical" Margin="5,15,0,0" >
         <StackPanel.Resources>
@@ -18,4 +26,6 @@
         </StackPanel.Resources>    
     </StackPanel>
        </ScrollViewer>
+        
+    </DockPanel>
 </Window>

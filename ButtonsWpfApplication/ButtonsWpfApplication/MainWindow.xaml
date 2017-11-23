@@ -1,0 +1,16 @@
+﻿<Window x:Class="ButtonsWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ButtonsWpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <UniformGrid>
+        <Button>simple Button</Button>
+        <ToggleButton>hin und her</ToggleButton>
+        <RepeatButton Click="up">Immer höher</RepeatButton>
+        <RepeatButton Click="down">Wieder runter</RepeatButton>
+        <Label Content="1" Name="l" />
+    </UniformGrid>
+</Window>

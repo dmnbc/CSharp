@@ -20,8 +20,19 @@ namespace RaumdarstellungWpfApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        public void mover(object sender, RoutedEventArgs e)
+        {
+            LeftDock.Width = 300;
+        }
+        public void moout(object sender, RoutedEventArgs e)
+        {
+            LeftDock.Width = 30;
+        }
+
         public MainWindow()
         {
+      
+
             InitializeComponent();
             Label headline = new Label
             {
