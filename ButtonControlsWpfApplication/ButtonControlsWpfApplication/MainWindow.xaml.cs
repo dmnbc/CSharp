@@ -20,8 +20,10 @@ namespace ButtonControlsWpfApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string Bildpfad;
         public MainWindow()
         {
+            Bildpfad = "D:\\D\\_freiberuflich\\github\\csharp\\beispieldateien\\ButtonControlsWpfApplication\\ButtonControlsWpfApplication\\bin\\Debug\\";
             InitializeComponent();       
 
         }
@@ -41,11 +43,31 @@ namespace ButtonControlsWpfApplication
         {
             aktiv_toggle.Content = "aktiv";
             inaktiv_toggle.Content = "";
+            Image content = new Image();
+            content.Source = new BitmapImage(new Uri(Bildpfad+"check.png"));
+            toggle_img.Content = content;
+
+          //   toggle_img.Background = Properties.Resources.
+
         }
         private void toggle_unchecked(object sender, RoutedEventArgs e)
         {
             inaktiv_toggle.Content = "nicht aktiv";
             aktiv_toggle.Content = "";
+            Image content = new Image();
+            content.Source = new BitmapImage(new Uri(Bildpfad+"uncheck.png"));
+            toggle_img.Content = content;
+        }
+
+        private void repeat_clicked(object sender, RoutedEventArgs e)
+        {
+            repeat_count.Content = Convert.ToInt32(repeat_count.Content.ToString())+1;
+          
+        }
+        private void repeat_clickedDown(object sender, RoutedEventArgs e)
+        {
+            repeat_count.Content = Convert.ToInt32(repeat_count.Content.ToString()) - 1;
+
         }
     }
 }

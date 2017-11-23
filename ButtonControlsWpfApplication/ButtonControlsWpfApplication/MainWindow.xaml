@@ -17,6 +17,7 @@
             <RowDefinition Name="first_Row"/>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Button 
             ClickMode="Release"
@@ -30,6 +31,7 @@
             Width="100" 
             Height="20">Simple</Button>
         <ToggleButton 
+            Name="toggle_img"
             Grid.Column="0" 
             Grid.Row="1" 
             Click="toggle_geklickt"
@@ -38,13 +40,26 @@
             HorizontalAlignment="Center" 
             VerticalAlignment="Center"
             Width="100" 
-            Height="20" >Toggle</ToggleButton>
+            Height="100" >
+            <Image Name="toggleImage" Source="D:\D\_freiberuflich\github\csharp\beispieldateien\ButtonControlsWpfApplication\ButtonControlsWpfApplication\bin\Debug/smil1.png"></Image>
+            
+        </ToggleButton>
         <RepeatButton 
+            Name="RepeatBtnUP"
+            Click="repeat_clicked"
             Grid.Column="0" 
             Grid.Row="2" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center" 
-            Width="100" Height="20" >Repeat</RepeatButton>
+            Width="100" Height="20" >+</RepeatButton>
+        <RepeatButton 
+            Name="RepeatBtndown"
+            Click="repeat_clickedDown"
+            Grid.Column="0" 
+            Grid.Row="3" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Width="100" Height="20" >-</RepeatButton>
         <Label Name="label_simple" 
                Grid.Column="1" 
                Grid.Row="0"
@@ -67,6 +82,12 @@
                Grid.Column="3" 
                Grid.Row="1"
                Content=""
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center"/>
+        <Label Name="repeat_count" 
+               Grid.Column="1" 
+               Grid.Row="2"
+               Content="0"
                HorizontalAlignment="Center" 
                VerticalAlignment="Center"/>
     </Grid>
