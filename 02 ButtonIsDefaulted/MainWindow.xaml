@@ -1,0 +1,22 @@
+﻿<Window x:Class="ButtonIsDefaulted.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="IsDefaulted-Property" Width="200" Height="200">
+<!--
+		 Beachten Sie, wie sich der Fokus auf eine TextBox mit AcceptsReturn=True
+		 auf den Button mit IsDefault="True" auswirkt. Der Button mit IsDefault="True"
+		 wird nomralerweise geklickt, wenn Sie in dem Fenster die Enter-Taste drücken.
+		 Ob er tatsächlich gedrückt wird, bestimmt die IsDefaulted-Property, die
+		 true sein muss (oder der Button selbst muss den Tastatur-Fokus haben.
+		-->
+	  
+		<StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Button IsDefaulted: "/>
+	  		<TextBlock Text="{Binding ElementName=btn,Path=IsDefaulted}"/>
+			</StackPanel>
+		  <TextBox Text="Akzeptiert kein Return"/>
+      <TextBox Text="Akzeptiert Return" AcceptsReturn="True"/>
+      <Button x:Name="btn" IsDefault="True" Content="Klick mich" Click="btn_Click"/>
+	</StackPanel>
+</Window>
