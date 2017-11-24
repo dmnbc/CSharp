@@ -28,13 +28,31 @@ namespace RadioControlsWpfApplication
         public MainWindow()
         {
             InitializeComponent();
-            RadioButton itsk = new RadioButton();
+            /*
+             foreach(var item in  myGrid.Children)
+            {
+                
+                if(item is System.Windows.Controls.GroupBox)
+                {
+                    GroupBox   gb = item as GroupBox;
+                    StackPanel sp = gb.Content as StackPanel;
+                    foreach(var rb in sp.Children)
+                    {
+                        MessageBox.Show(rb.ToString());
+                    }
+
+                }
+                
+            } */
+            
+            CheckBox itsk = new CheckBox();
             itsk.Content = "ITSK";
             fachrichtungen.Children.Add(itsk);
-
+            itsk.Click += any_CheckBox_Click;
             foreach(string item in berufeliste)
             {
-                RadioButton rb = new RadioButton { Content = item };
+                CheckBox rb = new CheckBox { Content = item };
+                rb.Click += any_CheckBox_Click;
                 fachrichtungen.Children.Add(rb);
 
             }
@@ -43,14 +61,30 @@ namespace RadioControlsWpfApplication
 
         }
 
-        private void radioButton_male_Click(object sender, RoutedEventArgs e)
+        
+
+        private void any_CheckBox_Click(object sender, RoutedEventArgs e)
         {
-            auswertung.Content = "Ihre Auswahl: männlich";
+            auswertung.Content = " ";
+            foreach (RadioButton item in geschlecht.Children)
+            {
+                if (item.IsChecked == true)
+                {
+                    // MessageBox.Show(item.ToString());
+                    auswertung.Content += item.Content.ToString();
+                }
+            }
+
+            auswertung.Content += ":";
+
+            foreach (CheckBox item in fachrichtungen.Children)
+            {
+                if (item.IsChecked == true)
+                {
+                   // MessageBox.Show(item.ToString());
+                    auswertung.Content += item.Content.ToString(); }
+            }
         }
 
-        private void radioButton_female_Click(object sender, RoutedEventArgs e)
-        {
-            auswertung.Content = "Ihre Auswahl: weiblich";
-        }
     }
 }

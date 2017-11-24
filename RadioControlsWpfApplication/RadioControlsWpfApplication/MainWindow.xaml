@@ -20,19 +20,20 @@
         </Grid.ColumnDefinitions>
         <GroupBox Name="gb2" Grid.Column="0" Header="Fachrichtung" BorderBrush="Black" Height="auto" Margin="0,0,0,0">
         <StackPanel Grid.Column="0" Name="fachrichtungen" >
-            <RadioButton x:Name="radioButton" Content="FISI" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-            <RadioButton x:Name="radioButton1" Content="FIAE" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+            <CheckBox x:Name="CheckBox" Content="FISI" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="any_CheckBox_Click" IsChecked="True"/>
+                <CheckBox x:Name="CheckBox1" Content="FIAE" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="any_CheckBox_Click"/>
         </StackPanel>
         </GroupBox>
         <GroupBox x:Name="groupBox"  Grid.Column="1" Header="Geschlecht" BorderBrush="#FFC30404" Height="auto" Margin="0,0,0,0">
 
-            <StackPanel  >
-                <RadioButton x:Name="radioButton_male" Content="Männlich"  HorizontalAlignment="Left"  VerticalAlignment="Top" Click="radioButton_male_Click"/>
-                <RadioButton x:Name="radioButton_female" Content="Weiblich"  HorizontalAlignment="Left"  VerticalAlignment="Top" Click="radioButton_female_Click"/>
+            <StackPanel Name="geschlecht" >
+                <RadioButton x:Name="CheckBox_male" Content="Männlich"  HorizontalAlignment="Left"  VerticalAlignment="Top" Click="any_CheckBox_Click" IsChecked="True"/>
+                <RadioButton x:Name="CheckBox_female" Content="Weiblich"  HorizontalAlignment="Left"  VerticalAlignment="Top" Click="any_CheckBox_Click"/>
            
         </StackPanel>
         </GroupBox>
-        <Label Name="auswertung" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Content="Ihre Auswahl "></Label>
+        <Label Name="auswertung" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Content="Ihre Auswahl "></Label>
+        <Label Name="seiteninhalt"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3">Elemente der Seite</Label>
     </Grid>
 
 </Window>
