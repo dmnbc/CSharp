@@ -41,7 +41,7 @@
             VerticalAlignment="Center"
             Width="100" 
             Height="100" >
-            <Image Name="toggleImage" Source="D:\D\_freiberuflich\github\csharp\beispieldateien\ButtonControlsWpfApplication\ButtonControlsWpfApplication\bin\Debug/smil1.png"></Image>
+            <Image Name="toggleImage" Source="smil1.png"></Image>
             
         </ToggleButton>
         <RepeatButton 

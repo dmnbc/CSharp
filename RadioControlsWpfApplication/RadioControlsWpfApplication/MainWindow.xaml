@@ -1,0 +1,38 @@
+﻿<Window x:Class="RadioControlsWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RadioControlsWpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="myGrid" HorizontalAlignment="Left" Height="250" Margin="30,30,0,0" VerticalAlignment="Top" Width="500" ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Name="gb2" Grid.Column="0" Header="Fachrichtung" BorderBrush="Black" Height="auto" Margin="0,0,0,0">
+        <StackPanel Grid.Column="0" Name="fachrichtungen" >
+            <RadioButton x:Name="radioButton" Content="FISI" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+            <RadioButton x:Name="radioButton1" Content="FIAE" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="groupBox"  Grid.Column="1" Header="Geschlecht" BorderBrush="#FFC30404" Height="auto" Margin="0,0,0,0">
+
+            <StackPanel  >
+                <RadioButton x:Name="radioButton_male" Content="Männlich"  HorizontalAlignment="Left"  VerticalAlignment="Top" Click="radioButton_male_Click"/>
+                <RadioButton x:Name="radioButton_female" Content="Weiblich"  HorizontalAlignment="Left"  VerticalAlignment="Top" Click="radioButton_female_Click"/>
+           
+        </StackPanel>
+        </GroupBox>
+        <Label Name="auswertung" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Content="Ihre Auswahl "></Label>
+    </Grid>
+
+</Window>

@@ -55,7 +55,7 @@ namespace ButtonControlsWpfApplication
             inaktiv_toggle.Content = "nicht aktiv";
             aktiv_toggle.Content = "";
             Image content = new Image();
-            content.Source = new BitmapImage(new Uri(Bildpfad+"uncheck.png"));
+            content.Source = new BitmapImage(new Uri("uncheck.png"));
             toggle_img.Content = content;
         }
 
