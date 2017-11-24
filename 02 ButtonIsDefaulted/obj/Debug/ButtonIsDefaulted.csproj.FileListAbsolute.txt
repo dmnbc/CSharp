@@ -1,0 +1,13 @@
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\bin\Debug\ButtonIsDefaulted.exe.config
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\bin\Debug\ButtonIsDefaulted.exe
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\bin\Debug\ButtonIsDefaulted.pdb
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\ButtonIsDefaulted.csprojResolveAssemblyReference.cache
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\MainWindow.baml
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\MainWindow.g.cs
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\App.g.cs
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\ButtonIsDefaulted_MarkupCompile.cache
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\ButtonIsDefaulted.g.resources
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\ButtonIsDefaulted.Properties.Resources.resources
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\ButtonIsDefaulted.csproj.GenerateResource.Cache
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\ButtonIsDefaulted.exe
+D:\D\_freiberuflich\github\csharp\K05\02 ButtonIsDefaulted\obj\Debug\ButtonIsDefaulted.pdb
