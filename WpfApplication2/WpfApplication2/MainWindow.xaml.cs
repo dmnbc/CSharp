@@ -52,7 +52,7 @@ namespace WpfApplication2
             btn1.BeginAnimation(Button.WidthProperty, change);
        // wenn synchron in gleicher Weise      btn1.BeginAnimation(Button.HeightProperty, change);
            
-
+            
         }
     }
  }

@@ -1,0 +1,16 @@
+﻿<Window x:Class="ColorAnimationWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorAnimationWpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        Loaded="Window_Loaded"
+        Name="window">
+    <Grid>
+        <Label Name="btn1" Width="100" Height="100" Background="white" MouseEnter="btn1_Click" >
+            wechseln nach Klick
+        </Label>
+    </Grid>
+</Window>
