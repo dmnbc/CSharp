@@ -23,6 +23,7 @@ namespace CanvasWpfApplication
     {
         private AnimationClock _clock = null;
         private AnimationClock _clock2 = null;
+        public static bool noch_nicht_gemeldet = true;
         public MainWindow()
         {
 
@@ -40,6 +41,8 @@ namespace CanvasWpfApplication
             moveCar.Duration = new Duration(TimeSpan.Parse("0:0:10"));
             _clock = moveCar.CreateClock();
             kunde.ApplyAnimationClock(Canvas.TopProperty, _clock);
+            _clock.CurrentTimeInvalidated += _clock_CurrentTimeInvalidated;
+            
           
 
             DoubleAnimation enlargeButton = new DoubleAnimation
@@ -54,6 +57,22 @@ namespace CanvasWpfApplication
 
         }
 
+        private void _clock_CurrentTimeInvalidated(object sender, EventArgs e)
+        {
+            progress.Content = kunde.GetValue(Canvas.TopProperty);
+            double top;
+           // bool noch_nicht_gemeldet = false;
+            Double.TryParse((kunde.GetValue(Canvas.TopProperty)).ToString(),out top);
+           // kunde.InvalidateProperty(Canvas.TopProperty);
+            if((top > 200.0) & noch_nicht_gemeldet)
+            {
+              //  _clock.Controller.Pause();
+                MessageBox.Show("Stop auf halber Strecke");
+                noch_nicht_gemeldet = !noch_nicht_gemeldet;
+              //  _clock.Controller.Resume();
+            }
+           
+        }
     }  
     
 }

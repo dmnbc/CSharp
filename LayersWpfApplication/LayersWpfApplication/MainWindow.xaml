@@ -1,0 +1,27 @@
+﻿<Window x:Class="LayersWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LayersWpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Canvas Background="Ivory"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+        <Canvas>
+            <Rectangle Height="60" Width="60" Fill="Gold"/>
+            <Rectangle Height="50" Width="70" Fill="Coral"/>
+            <Rectangle Height="40" Width="80" Fill="Teal"/>
+            <Rectangle Height="30" Width="90" Fill="Black"/>
+        </Canvas>
+
+        <Canvas Canvas.Left="120">
+            <Rectangle Canvas.ZIndex="99" Height="60" Width="60" Fill="Gold"/>
+            <Rectangle Canvas.ZIndex="98" Height="50" Width="70" Fill="Coral"/>
+            <Rectangle Canvas.ZIndex="97" Height="40" Width="80" Fill="Teal"/>
+            <Rectangle Canvas.ZIndex="96" Height="30" Width="90" Fill="Black"/>
+        </Canvas>
+
+    </Canvas>
+</Window>
