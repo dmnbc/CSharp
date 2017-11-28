@@ -35,7 +35,7 @@ namespace KundeBewegenWpfApplication
             {
                 From = 0,
                 To = 400,
-                Duration = TimeSpan.Parse("0:0:10")
+                Duration = TimeSpan.Parse("0:0:50")
             };
             _taktgeber = kundeBewegung.CreateClock();
             kunde.ApplyAnimationClock(Canvas.TopProperty, _taktgeber);
@@ -55,10 +55,59 @@ namespace KundeBewegenWpfApplication
             Double.TryParse((kunde.GetValue(Canvas.TopProperty).ToString()),out aktuellePosition);
             if(aktuellePosition > 200.0)
             {
-                bewegung.Content="halbe Strecke geschafft";
-               
+                bewegung.Content="halbe Strecke geschafft";               
+            }
+            if (aktuellePosition > 210.0)
+            {
+                bewegung.Content = kunde.GetValue(Canvas.TopProperty);
             }
         }
 
+        private void reset_Click(object sender, RoutedEventArgs e)
+        {
+            _taktgeber.Controller.Begin();
+        }
+
+        private void pause_Click(object sender, RoutedEventArgs e)
+        {
+            _taktgeber.Controller.Pause();
+        }
+
+        private void weiter_Click(object sender, RoutedEventArgs e)
+        {
+            _taktgeber.Controller.Resume();
+        }
+
+        private void ende_Click(object sender, RoutedEventArgs e)
+        {
+            _taktgeber.Controller.SkipToFill();
+        }
+
+        private void liste_Click(object sender, RoutedEventArgs e)
+        {
+            _taktgeber.Controller.Pause();
+            MessageBox.Show("Anzeige der Einkaufsliste");
+            _taktgeber.Controller.Resume();
+        }
+
+        private void kunde_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            _taktgeber.Controller.Pause();
+            MessageBox.Show("Anzeige der Einkaufsliste");
+            _taktgeber.Controller.Resume();
+
+        }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            speedration.Content = e.NewValue;
+            if (_taktgeber != null)
+            {
+                var bindung = new Binding();
+                bindung.Source = _taktgeber.Controller;
+                bindung.Path = new PropertyPath("SpeedRatio");
+                slider.SetBinding(Slider.ValueProperty, bindung);
+            }
+        }
     }
 }
