@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RaumdarstellungWpfApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="820">
+        Title="MainWindow" Height="620" Width="820" Loaded="Window_Loaded">
+    <Canvas Height="620" Width="820" Name="canvas">
+        <Label Name="kunde" Width="auto" FontSize="10" Panel.ZIndex="99" Canvas.Left="10" Canvas.Top="10">K</Label>
     <DockPanel Margin="5,15,0,0">
         <Label DockPanel.Dock="Top" Width="100" Background="CadetBlue" >HeadLine</Label>
         <Label DockPanel.Dock="Left" Width="30" Background="CadetBlue" 
@@ -28,4 +30,5 @@
        </ScrollViewer>
         
     </DockPanel>
+    </Canvas>
 </Window>

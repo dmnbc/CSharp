@@ -17,7 +17,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         </Canvas>
 
         <Canvas Canvas.Left="120">
-            <Rectangle Canvas.ZIndex="99" Height="60" Width="60" Fill="Gold"/>
+            <Rectangle Canvas.ZIndex="99" Height="60" Width="60" Fill="Gold" Opacity=".5"/>
             <Rectangle Canvas.ZIndex="98" Height="50" Width="70" Fill="Coral"/>
             <Rectangle Canvas.ZIndex="97" Height="40" Width="80" Fill="Teal"/>
             <Rectangle Canvas.ZIndex="96" Height="30" Width="90" Fill="Black"/>

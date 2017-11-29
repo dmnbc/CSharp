@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="620" Width="820">
     <Canvas Name="Raumdarstellung" Height="600" Width="800">
-        <Border Name="kunde" BorderThickness="2" BorderBrush="Black" CornerRadius="20" MouseDown="kunde_MouseDown" >
+        <Border Name="kunde" Canvas.Top="2"   BorderThickness="2" BorderBrush="Black" CornerRadius="20" MouseDown="kunde_MouseDown" >
             <StackPanel >
                 <Label>Kunde</Label>
                 <Button Name="liste" Click="liste_Click">Liste</Button>
@@ -20,6 +20,7 @@
         <Label x:Name="speedration" Content="1.0" Canvas.Left="16" Canvas.Top="539"/>
         <Button x:Name="ende" Content="Ende"       Canvas.Left="480" Canvas.Top="500" Width="75" Click="ende_Click"/>
         <Slider x:Name="slider"  Value="1.0"  Minimum ="0.01" Maximum="5.0" Canvas.Left="180" Canvas.Top="547" Width="375" ValueChanged="slider_ValueChanged"/>
-        
+        <Rectangle Name="gang1" Fill="#FFF4F4F5" Height="38" Canvas.Left="50" Stroke="Black" Canvas.Top="80" Width="600" Visibility="Hidden"/>
+
     </Canvas>
 </Window>
