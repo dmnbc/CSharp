@@ -23,14 +23,7 @@ namespace RaumdarstellungWpfApplication
     public partial class MainWindow : Window
     {
         public static List<Label> gangbei = new List<Label>(); // soll das Abbiegen in die Gänge steuern
-        public void mover(object sender, RoutedEventArgs e)
-        {
-            LeftDock.Width = 300;
-        }
-        public void moout(object sender, RoutedEventArgs e)
-        {
-            LeftDock.Width = 30;
-        }
+        
 
         public MainWindow()
         {
@@ -104,16 +97,54 @@ namespace RaumdarstellungWpfApplication
                 canvas.Children.Add(kundenAlsKreis);
                 Canvas.SetTop(kundenAlsKreis, relativePoint.Y);
                 Canvas.SetLeft(kundenAlsKreis, relativePoint.X);
-                DoubleAnimation x = new DoubleAnimation();
-                DoubleAnimation y = new DoubleAnimation();
-                x.From = 40;
-                x.To = relativePoint.X;
-                y.To = relativePoint.Y;
-                x.Duration = TimeSpan.Parse("0:0:20");
-                y.Duration = TimeSpan.Parse("0:0:20");
-                kunde.BeginAnimation(Canvas.TopProperty, y);
-                kunde.BeginAnimation(Canvas.LeftProperty, x);
+               
             }
+        }
+
+        private void start_Click(object sender, RoutedEventArgs e)
+        {
+            Point relativePoint = gangbei[0].TransformToAncestor(Application.Current.MainWindow).Transform(new Point(0, 0));
+
+            DoubleAnimation x = new DoubleAnimation();
+            DoubleAnimation y = new DoubleAnimation();
+            x.From = 40;
+            x.To = relativePoint.X;
+            y.To = relativePoint.Y;
+            x.Duration = TimeSpan.Parse("0:0:2");
+            y.Duration = TimeSpan.Parse("0:0:2");
+            x.Completed += X_Completed;
+            kunde.BeginAnimation(Canvas.TopProperty, y);
+            kunde.BeginAnimation(Canvas.LeftProperty, x);
+           
+
+
+
+        }
+
+        private void X_Completed(object sender, EventArgs e)
+        {
+           // MessageBox.Show("jetzt sollte ich in den gang gehen ");
+            DoubleAnimation x = new DoubleAnimation();
+            x.By =canvas.Width; //  Double.Parse(Verkauf.Children[1].GetValue(WidthProperty).ToString());
+            x.Duration = TimeSpan.Parse("0:0:3");
+            x.AutoReverse = true;
+            Point aufenthalt = kunde.TransformToAncestor(Application.Current.MainWindow).Transform(new Point(0, 0));
+            if (aufenthalt.Y < Height)
+            { x.Completed += X_Completed1; }
+            else
+            { MessageBox.Show("Einkauf abgeschlossen, Stehe an der Kasse "); }
+            kunde.BeginAnimation(Canvas.LeftProperty, x);
+        }
+
+        private void X_Completed1(object sender, EventArgs e)
+        {
+            DoubleAnimation y = new DoubleAnimation();
+            y.By = 90; //  Double.Parse(Verkauf.Children[1].GetValue(WidthProperty).ToString());
+            y.Duration = TimeSpan.Parse("0:0:3");
+           
+            y.Completed += X_Completed;
+            kunde.BeginAnimation(Canvas.TopProperty, y);
+
         }
     }
 }
