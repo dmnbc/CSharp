@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -93,17 +94,25 @@ namespace RaumdarstellungWpfApplication
             foreach (Label g in gangbei)
             {
                 Point relativePoint = g.TransformToAncestor(Application.Current.MainWindow).Transform(new Point(0, 0));
-                MessageBox.Show(relativePoint.ToString());
+               
                 Ellipse kundenAlsKreis = new Ellipse
                 {
                     Width = 10,
                     Height = 10,
-                    Fill = Brushes.Black  
-                                                     
+                    Fill = Brushes.Black                                                       
                 };
                 canvas.Children.Add(kundenAlsKreis);
                 Canvas.SetTop(kundenAlsKreis, relativePoint.Y);
                 Canvas.SetLeft(kundenAlsKreis, relativePoint.X);
+                DoubleAnimation x = new DoubleAnimation();
+                DoubleAnimation y = new DoubleAnimation();
+                x.From = 40;
+                x.To = relativePoint.X;
+                y.To = relativePoint.Y;
+                x.Duration = TimeSpan.Parse("0:0:20");
+                y.Duration = TimeSpan.Parse("0:0:20");
+                kunde.BeginAnimation(Canvas.TopProperty, y);
+                kunde.BeginAnimation(Canvas.LeftProperty, x);
             }
         }
     }

@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded">
     <Canvas Height="620" Width="820" Name="canvas" HorizontalAlignment="Left" VerticalAlignment="Top">
-        <Label Name="kunde" Width="auto" FontSize="10" Panel.ZIndex="99" Canvas.Left="10" Canvas.Top="10">K</Label>
+        <Ellipse Name="kunde" Width="10" Height="10"  Panel.ZIndex="99" Canvas.Left="10" Canvas.Top="10" Fill="Cyan">
+           
+        </Ellipse>    
+            
     <DockPanel Margin="5,15,0,0">
         <Label DockPanel.Dock="Top" Width="100" Background="CadetBlue" >HeadLine</Label>
         <Label DockPanel.Dock="Left" Width="30" Background="CadetBlue" 
