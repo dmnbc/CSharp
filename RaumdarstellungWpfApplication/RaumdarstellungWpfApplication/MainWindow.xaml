@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded">
     <Canvas Height="620" Width="820" Name="canvas" HorizontalAlignment="Left" VerticalAlignment="Top">
-        <Ellipse Name="kunde" Width="10" Height="10"  Panel.ZIndex="99" Canvas.Left="10" Canvas.Top="10" Fill="Cyan">
-           
-        </Ellipse>    
+        <Image Name="kunde" Width="26" Height="26"  Panel.ZIndex="99" Canvas.Left="10" Canvas.Top="10" 
+               Source="D:\\D\\_freiberuflich\\github\\csharp\\beispieldateien\\raumdarstellungwpfapplication\\raumdarstellungwpfapplication\\shopping-cart.png">
+        </Image>    
             
     <DockPanel Margin="5,15,0,0">
         <Label DockPanel.Dock="Top" Width="100" Background="CadetBlue" >HeadLine</Label>
