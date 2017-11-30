@@ -34,13 +34,13 @@ namespace EigenKlasseInWpfApplication
             Kunde meier = new Kunde();
 
             raumdarstellung.Children.Add(new Image() { Source = meier.wagen.Source });
-            Canvas.SetLeft(raumdarstellung.Children[raumdarstellung.Children.Count - 1], 30);
+        //    Canvas.SetLeft(raumdarstellung.Children[raumdarstellung.Children.Count - 1], 30);
             Kunde schulz = new Kunde();
-            raumdarstellung.Children.Add(new Image() { Source = schulz.wagen.Source });
-            Canvas.SetLeft(raumdarstellung.Children[raumdarstellung.Children.Count - 1], 60);
+           raumdarstellung.Children.Add(new Image() { Source = schulz.wagen.Source });
+       //     Canvas.SetLeft(raumdarstellung.Children[raumdarstellung.Children.Count - 1], 60);
             Kunde schmidt = new Kunde();
             raumdarstellung.Children.Add(new Image() { Source = schmidt.wagen.Source });
-            Canvas.SetLeft(raumdarstellung.Children[raumdarstellung.Children.Count - 1], 90);
+       //      Canvas.SetLeft(raumdarstellung.Children[raumdarstellung.Children.Count - 1], 90);
 
         }
     }
