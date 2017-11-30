@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -20,6 +21,7 @@ namespace EigenKlasseInWpfApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static int anzKunden = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,17 +33,37 @@ namespace EigenKlasseInWpfApplication
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Kunde meier = new Kunde();
+      
 
-            raumdarstellung.Children.Add(new Image() { Source = meier.wagen.Source });
-        //    Canvas.SetLeft(raumdarstellung.Children[raumdarstellung.Children.Count - 1], 30);
-            Kunde schulz = new Kunde();
-           raumdarstellung.Children.Add(new Image() { Source = schulz.wagen.Source });
-       //     Canvas.SetLeft(raumdarstellung.Children[raumdarstellung.Children.Count - 1], 60);
-            Kunde schmidt = new Kunde();
-            raumdarstellung.Children.Add(new Image() { Source = schmidt.wagen.Source });
-       //      Canvas.SetLeft(raumdarstellung.Children[raumdarstellung.Children.Count - 1], 90);
+        }
 
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            anzKunden = Int32.Parse(slider.Value.ToString());
+            for(int i = 0; i < anzKunden; i++)
+            {
+                Kunde n = new Kunde();
+                n.wagen.MouseDown += Wagen_MouseDown;
+                n.wagen.Margin =  new Thickness(20 * Kunde.kundenummer, 30 * Kunde.kundenummer, 0, 0);
+                raumdarstellung.Children.Add(n.wagen);
+
+               ThicknessAnimation x = new ThicknessAnimation();
+                Thickness bla = new Thickness();
+                bla.Left = 400;
+                bla.Top = n.wagen.Margin.Top;
+                x.To = bla;
+                x.Duration = TimeSpan.Parse("0:0:3");
+                x.BeginTime = TimeSpan.Parse("0:0:" + Kunde.kundenummer);
+                n.wagen.BeginAnimation(Image.MarginProperty, x);
+                    
+            }
+        }
+
+
+
+        private void Wagen_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show(sender.ToString());
         }
     }
 }
