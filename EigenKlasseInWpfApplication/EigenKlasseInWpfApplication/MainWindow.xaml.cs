@@ -40,21 +40,27 @@ namespace EigenKlasseInWpfApplication
         private void button_Click(object sender, RoutedEventArgs e)
         {
             anzKunden = Int32.Parse(slider.Value.ToString());
-            for(int i = 0; i < anzKunden; i++)
+            bool autoreverse = true;
+            ThicknessAnimation x = new ThicknessAnimation();
+            Thickness bla = new Thickness();
+            bla.Left = 400;
+            
+           
+            x.Duration = TimeSpan.Parse("0:0:10");
+            x.BeginTime = TimeSpan.Parse("0:0:" + Kunde.kundenummer);
+            for (int i = 0; i < anzKunden; i++)
             {
+
                 Kunde n = new Kunde();
                 n.wagen.MouseDown += Wagen_MouseDown;
                 n.wagen.Margin =  new Thickness(20 * Kunde.kundenummer, 30 * Kunde.kundenummer, 0, 0);
                 raumdarstellung.Children.Add(n.wagen);
 
-               ThicknessAnimation x = new ThicknessAnimation();
-                Thickness bla = new Thickness();
-                bla.Left = 400;
                 bla.Top = n.wagen.Margin.Top;
                 x.To = bla;
-                x.Duration = TimeSpan.Parse("0:0:3");
-                x.BeginTime = TimeSpan.Parse("0:0:" + Kunde.kundenummer);
+                x.AutoReverse = autoreverse;
                 n.wagen.BeginAnimation(Image.MarginProperty, x);
+                autoreverse = !autoreverse;
                     
             }
         }

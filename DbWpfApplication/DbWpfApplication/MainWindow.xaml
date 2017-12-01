@@ -1,0 +1,14 @@
+﻿<Window x:Class="DbWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DbWpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="81" Margin="109,90,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="auto" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+        <Rectangle Fill="Black" Margin="151,90,289.4,149.8"></Rectangle>
+    </Grid>
+</Window>
