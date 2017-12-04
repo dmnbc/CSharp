@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.ComponentModel;
 
+using System.Windows;
+
 namespace WunschListeWpfApplication
 {
     class Things : INotifyPropertyChanged
@@ -31,6 +33,7 @@ namespace WunschListeWpfApplication
 
         private void Changed(string propertyName)
         {
+          //   MessageBox.Show(" es wird das Attribute " + propertyName + " gesetzt");
             var handler = PropertyChanged;
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));

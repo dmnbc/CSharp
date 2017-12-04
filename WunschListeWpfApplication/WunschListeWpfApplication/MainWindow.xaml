@@ -16,7 +16,7 @@
 
         <DataTemplate DataType="{x:TypeExtension local:Things}">
             <Border BorderBrush="Black" BorderThickness="2" Background="Green">
-            <TextBlock Text="{Binding bezeichnung}" Foreground="Black"></TextBlock>
+            <TextBlock  Width="170"  Text="{Binding bezeichnung}" Foreground="Black"></TextBlock>
             </Border>
         </DataTemplate>
         
@@ -28,11 +28,17 @@
         <ScrollViewer>
             <ListBox Width="200" Name="listbox"
                      ItemsSource="{Binding Source={StaticResource things}}"
+                     
                  />
         </ScrollViewer>
-        <Label Name="label" Width="60" Background="Red"  DockPanel.Dock="Bottom">Summe</Label>
+        <Label HorizontalAlignment="Right"   Name="label" Width="auto" Background="Red"  DockPanel.Dock="Bottom">Summe: 00000.00</Label>
         <Border BorderBrush="Plum" BorderThickness="4" CornerRadius="10">
-        <Canvas Background="BurlyWood"></Canvas>
+            <Canvas Background="BurlyWood" AllowDrop="True" Name="wunschzettel"
+                    DragEnter="Canvas_DragEnter" DragLeave="Canvas_DragLeave"
+                    DragOver="wunschzettel_DragOver" Drop="wunschzettel_Drop"
+                    
+                    
+                    />
         </Border>
     </DockPanel>
 </Window>

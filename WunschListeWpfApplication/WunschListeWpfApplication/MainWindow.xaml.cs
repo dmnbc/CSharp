@@ -23,6 +23,48 @@ namespace WunschListeWpfApplication
         public MainWindow()
         {
             InitializeComponent();
+            listbox.AddHandler(ListBox.MouseDownEvent, new MouseButtonEventHandler(ListBox_MouseDown), true);
+        }
+
+        private void ListBox_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+         //   MessageBox.Show("ausgewählt wurde : "+(listbox.SelectedItem as Things).preis );
+            Things wunsch = listbox.SelectedItem as Things;
+            DataObject data = new DataObject(wunsch);
+            DragDrop.DoDragDrop(listbox, data, DragDropEffects.Copy);
+        }
+
+        private void Canvas_DragEnter(object sender, DragEventArgs e)
+        {
+            wunschzettel.Background = Brushes.DarkGoldenrod;
+        }
+        private void Canvas_DragLeave(object sender, DragEventArgs e)
+        {
+            wunschzettel.Background = Brushes.DarkKhaki;
+        }
+
+        private void wunschzettel_DragOver(object sender, DragEventArgs e)
+        {
+            ;
+        }
+
+        private void wunschzettel_Drop(object sender, DragEventArgs e)
+        {
+         
+            Things kopie = (Things)e.Data.GetData(typeof(Things));
+            Canvas canvas = e.Source as Canvas;
+            Point p = e.GetPosition(canvas);     // wo ist die Maus beim Drop
+
+            ContentControl cc = new ContentControl();
+            cc.Content = kopie;
+
+            Canvas.SetLeft(cc, p.X);
+            Canvas.SetTop(cc,  p.Y);
+            wunschzettel.Children.Add(cc);
+
+
+
+
         }
     }
 }
