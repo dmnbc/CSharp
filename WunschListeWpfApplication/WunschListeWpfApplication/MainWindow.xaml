@@ -1,0 +1,38 @@
+﻿<Window x:Class="WunschListeWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WunschListeWpfApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Window.Resources>
+        <x:Array x:Key="things" Type="{x:Type local:Things}">
+            <local:Things bezeichnung="Segelboot"      preis="50000" />
+            <local:Things bezeichnung="Sportwagen"     preis="70000" />
+            <local:Things bezeichnung="Segelflugzeug"  preis="150000" />
+            <local:Things bezeichnung="Super Nintendo" preis="99" />
+       </x:Array>
+
+        <DataTemplate DataType="{x:TypeExtension local:Things}">
+            <Border BorderBrush="Black" BorderThickness="2" Background="Green">
+            <TextBlock Text="{Binding bezeichnung}" Foreground="Black"></TextBlock>
+            </Border>
+        </DataTemplate>
+        
+        
+        
+
+    </Window.Resources>
+    <DockPanel>
+        <ScrollViewer>
+            <ListBox Width="200" Name="listbox"
+                     ItemsSource="{Binding Source={StaticResource things}}"
+                 />
+        </ScrollViewer>
+        <Label Name="label" Width="60" Background="Red"  DockPanel.Dock="Bottom">Summe</Label>
+        <Border BorderBrush="Plum" BorderThickness="4" CornerRadius="10">
+        <Canvas Background="BurlyWood"></Canvas>
+        </Border>
+    </DockPanel>
+</Window>

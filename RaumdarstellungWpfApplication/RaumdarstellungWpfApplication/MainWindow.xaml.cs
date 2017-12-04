@@ -20,15 +20,15 @@ namespace RaumdarstellungWpfApplication
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
+    /// 
+
+
     public partial class MainWindow : Window
     {
-        public static List<Label> gangbei = new List<Label>(); // soll das Abbiegen in die Gänge steuern
-        
+         public static List<Label> gangbei = new List<Label>(); // soll das Abbiegen in die Gänge steuern
 
         public MainWindow()
         {
-      
-
             InitializeComponent();
             Label headline = new Label
             {
@@ -104,7 +104,7 @@ namespace RaumdarstellungWpfApplication
         private void start_Click(object sender, RoutedEventArgs e)
         {
             Point relativePoint = gangbei[0].TransformToAncestor(Application.Current.MainWindow).Transform(new Point(0, 0));
-
+            
             DoubleAnimation x = new DoubleAnimation();
             DoubleAnimation y = new DoubleAnimation();
             x.From = 40;

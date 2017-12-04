@@ -23,16 +23,16 @@ namespace DbWpfApplication
     public partial class MainWindow : Window
     {
         public static string dbconnectstring =
-            "SERVER=localhost;" +
-                            "DATABASE=bank;" +
-                            "UID=root;" +
-                            "PASSWORD=;";
+            "SERVER=dnmbc.c4vhtk9yfmbv.eu-central-1.rds.amazonaws.com;" +
+                            "DATABASE=waren;" +
+                            "UID=cbmnd;" +
+                            "PASSWORD=dC!?5678;";
         public MainWindow()
         {
             InitializeComponent();
             MySqlConnection connection = new MySqlConnection(dbconnectstring);
             MySqlCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT * FROM kontoinhaber";
+            command.CommandText = "SELECT * FROM Waren";
             MySqlDataReader Reader;
             connection.Open();
             Reader = command.ExecuteReader(); // alle Treffer in Reader -- List<string>

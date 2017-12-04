@@ -76,3 +76,14 @@ namespace CanvasWpfApplication
     }  
     
 }
+
+ <Canvas Name="Darstellung" Height="600" Width="800" >
+        <Border Name="kunde" BorderBrush="Red" BorderThickness="5" CornerRadius="10" Height="auto">
+            <StackPanel><Label Content="Kunde"></Label>
+                <Button>Liste</Button>
+            </StackPanel>
+        </Border>
+        <Button x:Name="start" Content="Start" Canvas.Left="647" Canvas.Top="218" Width="75" Click="start_Click"/>
+        <Button x:Name="progress" Content="läuft" Canvas.Left="26" Canvas.Top="523" Width="75"/>
+
+    </Canvas> 
