@@ -52,5 +52,17 @@ namespace mp3PlayerWpfApplication
         {
             mediaPlayer.Play();
         }
+        private void stopBtn_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Stop();
+        }
+        private void pauseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Pause();
+        }
+        private void weiterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Play();
+        }
     }
 }

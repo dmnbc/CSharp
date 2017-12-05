@@ -10,6 +10,9 @@
         <Button Name="btnOpenAudioFile" Click="btnOpenAudioFile_Click">Select Audio file</Button>
         <MediaElement Width="auto" Height="auto" Name="mediaPlayer"></MediaElement>
         <Button Name="playBtn" Content="Play" Click="playBtn_Click"></Button>
+        <Button Name="stopBtn" Content="Stop" Click="stopBtn_Click"></Button>
+        <Button Name="pauseBtn" Content="Pause" Click="pauseBtn_Click"></Button>
+        <Button Name="resumeBtn" Content="Weiter" Click="weiterBtn_Click"></Button>
     </StackPanel>
 
 </Window>
