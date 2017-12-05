@@ -31,21 +31,26 @@ namespace mp3PlayerWpfApplication
 
         private void btnOpenAudioFile_Click(object sender, RoutedEventArgs e)
         {
-          /*  OpenFileDialog openFileDialog = new OpenFileDialog();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = "D:\\D\\_privat\\musik\\MP3Files";
-            openFileDialog.Filter = "MP files (*.mp4)|*.mp4|All files (*.*)|*.*";
+            openFileDialog.Filter = "MP files (*.mp*)|*.mp*|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
-            { */
+            { 
                 mediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
-                mediaPlayer.Source = (new Uri("http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg&quot;"));//openFileDialog.FileName));
+                mediaPlayer.Source =new Uri ((openFileDialog.FileName));
                 mediaPlayer.LoadedBehavior = MediaState.Manual;
-                mediaPlayer.Play();
-          //  }
+               
+            }
         }
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
         {
             MessageBox.Show("Lied zu Ende ");
+        }
+
+        private void playBtn_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Play();
         }
     }
 }

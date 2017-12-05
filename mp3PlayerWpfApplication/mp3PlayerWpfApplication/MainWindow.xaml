@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Button Name="btnOpenAudioFile" Click="btnOpenAudioFile_Click">Open Audio file</Button>
+        <Button Name="btnOpenAudioFile" Click="btnOpenAudioFile_Click">Select Audio file</Button>
         <MediaElement Width="auto" Height="auto" Name="mediaPlayer"></MediaElement>
+        <Button Name="playBtn" Content="Play" Click="playBtn_Click"></Button>
     </StackPanel>
 
 </Window>
