@@ -8,7 +8,13 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <TabControl Height="200" Width="400">
-            <TabItem Header="Klassik" Background="Aqua"></TabItem>
+            <TabItem Header="Klassik" Background="Aqua">
+                <StackPanel>
+                <RadioButton Content="Beethoven 5." />
+                <RadioButton Content="Schumann 3." />
+                <RadioButton Content="Wagner Siegfrieds Tod" />
+                </StackPanel>
+            </TabItem>
             <TabItem Header="Metal" Background="Black" Foreground="Green"></TabItem>
             <TabItem Header="Rock" Background="Brown"></TabItem>
         </TabControl>
