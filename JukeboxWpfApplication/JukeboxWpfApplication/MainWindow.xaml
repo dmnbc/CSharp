@@ -6,18 +6,33 @@
         xmlns:local="clr-namespace:JukeboxWpfApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <StackPanel>
         <TabControl Height="200" Width="400">
             <TabItem Header="Klassik" Background="Aqua">
                 <StackPanel>
-                <RadioButton Content="Beethoven 5." />
-                <RadioButton Content="Schumann 3." />
-                <RadioButton Content="Wagner Siegfrieds Tod" />
+                <RadioButton GroupName="klassik" Content="Beethoven 5."    Checked="RadioButton_Checked" Tag="bet.mp3" />
+                    <RadioButton GroupName="klassik" Content="Schumann 3." Checked="RadioButton_Checked" Tag="sch.mp3"/>
+                    <RadioButton GroupName="klassik" Content="Wagner Siegfrieds Tod" Checked="RadioButton_Checked" Tag="wag.mp3"/>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Metal" Background="Black" Foreground="Green"></TabItem>
-            <TabItem Header="Rock" Background="Brown"></TabItem>
+            <TabItem Header="Metal" Background="Black" Foreground="Green">
+                <StackPanel>
+                    <RadioButton GroupName="metal" Content="Paranoid"    Checked="RadioButton_Checked" Tag="Black Sabbath-paranoid black sabbath (lyrics included).mp3" />
+                    <RadioButton GroupName="metal" Content="Nothing else matters" Checked="RadioButton_Checked" Tag="meta.mp3"/>
+                    <RadioButton GroupName="metal" Content="Up the hill" Checked="RadioButton_Checked" Tag="iron.mp3"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Rock" Background="Brown">
+                <StackPanel>
+                    <RadioButton GroupName="rock" Content="Stairway to heaven"    Checked="RadioButton_Checked" Tag="led.mp3" />
+                    <RadioButton GroupName="rock" Content="Burn" Checked="RadioButton_Checked" Tag="purple.mp3"/>
+                    <RadioButton GroupName="rock" Content="Night move" Checked="RadioButton_Checked" Tag="sample.mp3"/>
+                </StackPanel>
+            </TabItem>
         </TabControl>
-        
-    </Grid>
+        <TextBox Name="laufzeit"></TextBox>
+        <ProgressBar Name="progressbar" Height="20" />
+        <Button Content="Abspielen" Click="Button_Click"/>
+
+    </StackPanel>
 </Window>
