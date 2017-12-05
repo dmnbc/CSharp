@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="525">
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <Button Name="btnOpenAudioFile" Click="btnOpenAudioFile_Click">Open Audio file</Button>
-        <MediaElement Width="250" Height="250" Name="mediaPlayer"></MediaElement>
+        <MediaElement Width="auto" Height="auto" Name="mediaPlayer"></MediaElement>
     </StackPanel>
 
 </Window>

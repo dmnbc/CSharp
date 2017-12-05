@@ -25,22 +25,22 @@ namespace mp3PlayerWpfApplication
         public MainWindow()
         {
             InitializeComponent();
-            mediaPlayer.Height = 300;
-            mediaPlayer.Width = 500;
+         //   mediaPlayer.Height = 300;
+         //   mediaPlayer.Width = 500;
         }
 
         private void btnOpenAudioFile_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+          /*  OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = "D:\\D\\_privat\\musik\\MP3Files";
             openFileDialog.Filter = "MP files (*.mp4)|*.mp4|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
-            {
+            { */
                 mediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
-                mediaPlayer.Source = (new Uri(openFileDialog.FileName));
+                mediaPlayer.Source = (new Uri("http://hubblesource.stsci.edu/sources/video/clips/details/images/hst_1.mpg&quot;"));//openFileDialog.FileName));
                 mediaPlayer.LoadedBehavior = MediaState.Manual;
                 mediaPlayer.Play();
-            }
+          //  }
         }
 
         private void MediaPlayer_MediaEnded(object sender, EventArgs e)
