@@ -26,13 +26,13 @@
                 <StackPanel>
                     <RadioButton GroupName="rock" Content="Stairway to heaven"    Checked="RadioButton_Checked" Tag="led.mp3" />
                     <RadioButton GroupName="rock" Content="Burn" Checked="RadioButton_Checked" Tag="purple.mp3"/>
-                    <RadioButton GroupName="rock" Content="Night move" Checked="RadioButton_Checked" Tag="sample.mp3"/>
+                    <RadioButton GroupName="rock" Content="Shaft" Checked="RadioButton_Checked" Tag="shaft_original.mid"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
         <TextBox Name="laufzeit"></TextBox>
         <ProgressBar Name="progressbar" Height="20" />
-        <Button Content="Abspielen" Click="Button_Click"/>
+        <Button Name ="startBtn" Content="Abspielen" Click="Button_Click" Opacity=".2"/>
 
     </StackPanel>
 </Window>

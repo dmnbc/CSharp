@@ -32,7 +32,7 @@ namespace JukeboxWpfApplication
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             var gewaehlt = sender as RadioButton;
-            MessageBox.Show(pfad+gewaehlt.Tag.ToString());
+     //       MessageBox.Show(pfad+gewaehlt.Tag.ToString());
             _timeLine = new MediaTimeline();
             _timeLine.Source = new Uri(pfad + gewaehlt.Tag.ToString());
      //       _timeLine.Source = new Uri(gewaehlt.Tag.ToString());
@@ -48,6 +48,8 @@ namespace JukeboxWpfApplication
         {
             MediaPlayer temp = sender as MediaPlayer;
             progressbar.Maximum = temp.NaturalDuration.TimeSpan.Ticks;
+            startBtn.Opacity = 1;
+
         }
 
         private void _clock_CurrentTimeInvalidated(object sender, EventArgs e)
