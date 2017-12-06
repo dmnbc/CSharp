@@ -9,7 +9,9 @@
     <Grid Name="grid" Background="Black">
         <Grid.RowDefinitions></Grid.RowDefinitions>
         <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
-        <Image Grid.Column="0" Grid.Row="0" Source="mg_3769.jpg"  ></Image>
+        <Image Grid.Column="0" Grid.Row="0" 
+               MouseDown="Image_MouseDown"
+               Source="D:\\D\\_freiberuflich\\github\\csharp\\beispieldateien\\MapWpfApplication\\MapWpfApplication\\mg_3769.jpg"></Image>
         
     </Grid>
 </Window>
