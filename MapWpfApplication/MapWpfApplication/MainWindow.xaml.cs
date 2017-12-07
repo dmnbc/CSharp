@@ -29,15 +29,37 @@ namespace MapWpfApplication
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            // MessageBox.Show
-
-            koord.Add(e.GetPosition(Application.Current.MainWindow));
-            if(koord.Count == 2)
+            // Markierung setzen
+            Ellipse marke = new Ellipse
             {
-                double entfernung;
-                entfernung = Math.Sqrt(Math.Pow(Math.Abs(koord[0].X - koord[1].X), 2)
-                                     + Math.Pow(Math.Abs(koord[0].Y - koord[1].Y), 2));
+                Width = 20,
+                Height = 20,
+                Fill = Brushes.Black,
+                Margin = new Thickness(e.GetPosition(Application.Current.MainWindow).X,
+                e.GetPosition(Application.Current.MainWindow).Y, 0, 0)
+            };
+            grid.Children.Add(marke);
+            koord.Add(e.GetPosition(Application.Current.MainWindow));
+            if(koord.Count > 2)
+            {
+                double entfernung=0;
+                for (int i = 1; i < koord.Count; i++)
+                {
+                    Line l = new Line
+                    {
+                        X1 = Math.Abs(koord[i - 1].X),
+                        X2 = Math.Abs(koord[i].X),
+                        Y1 = Math.Abs(koord[i - 1].Y),
+                        Y2 = Math.Abs(koord[i].Y),
+                        Stroke = Brushes.Yellow,
+                        StrokeThickness = 4
+                    };
+                    grid.Children.Add(l);
+                    entfernung += Math.Sqrt(Math.Pow(Math.Abs(koord[i - 1].X - koord[i].X), 2)
+                                       + Math.Pow(Math.Abs(koord[i - 1].Y - koord[i].Y), 2));
+                }
                 MessageBox.Show(entfernung.ToString());
+                
             }
 
         }
