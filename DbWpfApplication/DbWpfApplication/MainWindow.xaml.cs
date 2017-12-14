@@ -23,10 +23,10 @@ namespace DbWpfApplication
     public partial class MainWindow : Window
     {
         public static string dbconnectstring =
-            "SERVER=dnmbc.c4vhtk9yfmbv.eu-central-1.rds.amazonaws.com;" +
-                            "DATABASE=waren;" +
-                            "UID=cbmnd;" +
-                            "PASSWORD=dC!?5678;";
+            "SERVER=" +
+                            "DATABASE=" +
+                            "UID=" +
+                            "PASSWORD=";
         public MainWindow()
         {
             InitializeComponent();
